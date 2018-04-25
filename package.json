@@ -2,7 +2,7 @@
   "name": "firsttest",
   "version": "1.0.0",
   "description": "",
-  "main": "truffle-config.js",
+  "main": "app/js/app.js",
   "directories": {
     "test": "test"
   },
