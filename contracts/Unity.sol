@@ -6,7 +6,7 @@ contract Unity {
     bytes32 ID; 
     mapping (address => address) history; 
     
-    function LandPlot(uint256 price, bytes32 _id) public {
+    function constrcutor(uint256 price, bytes32 _id) public {
         owner = msg.sender;
         value = price;
         ID = _id;

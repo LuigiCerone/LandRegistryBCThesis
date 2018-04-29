@@ -6,7 +6,13 @@ module.exports = {
 		path: path.join(__dirname, 'dist'),
 		filename: 'build.js' // The final file will be created in dist/build.js
 	},
-	mode: 'development'
+	mode: 'development',
+	resolve: {
+		alias: {
+			// When a conctract is compiled, truffle stores the abi and deployed address in a json.
+			CompiledContracts: path.resolve(__dirname, 'build/contracts/')
+		}
+	}
 	// Loader for ReactJS.
 	// ,
 	// module: {
