@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack-cli --watch"
+    "dev-frontend": "webpack-cli --watch",
+    "dev-backend": "node server.js"
   },
   "author": "",
   "license": "ISC",
