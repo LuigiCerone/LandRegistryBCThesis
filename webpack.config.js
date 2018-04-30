@@ -1,9 +1,9 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
 	entry: path.join(__dirname, 'app/js', 'index.js'), // Entry point js file is src/app/js/index.js
 	output: {
-		path: path.join(__dirname, 'dist'),
+		path: path.join(__dirname, 'app/dist'),
 		filename: 'build.js' // The final file will be created in dist/build.js
 	},
 	mode: 'development',
@@ -12,6 +12,15 @@ module.exports = {
 			// When a conctract is compiled, truffle stores the abi and deployed address in a json.
 			CompiledContracts: path.resolve(__dirname, 'build/contracts/')
 		}
+	},
+	module: {
+		rules: [{
+			test: /\.js$/,
+			exclude: /node_modules/,
+			use: {
+				loader: "babel-loader"
+			}
+		}]
 	}
 	// Loader for ReactJS.
 	// ,
