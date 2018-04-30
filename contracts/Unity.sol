@@ -11,6 +11,20 @@ contract Unity {
         value = price;
         ID = _id;
     }
+
+    function setUnity(uint256 price, bytes32 _id) public {
+        owner = msg.sender;
+        value = price;
+        ID = _id;
+    }
+
+    function getOwner() public view returns(address) {
+        return owner;
+    }
+
+    function getId() public view returns(bytes32) {
+        return ID;
+    }
     
     function updateOwner(address _newOwner) public returns(address) {
         owner = _newOwner; 
