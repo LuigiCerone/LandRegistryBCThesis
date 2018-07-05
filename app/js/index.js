@@ -1,4 +1,4 @@
-import web3 from './web3';
+import web3 from '../../server/web3';
 import $ from 'jquery';
 import TruffleContract from 'truffle-contract'
 
