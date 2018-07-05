@@ -1,6 +1,6 @@
 'use strict';
 const express = require('express');
-const body_parser = require('body-parser');
+const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const dotenv = require('dotenv').config();
 
@@ -51,7 +51,7 @@ module.exports = {
 
         //Start the server
         app.listen(app.get('port'), () => {
-            logger.info(`Ethereum app running on port ${PORT}...`);
+            logger.info(`Ethereum app running on port ${app.get('port')}...`);
         });
     }
 };
