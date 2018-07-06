@@ -2,13 +2,13 @@
   "name": "firsttest",
   "version": "1.0.0",
   "description": "",
-  "main": "app/js/app.js",
+  "main": "./index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-backend": "nodemon server.js"
+    "dev-backend": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",

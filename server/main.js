@@ -21,17 +21,17 @@ module.exports = {
         //Serve contract artifact files (ex: ToDo.json)
         // app.use(express.static('build/contracts'));
 
-        // Set application port.
-        app.set('port', process.env.PORT || 3000);
-
-        // Set routes.
-        app.use('/rest/v1/', routes);
-
         // Setup body parser.
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({
             extended: true
         }));
+
+        // Set application port.
+        app.set('port', process.env.PORT || 3000);
+
+        // Set routes.
+        app.use('/rest/v1/', routes);
 
         // Setup logger for express HTTP requests.
         app.use(morgan('dev'));
