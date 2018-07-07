@@ -6,4 +6,4 @@ const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 // web3.eth.getAccounts().then(console.log);
 
 // Export default because it is the only thing exported.
-export default web3;
+module.exports = web3;
