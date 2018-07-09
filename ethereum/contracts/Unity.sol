@@ -38,7 +38,7 @@ contract Unity {
     //1. FIRST OPERATION
     //owner shall add lands via this function
     //    function addLand(string _location, uint _cost) public isOwner {
-    function addLand(uint _landParcel) public isOwner {
+    function addLand(uint _landParcel) public returns (uint) {
 
         totalLandsCounter = totalLandsCounter + 1;
         Land memory myLand = Land({
@@ -50,6 +50,7 @@ contract Unity {
             });
         __ownedLands[msg.sender].push(myLand);
         emit Add(msg.sender, totalLandsCounter);
+        return totalLandsCounter;
     }
 
 
@@ -103,6 +104,13 @@ contract Unity {
     function getNoOfLands(address _landHolder) public view returns (uint) {
         return __ownedLands[_landHolder].length;
     }
+
+
+    //    function toString() public view {
+    //        for (uint i = 0; i < totalLandsCounter; i++) {
+    //            console.log(__ownedLands[i]);
+    //        }
+    //    }
 
 
 }

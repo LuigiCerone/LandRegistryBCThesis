@@ -6,8 +6,11 @@ const logger = winston.createLogger({
     transports: [
         new winston.transports.Console({
             colorize: true,
+            json: false,
             level: 'verbose',
-            timestamp: true
+            timestamp: true,
+            prettyPrint: true,
+            handleExceptions: true
         }),
         new winston.transports.File({
             filename: 'error.log',

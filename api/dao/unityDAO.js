@@ -24,9 +24,15 @@ module.exports = {
     },
 
     insertUnity(newUnity) {
-        logger.info(newUnity._landParcel);
-        UnityContract.methods.addLand(newUnity._landParcel).call()
-            .then(console.log);
+        logger.info(addresses[1]);
+
+        return UnityContract.methods.addLand(newUnity._landParcel).send({from: addresses[1], gas: 300000});
+        // .then((res) => logger.info("Result: %j", res)).catch((err) => logger.error("Error" + err));
+
+        // UnityContract.events.Add({fromBlock: 0, toBlock: 'latest'}, function (error, event) {
+        // }).on('data', function (event) {
+        //     logger.info("Event: %j", event);
+        // }).on('error', (err) => logger.error(err));
     },
 
     initContract() {
@@ -34,8 +40,7 @@ module.exports = {
     },
 
     getList() {
-        UnityContract.methods.getNoOfLands.call(addresses[0])
-            .then(console.log);
+        return UnityContract.methods.getNoOfLands(addresses[1]).call();
     }
 
 };

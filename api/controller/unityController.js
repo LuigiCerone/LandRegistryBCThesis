@@ -23,10 +23,12 @@ module.exports = {
     },
 
     async getList(req, res) {
+        let result = null;
         try {
-            await unityDAO.getList();
+            result = await unityDAO.getList();
         } catch (error) {
             logger.error("" + error);
         }
+        res.json(result);
     }
 };
