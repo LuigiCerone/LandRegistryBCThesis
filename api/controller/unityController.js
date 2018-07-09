@@ -15,11 +15,11 @@ module.exports = {
 
         // Now I need to insert newUnity into the contract.
         try {
-            await unityDAO.insertUnity(newUnity);
+            var [insert, event] = await unityDAO.insertUnity(newUnity);
         } catch (error) {
             logger.error("" + error);
         }
-        res.status(201).send();
+        res.status(201).json(insert);
     },
 
     async getList(req, res) {

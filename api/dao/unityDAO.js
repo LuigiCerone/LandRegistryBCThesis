@@ -1,6 +1,7 @@
 const web3 = require('../../server/web3');
 const unity_abi = require('../../ethereum/build/contracts/Unity');
 const logger = require('../../server/logger');
+const eventToPromise = require('event-to-promise');
 
 
 var UnityContract = new web3.eth.Contract(unity_abi.abi);
@@ -24,14 +25,19 @@ module.exports = {
     },
 
     insertUnity(newUnity) {
-        logger.info(addresses[1]);
+        logger.info(addresses[2]);
 
-        return UnityContract.methods.addLand(newUnity._landParcel).send({from: addresses[1], gas: 300000});
+        let addPromise = UnityContract.methods.addLand(newUnity._landParcel).send({
+            from: addresses[1],
+            to: addresses[2],
+            gas: 300000
+        });
         // .then((res) => logger.info("Result: %j", res)).catch((err) => logger.error("Error" + err));
 
-        // UnityContract.events.Add({fromBlock: 0, toBlock: 'latest'}, function (error, event) {
-        // }).on('data', function (event) {
-        //     logger.info("Event: %j", event);
+        let emitter = UnityContract.events.Add({fromBlock: 0, toBlock: 'latest'});
+        return Promise.all([addPromise, eventToPromise(emitter, 'data')]);
+        // .on('data', function (event) {
+        // logger.info("Event: %j", event);
         // }).on('error', (err) => logger.error(err));
     },
 
@@ -39,8 +45,12 @@ module.exports = {
 
     },
 
-    getList() {
-        return UnityContract.methods.getNoOfLands(addresses[1]).call();
+    async getList() {
+        let n = await UnityContract.methods.getNoOfLands(addresses[1]).call();
+        let promises = [];
+        for (let i = 0; i < n; i++) {
+            promises.push(UnityContract.methods.getLand(addresses[1], i).call());
+        }
+        return Promise.all(promises);
     }
-
 };
