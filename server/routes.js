@@ -8,5 +8,7 @@ const router = express.Router();
 // router.post('/add', controller.method);
 router.post('/insert', unityController.insertUnity);
 router.get('/list', unityController.getList);
+router.get('/addresses', unityController.getAddresses);
+router.get('/address/:id', unityController.getAddress);
 
 module.exports = router;

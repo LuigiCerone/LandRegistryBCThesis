@@ -31,6 +31,19 @@ contract Unity {
         _;
     }
 
+    // Modifier used to check if current land is already present in the array associated to the user.
+    modifier isUnique (uint _landParcel, address _ownerAddress){
+        bool duplicate = false;
+        for (uint i = 0; i < (__ownedLands[_ownerAddress].length); i++) {
+            if (__ownedLands[_ownerAddress][i].landParcel == _landParcel) {
+                duplicate = true;
+                break;
+            }
+        }
+        require(duplicate == false);
+        _;
+    }
+
     //one account can hold many lands (many landTokens, each token one land)
     mapping(address => Land[]) public __ownedLands;
 
@@ -38,18 +51,18 @@ contract Unity {
     //1. FIRST OPERATION
     //owner shall add lands via this function
     //    function addLand(string _location, uint _cost) public isOwner {
-    function addLand(uint _landParcel) public isOwner returns (address) {
+    function addLand(uint _landParcel, address _ownerAddress) public isOwner isUnique(_landParcel, _ownerAddress) returns (address) {
 
         totalLandsCounter = totalLandsCounter + 1;
         Land memory myLand = Land({
             landParcel : _landParcel,
-            ownerAddress : msg.sender,
+            ownerAddress : _ownerAddress,
             //                location: _location,
             //                cost: _cost,
             landID : totalLandsCounter
             });
-        __ownedLands[msg.sender].push(myLand);
-        emit Add(msg.sender, totalLandsCounter);
+        __ownedLands[_ownerAddress].push(myLand);
+        emit Add(_ownerAddress, totalLandsCounter);
         return msg.sender;
     }
 

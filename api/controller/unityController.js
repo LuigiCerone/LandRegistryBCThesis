@@ -10,25 +10,52 @@ module.exports = {
     // {}
     async insertUnity(req, res) {
         // First we need to create a new unity by using the data stored in req.body.
-        logger.info("Just received an insert request");
+        logger.info("Just received an insert request.");
         let newUnity = new Unity(req.body.landParcel, req.body.ownerAddress);
 
         // Now I need to insert newUnity into the contract.
         try {
-            var [insert, event] = await unityDAO.insertUnity(newUnity);
+            let [insert, event] = await unityDAO.insertUnity(newUnity);
+            res.status(201).json(insert);
         } catch (error) {
             logger.error("" + error);
+            res.status(500).send();
         }
-        res.status(201).json(insert);
     },
 
     async getList(req, res) {
+        logger.info("Just received a getList request.");
+        let address = req.body.address;
+
         let result = null;
         try {
-            result = await unityDAO.getList();
+            result = await unityDAO.getList(address);
+            res.json(result);
         } catch (error) {
             logger.error("" + error);
+            res.status(500).send();
         }
-        res.json(result);
+    },
+
+    getAddresses(req, res) {
+        logger.info("Just received a getAddresses request.");
+
+        try {
+            res.json(unityDAO.getAddresses());
+        } catch (error) {
+            logger.error("" + error);
+            res.status(500).send();
+        }
+    },
+
+    getAddress(req, res) {
+        logger.info(`Just received a getAddress request with id: ${req.params.id}.`);
+
+        try {
+            res.json(unityDAO.getAddress(req.params.id));
+        } catch (error) {
+            logger.error("" + error);
+            res.status(500).send();
+        }
     }
 };

@@ -6,13 +6,10 @@ const eventToPromise = require('event-to-promise');
 
 var UnityContract = new web3.eth.Contract(unity_abi.abi);
 
-// We need to set the contract's address.
+// We need to set the contract's address and the default from (governament address i.e. first address).
 UnityContract.options.address = Object.values(unity_abi.networks).pop().address;
-// console.log(UnityContract);
-// var contractInstance = UnityContract.deploy({
-//     data: unity_abi.bytecode,
-//     arguments: [0, (web3.utils.asciiToHex('324'))]
-// });
+
+// Setup ganache-cli addresses.
 var addresses;
 web3.eth.getAccounts().then((accounts) => {
     web3.eth.defaultAccount = accounts[0];
@@ -20,6 +17,16 @@ web3.eth.getAccounts().then((accounts) => {
 }).catch((err) => logger.error(err));
 
 module.exports = {
+    getAddresses() {
+        return addresses;
+    },
+
+    getAddress(n) {
+        if (n === undefined) throw "Param is undefined.";
+        if (n >= addresses.length || n < 0) throw "Invalid param number.";
+        return addresses[n];
+    },
+
     getContractInfo() {
         return UnityContract;
     },
@@ -27,7 +34,8 @@ module.exports = {
     insertUnity(newUnity) {
         logger.info(addresses[2]);
 
-        let addPromise = UnityContract.methods.addLand(newUnity._landParcel).send({
+        let addPromise = UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).send({
+            from: web3.eth.defaultAccount,
             gas: 300000
         });
         // .then((res) => logger.info("Result: %j", res)).catch((err) => logger.error("Error" + err));
@@ -39,15 +47,11 @@ module.exports = {
         // }).on('error', (err) => logger.error(err));
     },
 
-    initContract() {
-
-    },
-
-    async getList() {
-        let n = await UnityContract.methods.getNoOfLands(addresses[1]).call();
+    async getList(address) {
+        let n = await UnityContract.methods.getNoOfLands(address).call();
         let promises = [];
         for (let i = 0; i < n; i++) {
-            promises.push(UnityContract.methods.getLand(addresses[1], i).call());
+            promises.push(UnityContract.methods.getLand(address, i).call());
         }
         return Promise.all(promises);
     }
