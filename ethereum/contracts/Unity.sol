@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.23;
 
 
 contract Unity {
@@ -12,6 +12,11 @@ contract Unity {
 
     address public owner;   // government who creates the contract
 
+    // one landId can have multiple owners.
+    mapping(uint => address[]) public __history;
+
+    //one account can hold many lands (many landTokens, each token one land)
+    mapping(address => Land[]) public __ownedLands;
     uint public totalLandsCounter; //total no of lands via this contract at any time
 
     //define who is owner
@@ -27,7 +32,7 @@ contract Unity {
     event Transfer(address indexed _from, address indexed _to, uint _landID);
 
     modifier isOwner{
-        require(msg.sender == owner);
+        require(msg.sender == owner, "Not authorized");
         _;
     }
 
@@ -40,12 +45,11 @@ contract Unity {
                 break;
             }
         }
-        require(duplicate == false);
+        require(duplicate == false, "Duplicate land");
         _;
     }
 
-    //one account can hold many lands (many landTokens, each token one land)
-    mapping(address => Land[]) public __ownedLands;
+
 
 
     //1. FIRST OPERATION
@@ -62,6 +66,10 @@ contract Unity {
             landID : totalLandsCounter
             });
         __ownedLands[_ownerAddress].push(myLand);
+
+        // Add history entry for this new land.
+        __history[totalLandsCounter].push(_ownerAddress);
+
         emit Add(_ownerAddress, totalLandsCounter);
         return msg.sender;
     }
@@ -69,17 +77,17 @@ contract Unity {
 
     //2. SECOND OPERATION
     //caller (owner/anyone) to transfer land to buyer provided caller is owner of the land
-    function transferLand(address _landBuyer, uint _landID) public returns (bool) {
+    function transferLand(address _landBuyer, uint _landParcel) public returns (bool) {
         //find out the particular land ID in owner's collection
         for (uint i = 0; i < (__ownedLands[msg.sender].length); i++) {
             //if given land ID is indeed in owner's collection
-            if (__ownedLands[msg.sender][i].landID == _landID) {
+            if (__ownedLands[msg.sender][i].landParcel == _landParcel) {
                 //copy land in new owner's collection
                 Land memory myLand = Land(
                     {
-                    landParcel : __ownedLands[msg.sender][i].landParcel,
+                    landParcel : _landParcel,
                     ownerAddress : _landBuyer,
-                    landID : _landID
+                    landID : __ownedLands[msg.sender][i].landID
                     //                        location: __ownedLands[msg.sender][i].location,
                     //                        cost: __ownedLands[msg.sender][i].cost,
                     });
@@ -88,9 +96,11 @@ contract Unity {
                 //remove land from current ownerAddress
                 delete __ownedLands[msg.sender][i];
 
+                // Insert movement in the history mapping.
+                __history[__ownedLands[msg.sender][i].landID].push(_landBuyer);
 
                 //inform the world
-                emit Transfer(msg.sender, _landBuyer, _landID);
+                emit Transfer(msg.sender, _landBuyer, _landParcel);
 
                 return true;
             }
@@ -124,6 +134,11 @@ contract Unity {
     //            console.log(__ownedLands[i]);
     //        }
     //    }
+
+    // Return all the movements for a specific land.
+    function getHistoryForLand(uint _landId) public view returns (address[]) {
+        return __history[_landId];
+    }
 
 
 }

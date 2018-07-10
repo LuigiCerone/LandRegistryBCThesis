@@ -57,5 +57,29 @@ module.exports = {
             logger.error("" + error);
             res.status(500).send();
         }
+    },
+
+    async transfer(req, res) {
+        logger.info('Just received a transfer reqeust.');
+
+        try {
+
+        } catch (error) {
+            logger.error("" + error);
+            res.status(500).send();
+        }
+    },
+
+    async getHistory(req, res) {
+        logger.info(`Just received a getHistory request for landId: ${req.params.landId}`);
+
+        try {
+            let v = await unityDAO.getHistory(req.params.landId);
+            logger.info(v);
+            res.json(v);
+        } catch (error) {
+            logger.error("" + error);
+            res.status(500).send();
+        }
     }
 };

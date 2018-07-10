@@ -32,7 +32,7 @@ module.exports = {
     },
 
     insertUnity(newUnity) {
-        logger.info(addresses[2]);
+        // logger.info(addresses[2]);
 
         let addPromise = UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).send({
             from: web3.eth.defaultAccount,
@@ -54,5 +54,9 @@ module.exports = {
             promises.push(UnityContract.methods.getLand(address, i).call());
         }
         return Promise.all(promises);
+    },
+
+    getHistory(landId) {
+        return UnityContract.methods.getHistoryForLand(landId).call();
     }
 };

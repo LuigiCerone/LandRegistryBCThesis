@@ -7,8 +7,10 @@ const router = express.Router();
 // Map each endpoint to router method.
 // router.post('/add', controller.method);
 router.post('/insert', unityController.insertUnity);
-router.get('/list', unityController.getList);
+router.post('/list', unityController.getList);
 router.get('/addresses', unityController.getAddresses);
 router.get('/address/:id', unityController.getAddress);
+router.post('/transfer', unityController.transfer);
+router.get('/history/:landId', unityController.getHistory);
 
 module.exports = router;
