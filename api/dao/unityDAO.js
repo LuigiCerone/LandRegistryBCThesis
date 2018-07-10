@@ -28,8 +28,6 @@ module.exports = {
         logger.info(addresses[2]);
 
         let addPromise = UnityContract.methods.addLand(newUnity._landParcel).send({
-            from: addresses[1],
-            to: addresses[2],
             gas: 300000
         });
         // .then((res) => logger.info("Result: %j", res)).catch((err) => logger.error("Error" + err));
