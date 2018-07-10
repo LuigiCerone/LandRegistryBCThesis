@@ -58,5 +58,12 @@ module.exports = {
 
     getHistory(landId) {
         return UnityContract.methods.getHistoryForLand(landId).call();
+    },
+
+    transfer(buyerAddress, unity) {
+        return UnityContract.methods.transferLand(buyerAddress, unity._landParcel).send({
+            from: unity._ownerAddress,
+            gas: 300000
+        });
     }
 };

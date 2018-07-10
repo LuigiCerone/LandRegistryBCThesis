@@ -93,11 +93,12 @@ contract Unity {
                     });
                 __ownedLands[_landBuyer].push(myLand);
 
-                //remove land from current ownerAddress
-                delete __ownedLands[msg.sender][i];
-
                 // Insert movement in the history mapping.
                 __history[__ownedLands[msg.sender][i].landID].push(_landBuyer);
+
+
+                //remove land from current ownerAddress
+                delete __ownedLands[msg.sender][i];
 
                 //inform the world
                 emit Transfer(msg.sender, _landBuyer, _landParcel);

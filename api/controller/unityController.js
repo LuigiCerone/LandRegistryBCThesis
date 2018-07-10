@@ -60,10 +60,12 @@ module.exports = {
     },
 
     async transfer(req, res) {
-        logger.info('Just received a transfer reqeust.');
+        logger.info('Just received a transfer request.');
+
+        let unity = new Unity(req.body.landParcel, req.body.ownerAddress);
 
         try {
-
+            res.json(await unityDAO.transfer(req.body.buyerAddress, unity));
         } catch (error) {
             logger.error("" + error);
             res.status(500).send();
@@ -74,9 +76,7 @@ module.exports = {
         logger.info(`Just received a getHistory request for landId: ${req.params.landId}`);
 
         try {
-            let v = await unityDAO.getHistory(req.params.landId);
-            logger.info(v);
-            res.json(v);
+            res.json(await unityDAO.getHistory(req.params.landId));
         } catch (error) {
             logger.error("" + error);
             res.status(500).send();
