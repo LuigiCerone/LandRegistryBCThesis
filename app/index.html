@@ -2,20 +2,29 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	<title>First test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <title>First test</title>
 </head>
 
 <body>
-	<div id="root"></div>
-	<div>
-		<input type="text" placeholder="Id" id="id" />
-		<input type="number" placeholder="Price" id="price" /> 
-	</div>
-	<button id="add">Click me!</button>
-	<script src="./dist/build.js"></script>
+<div id="root"></div>
+<div>
+
+</div>
+<form id="addLand">
+    <input type="number" placeholder="Land parcel" id="landParcel"/>
+
+    <input type="text" placeholder="Owner address" id="ownerAddress"/>
+    <input type="submit" value="Add land"/>
+</form>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="./js/web3.min.js"></script>
+<script src="./js/index.js"></script>
 </body>
 
 </html>

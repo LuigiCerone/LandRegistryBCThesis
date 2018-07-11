@@ -1,96 +1,36 @@
-import web3 from '../../server/web3';
-import $ from 'jquery';
-import TruffleContract from 'truffle-contract'
+$(function () {
 
-// web3.eth.getAccounts().then(console.log);
-import unity_abi from 'CompiledContracts/Unity.json';
-// Setup of defaultAccount.
+    // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+    if (typeof web3 !== 'undefined') {
+        // Use Mist/MetaMask's provider
+        // web3js = new Web3(web3.currentProvider);
+    } else {
+        console.log('No web3? You should consider trying MetaMask!');
+        // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+        web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    }
 
-web3.eth.getAccounts().then((accounts) => {
-	web3.eth.defaultAccount = accounts[0];
-	start();
-}).catch((err) => console.log(err));
+    // Now you can start your app & access web3 freely:
+    startApp()
 
-function start() {
-	// console.log(web3.eth.defaultAccount);
-	// Contract address is taken by Truffle when migrations are executed and is used to 
-	// identify a specific smart contract.
-	// var UnityContractAddress = "0x888af8dd6a24cc46b1ae83872d0b4037a7cbb7e2";
 
-	// Instantiate UnityContract.
-	var UnityContract = new web3.eth.Contract(unity_abi.abi);
-	console.log(UnityContract);
-	var contractInstance = UnityContract.deploy({
-		data: unity_abi.bytecode,
-		arguments: [0, (web3.utils.asciiToHex('324'))]
-	});
-	console.log(contractInstance);
+    $('#addLand').on('submit', function (event) {
+        event.preventDefault();
 
-	console.log("Other test: --------------------------------");
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:3000/rest/v1/insert",
+            data: {
+                landParcel: $('#landParcel').val(),
+                ownerAddress: $('#ownerAddress').val()
+            },
+            success: function (res) {
+                console.log(res);
+            }
+        });
+    });
+});
 
-	var UnityContract2 = TruffleContract(unity_abi);
-	UnityContract2.setProvider(web3.currentProvider);
-	// if (typeof UnityContract2.currentProvider.sendAsync !== "function") {
-	// 	UnityContract2.currentProvider.sendAsync = function() {
-	// 	  return UnityContract2.currentProvider.send.apply(
-	// 		UnityContract2.currentProvider, arguments
-	// 	  );
-	// 	};
-	//   }
-	var contractInstance2;
-	UnityContract2.deployed().then((instance) => contractInstance2 = instance);
-	console.log("Istance2: " + contractInstance2);
-
+function startApp() {
+    console.log("App started");
 }
-
-
-// 	console.log(UnityContract);
-
-// 	// UnityContract.methods.getOwner().call().then(console.log).catch(console.log);
-// 	// UnityContract.methods.getId().call().then((id) => $('#id').val(web3.utils.hexToString(id)));
-
-// 	if (contractInstance != null)
-// 		contractInstance.methods.getId().call().then((id) => $('#id').val(web3.utils.hexToString(id)))
-// 		.catch((err) => console.log(err));
-
-
-// 	$('#add').on('click', function () {
-// 		let price = $('#price').val();
-// 		let id = web3.utils.asciiToHex($('#id').val());
-
-// 		// UnityContract.methods.setUnity(price, id).send({
-// 		// 	'from': web3.eth.defaultAccount
-// 		// }).on('receipt', console.log);
-
-// 		// UnityContract.methods.constructor(price, id).send({
-// 		// 	'from': web3.eth.defaultAccount
-// 		// }).on('receipt', console.log);
-
-// 		contractInstance = UnityContract.deploy({
-// 			data: unity_abi.bytecode,
-// 			arguments: [price, id]
-// 		}).send({
-// 			from: web3.eth.defaultAccount,
-// 			gas: 1500000,
-// 			gasPrice: '30000000000000'
-// 		}).then((instance) => {
-// 			contractInstance = instance;
-// 			console.log(contractInstance);
-// 			//Call a method
-// 			contractInstance.methods.getId().call().then((id) => $('#id').val(web3.utils.hexToString(id)));
-// 		});
-// 	});
-// }
-
-
-// // UnityContract.deploy({
-// // 		data: unity_abi.bytecode,
-// // 		arguments: [price, id]
-// // 	}).send({
-// // 		from: web3.eth.defaultAccount,
-// // 		gas: 1500000,
-// // 		gasPrice: '30000000000000'
-// // 	})
-// // 	.then(function (newContractInstance) {
-// // 		console.log(newContractInstance.options.address) // instance with the new contract address
-// // 	});

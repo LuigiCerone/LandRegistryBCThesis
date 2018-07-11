@@ -49,9 +49,6 @@ contract Unity {
         _;
     }
 
-
-
-
     //1. FIRST OPERATION
     //owner shall add lands via this function
     //    function addLand(string _location, uint _cost) public isOwner {
