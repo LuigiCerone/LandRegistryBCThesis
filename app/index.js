@@ -51,7 +51,6 @@ function startApp() {
 
     UnityContract = new web3.eth.Contract(UnityAbi, Object.values(UnityAbi.networks).pop().address);
 
-
     web3.eth.getAccounts().then((accounts) => {
         web3.eth.defaultAccount = accounts[0];
         console.log(web3.eth.defaultAccount);
