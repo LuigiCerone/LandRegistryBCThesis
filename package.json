@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eth:build": "cd ethereum && truffle compile && truffle migrate --reset",
-    "dev-backend": "nodemon index.js"
+    "dev-backend": "nodemon index.js",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,8 @@
     "winston": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8"
   }
 }

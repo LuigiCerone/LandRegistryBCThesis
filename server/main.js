@@ -16,7 +16,7 @@ module.exports = {
           }) {
         logger.info(`Running mode ${env}`);
         //Serve static assets (js, css, ...)
-        app.use(express.static('app'));
+        app.use(express.static('app/dist'));
 
         //Serve contract artifact files (ex: ToDo.json)
         // app.use(express.static('build/contracts'));
