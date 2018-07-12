@@ -1,5 +1,9 @@
 import Web3 from "web3";
 import UnityAbi from "BuildContracts/Unity";
+import $ from 'jquery';
+
+// export for others scripts to use
+window.$ = $;
 
 var UnityContract, nonce;
 
@@ -49,7 +53,7 @@ $(function () {
 function startApp() {
     console.log("App started");
 
-    UnityContract = new web3.eth.Contract(UnityAbi, Object.values(UnityAbi.networks).pop().address);
+    UnityContract = new web3.eth.Contract(UnityAbi.abi, Object.values(UnityAbi.networks).pop().address);
 
     web3.eth.getAccounts().then((accounts) => {
         web3.eth.defaultAccount = accounts[0];
