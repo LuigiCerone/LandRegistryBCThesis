@@ -55,17 +55,16 @@ const unityController = {
             // console.log(insert);
             // TODO Update UI.
         } catch (error) {
-            console.log("Error: " + error);
+            console.log("" + error);
         }
     },
 
     async getHistory(landId) {
-
         try {
-            await
+            let res = await UnityContract.methods.getHistoryForLand(landId).call();
+            console.log(res);
         } catch (error) {
-            logger.error("" + error);
-            res.status(500).send();
+            console.log("" + error);
         }
     }
 
