@@ -22,29 +22,32 @@ const unityController = {
         // Now I need to insert newUnity into the contract.
         try {
             // let [insert, event] = await unityDAO.insertUnity(newUnity);
+            let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
+            console.log("Nonce value is: " + nonce);
 
-            // UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).send({
-            //     from: web3.eth.defaultAccount,
-            //     nonce: nonce,
-            //     gas: 300000
-            // }).then(console.log);
+            let result = await UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).send({
+                from: web3.eth.defaultAccount,
+                nonce: web3.utils.toHex(++nonce),
+                gas: web3.utils.toHex(300000)
+            });
+            console.log(result);
+
             let encodedMethod = UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).encodeABI();
             console.log("EncodedMethod is: " + encodedMethod);
 
 
-            // let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
-            // console.log("Nonce value is: " + nonce);
-
+            console.log("Default account is:" + web3.eth.defaultAccount);
+            let val = await web3.eth.getBalance(web3.eth.defaultAccount);
+            console.log("Fund is:" + val);
             let transactionToSign = {
-                gasLimit: web3.utils.toHex(6700000),
-                from: "0x74CceB453Ce7d0239f0d012d6Da2B9E4C07E9979",
+                gas: web3.utils.toHex(32000),
+                gasPrice: '0x4a817c800',
                 to: contractAddress,
                 data: encodedMethod,
-                // nonce: web3.utils.toHex(++nonce)
+                nonce: web3.utils.toHex(++nonce)
             };
 
             let signedTransaction = await  web3.eth.accounts.signTransaction(transactionToSign, web3.eth.defaultAccount);
-
             let result = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
             console.log(result);
 
