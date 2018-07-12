@@ -1,5 +1,4 @@
 'use strict';
-const logger = require('../../server/logger');
 
 module.exports = class Unity {
     constructor(landParcel, ownerAddress) {
