@@ -66,57 +66,28 @@ const unityController = {
         } catch (error) {
             console.log("" + error);
         }
+    },
+
+    async getList(searchAddress) {
+        try {
+            let result = await unityDAO.getList(searchAddress);
+            console.log(result);
+        } catch (error) {
+            console.log("" + error);
+        }
+    },
+
+    async transfer(landParcel, ownerAddress, buyerAddress) {
+        let unity = new Unity(landParcel, ownerAddress);
+
+        try {
+            await UnityContract.methods.transferLand(buyerAddress, unity._landParcel).send({
+                from: unity._ownerAddress,
+                gas: 300000
+            });
+        } catch (error) {
+            console.log("" + error);
+        }
     }
-
-    // async getList(req, res) {
-    //     logger.info("Just received a getList request.");
-    //     let address = req.body.address;
-    //
-    //     let result = null;
-    //     try {
-    //         result = await unityDAO.getList(address);
-    //         res.json(result);
-    //     } catch (error) {
-    //         logger.error("" + error);
-    //         res.status(500).send();
-    //     }
-    // },
-    //
-    // getAddresses(req, res) {
-    //     logger.info("Just received a getAddresses request.");
-    //
-    //     try {
-    //         res.json(unityDAO.getAddresses());
-    //     } catch (error) {
-    //         logger.error("" + error);
-    //         res.status(500).send();
-    //     }
-    // },
-    //
-    // getAddress(req, res) {
-    //     logger.info(`Just received a getAddress request with id: ${req.params.id}.`);
-    //
-    //     try {
-    //         res.json(unityDAO.getAddress(req.params.id));
-    //     } catch (error) {
-    //         logger.error("" + error);
-    //         res.status(500).send();
-    //     }
-    // },
-    //
-    // async transfer(req, res) {
-    //     logger.info('Just received a transfer request.');
-    //
-    //     let unity = new Unity(req.body.landParcel, req.body.ownerAddress);
-    //
-    //     try {
-    //         res.json(await unityDAO.transfer(req.body.buyerAddress, unity));
-    //     } catch (error) {
-    //         logger.error("" + error);
-    //         res.status(500).send();
-    //     }
-    // },
-    //
-
 };
 export default unityController;
