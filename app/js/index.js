@@ -15,8 +15,14 @@ $(function () {
     });
 
     // Get the history of a land by its id.
-    $('#getHistory').on('submit', function(event){
-       event.preventDefault();
-       return unityController.getHistory($('#landId').val());
+    $('#getHistory').on('submit', function (event) {
+        event.preventDefault();
+        return unityController.getHistory($('#landId').val());
+    });
+
+    // Get all lands for a given address.
+    $('#getLands').on('submit', function (event) {
+        event.preventDefault();
+        return unityController.getList($('#searchAddress').val());
     });
 });

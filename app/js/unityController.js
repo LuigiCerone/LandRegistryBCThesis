@@ -70,11 +70,20 @@ const unityController = {
 
     async getList(searchAddress) {
         try {
-            let result = await unityDAO.getList(searchAddress);
+            let result = await this.getAllLands(searchAddress);
             console.log(result);
         } catch (error) {
             console.log("" + error);
         }
+    },
+
+    async getAllLands(searchAddress) {
+        let n = await UnityContract.methods.getNoOfLands(searchAddress).call();
+        let promises = [];
+        for (let i = 0; i < n; i++) {
+            promises.push(UnityContract.methods.getLand(searchAddress, i).call());
+        }
+        return Promise.all(promises);
     },
 
     async transfer(landParcel, ownerAddress, buyerAddress) {
