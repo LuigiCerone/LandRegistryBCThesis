@@ -32,30 +32,40 @@ const unityController = {
             });
             console.log(result);
 
-            let encodedMethod = UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).encodeABI();
-            console.log("EncodedMethod is: " + encodedMethod);
+            // let encodedMethod = UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).encodeABI();
+            // console.log("EncodedMethod is: " + encodedMethod);
+            //
+            //
+            // console.log("Default account is:" + web3.eth.defaultAccount);
+            // let val = await web3.eth.getBalance(web3.eth.defaultAccount);
+            // console.log("Fund is:" + val);
+            // let transactionToSign = {
+            //     gas: web3.utils.toHex(32000),
+            //     gasPrice: '0x4a817c800',
+            //     to: contractAddress,
+            //     data: encodedMethod,
+            //     nonce: web3.utils.toHex(++nonce)
+            // };
+            //
+            // let signedTransaction = await  web3.eth.accounts.signTransaction(transactionToSign, web3.eth.defaultAccount);
+            // let result = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
+            // console.log(result);
 
-
-            console.log("Default account is:" + web3.eth.defaultAccount);
-            let val = await web3.eth.getBalance(web3.eth.defaultAccount);
-            console.log("Fund is:" + val);
-            let transactionToSign = {
-                gas: web3.utils.toHex(32000),
-                gasPrice: '0x4a817c800',
-                to: contractAddress,
-                data: encodedMethod,
-                nonce: web3.utils.toHex(++nonce)
-            };
-
-            let signedTransaction = await  web3.eth.accounts.signTransaction(transactionToSign, web3.eth.defaultAccount);
-            let result = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
-            console.log(result);
-
-            // If here then corretly inserted into the contract.
+            // If here then correctly inserted into the contract.
             // console.log(insert);
             // TODO Update UI.
         } catch (error) {
             console.log("Error: " + error);
+        }
+    },
+
+    async getHistory(landId) {
+
+        try {
+            await
+        } catch (error) {
+            logger.error("" + error);
+            res.status(500).send();
         }
     }
 
@@ -108,15 +118,6 @@ const unityController = {
     //     }
     // },
     //
-    // async getHistory(req, res) {
-    //     logger.info(`Just received a getHistory request for landId: ${req.params.landId}`);
-    //
-    //     try {
-    //         res.json(await unityDAO.getHistory(req.params.landId));
-    //     } catch (error) {
-    //         logger.error("" + error);
-    //         res.status(500).send();
-    //     }
-    // }
+
 };
 export default unityController;
