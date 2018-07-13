@@ -25,4 +25,10 @@ $(function () {
         event.preventDefault();
         return unityController.getList($('#searchAddress').val());
     });
+
+    // Trasfer land from owner address to buyer address.
+    $('#transferLand').on('submit', function (event) {
+        event.preventDefault();
+        return unityController.transfer($('#landParcelTransfer').val(),$('#ownerAddressTransfer').val(), $('#buyerAddress').val());
+    });
 });
