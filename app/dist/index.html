@@ -17,9 +17,14 @@
 <p>
 <form id="addLand">
     <h2>Insert new land</h2>
-    <input type="number" placeholder="Land parcel" id="landParcel"/>
+    <!--// district, document, landParcel, subaltern, ownerAddress.-->
 
+    <input type="text" maxlength="2" placeholder="District" id="district"/>
+    <input type="number" placeholder="Document" id="document"/>
+    <input type="number" placeholder="Land parcel" id="landParcel"/>
+    <input type="number" placeholder="Subaltern" id="subaltern"/>
     <input type="text" placeholder="Owner address" id="ownerAddress"/>
+
     <input type="submit" value="Add land"/>
 </form>
 </p>

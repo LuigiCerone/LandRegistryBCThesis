@@ -28,35 +28,35 @@ const unityController = {
             let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
             console.log("Nonce value is: " + nonce);
 
-            // let result = await UnityContract.methods.addLand(newUnity._district, newUnity._document,
-            //                 newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
-            //     from: web3.eth.defaultAccount,
-            //     nonce: web3.utils.toHex(++nonce),
-            //     gas: web3.utils.toHex(300000)
-            // });
-            // console.log(result);
+            let result = await UnityContract.methods.addLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
+                from: web3.eth.defaultAccount,
+                nonce: web3.utils.toHex(++nonce),
+                gas: web3.utils.toHex(300000)
+            });
+            console.log(result);
             // bytes2 _district, uint _document, uint _landParcel, uint _subaltern, address _ownerAddress
-            let encodedMethod = UnityContract.methods.addLand(newUnity._district, newUnity._document,
-                newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).encodeABI();
+            // let encodedMethod = UnityContract.methods.addLand(newUnity._district, newUnity._document,
+            //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).encodeABI();
             // console.log("EncodedMethod is: " + encodedMethod);
             // console.log("Default account is:" + web3.eth.defaultAccount);
 
-            let val = await web3.eth.getBalance(web3.eth.defaultAccount);
-            console.log("Fund is:" + val);
-            let transactionToSign = {
-                from: web3.eth.defaultAccount,
-                gas: web3.utils.toHex(32000),
-                gasPrice: '0x4a817c800',
-                to: contractAddress,
-                data: encodedMethod,
-                // nonce: web3.utils.toHex(++nonce)
-            };
+            // let val = await web3.eth.getBalance(web3.eth.defaultAccount);
+            // console.log("Fund is:" + val);
+            // let transactionToSign = {
+            //     from: web3.eth.defaultAccount,
+            //     gas: web3.utils.toHex(32000),
+            //     gasPrice: '0x4a817c800',
+            //     to: contractAddress,
+            //     data: encodedMethod,
+            //     // nonce: web3.utils.toHex(++nonce)
+            // };
 
-            console.log(transactionToSign);
+            // console.log(transactionToSign);
 
-            let signedTransaction = await  web3.eth.accounts.signTransaction(transactionToSign, web3.eth.defaultAccount);
-            let result = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
-            console.log(result);
+            // let signedTransaction = await  web3.eth.accounts.signTransaction(transactionToSign, web3.eth.defaultAccount);
+            // let result = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
+            // console.log(result);
 
             // If here then correctly inserted into the contract.
             // console.log(insert);
@@ -103,11 +103,9 @@ const unityController = {
     },
 
     async transfer(landParcel, ownerAddress, buyerAddress) {
-        let unity = new Unity(landParcel, ownerAddress);
-
         try {
-            await UnityContract.methods.transferLand(buyerAddress, unity._landParcel).send({
-                from: unity._ownerAddress,
+            await UnityContract.methods.transferLand(buyerAddress, landParcel).send({
+                from: ownerAddress,
                 gas: 300000
             });
         } catch (error) {
