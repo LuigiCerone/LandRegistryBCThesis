@@ -16,10 +16,11 @@ web3.eth.getAccounts().then((accounts) => {
 }).catch((err) => console.log(err));
 
 const unityController = {
-    async insertUnity(landParcel, ownerAddress) {
+    // district, document, landParcel, subaltern, ownerAddress.
+    async insertUnity(district, document, landParcel, subaltern, ownerAddress) {
 
         // First we need to create a new unity by using the data stored in req.body.
-        let newUnity = new Unity(landParcel, ownerAddress);
+        let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
         // debugger;
         // Now I need to insert newUnity into the contract.
         try {
@@ -27,14 +28,16 @@ const unityController = {
             let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
             console.log("Nonce value is: " + nonce);
 
-            // let result = await UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).send({
+            // let result = await UnityContract.methods.addLand(newUnity._district, newUnity._document,
+            //                 newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
             //     from: web3.eth.defaultAccount,
             //     nonce: web3.utils.toHex(++nonce),
             //     gas: web3.utils.toHex(300000)
             // });
             // console.log(result);
-
-            let encodedMethod = UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).encodeABI();
+            // bytes2 _district, uint _document, uint _landParcel, uint _subaltern, address _ownerAddress
+            let encodedMethod = UnityContract.methods.addLand(newUnity._district, newUnity._document,
+                newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).encodeABI();
             // console.log("EncodedMethod is: " + encodedMethod);
             // console.log("Default account is:" + web3.eth.defaultAccount);
 
@@ -65,14 +68,23 @@ const unityController = {
 
     async getHistory(landId) {
         try {
-            let res = await UnityContract.methods.getHistoryForLand(landId).call();
-            console.log(res);
+            let result = await this.getAllHistoryEntries(landId);
+            console.log(result);
         } catch (error) {
             console.log("" + error);
         }
     },
 
-    async getList(searchAddress) {
+    async getAllHistoryEntries(landId) {
+        let n = await UnityContract.methods.getNoOfEntries(landId).call();
+        let promises = [];
+        for (let i = 0; i < n; i++) {
+            promises.push(UnityContract.methods.getHistory(landId, i).call());
+        }
+        return Promise.all(promises);
+    },
+
+    async getListOfLands(searchAddress) {
         try {
             let result = await this.getAllLands(searchAddress);
             console.log(result);
