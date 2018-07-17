@@ -40,7 +40,7 @@ module.exports = {
         });
         // .then((res) => logger.info("Result: %j", res)).catch((err) => logger.error("Error" + err));
 
-        let emitter = UnityContract.events.Add({fromBlock: 0, toBlock: 'latest'});
+        let emitter =
         return Promise.all([addPromise, eventToPromise(emitter, 'data')]);
         // .on('data', function (event) {
         // logger.info("Event: %j", event);

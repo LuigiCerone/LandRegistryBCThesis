@@ -6,22 +6,32 @@ const unityDAO = require('../dao/unityDAO');
 
 module.exports = {
 
+    subscribeToEvents() {
+        logger.info("Subscribing to events.");
+        let UnityContract = unityDAO.getContractInfo();
+
+        // Subscribe to event Add.
+        UnityContract.events.Add({
+            fromBlock: 0,
+            toBlock: 'latest'
+        }, (error, event) => logger.info(`Recevied the event: ${event}`));
+    },
     // POST - /insert
     // {}
-    async insertUnity(req, res) {
-        // First we need to create a new unity by using the data stored in req.body.
-        logger.info("Just received an insert request.");
-        let newUnity = new Unity(req.body.landParcel, req.body.ownerAddress);
-
-        // Now I need to insert newUnity into the contract.
-        try {
-            let [insert, event] = await unityDAO.insertUnity(newUnity);
-            res.status(201).json(insert);
-        } catch (error) {
-            logger.error("" + error);
-            res.status(500).send();
-        }
-    },
+    // async insertUnity(req, res) {
+    //     // First we need to create a new unity by using the data stored in req.body.
+    //     logger.info("Just received an insert request.");
+    //     let newUnity = new Unity(req.body.landParcel, req.body.ownerAddress);
+    //
+    //     // Now I need to insert newUnity into the contract.
+    //     try {
+    //         let [insert, event] = await unityDAO.insertUnity(newUnity);
+    //         res.status(201).json(insert);
+    //     } catch (error) {
+    //         logger.error("" + error);
+    //         res.status(500).send();
+    //     }
+    // },
 
     async getList(req, res) {
         logger.info("Just received a getList request.");
