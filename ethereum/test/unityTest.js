@@ -11,7 +11,7 @@ contract('Unity contract test', async (accounts) => {
         // let nonce = await web3.eth.getTransactionCount(accounts[0]);
 
         // Insert a fake land for accounts[0].
-        let tx = await instance.addLand(123456789, accounts[0]);
+        let tx = await instance.addLand("0x4151", 12, 123456789, 32, accounts[0]);
 
         // Check if account[0] has only 1 land related.
         let numberOfLands = await instance.getNoOfLands(accounts[0]);
@@ -37,7 +37,7 @@ contract('Unity contract test', async (accounts) => {
 
         for (let i = 0; i < NUM_TRANSFERS; i++) {
             let landParcelRandom = Math.floor(Math.random() * 10000000) + 1;
-            let insertionGas = await instance.addLand(landParcelRandom, accounts[0]);
+            let insertionGas = await instance.addLand("0x4151", 12, landParcelRandom, 32, accounts[0]);
 
             let transferGas = await instance.transferLand(accounts[1], landParcelRandom);
 

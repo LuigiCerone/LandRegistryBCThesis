@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/unityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/unityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ethereum/test/unityTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/test/unityTest.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unityController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="unityController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/unityController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="107" column="22" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+            <state relative-caret-position="151">
+              <caret line="31" column="81" selection-start-line="30" selection-start-column="61" selection-end-line="31" selection-end-column="81" />
               <folding>
                 <element signature="e#14#48#0" expanded="true" />
               </folding>
@@ -68,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unityTest.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="unityTest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ethereum/test/unityTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state relative-caret-position="317">
+              <caret line="41" column="89" lean-forward="true" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -151,12 +147,12 @@
         <option value="$PROJECT_DIR$/app/js/unityDAO.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/ethereum/tests/unityTest.js" />
-        <option value="$PROJECT_DIR$/ethereum/test/unityTest.js" />
         <option value="$PROJECT_DIR$/ethereum/contracts/Unity.sol" />
         <option value="$PROJECT_DIR$/app/js/index.js" />
         <option value="$PROJECT_DIR$/app/dist/index.html" />
         <option value="$PROJECT_DIR$/app/js/Unity.js" />
         <option value="$PROJECT_DIR$/app/js/unityController.js" />
+        <option value="$PROJECT_DIR$/ethereum/test/unityTest.js" />
       </list>
     </option>
   </component>
@@ -305,12 +301,12 @@
       <workItem from="1531468903734" duration="6372000" />
       <workItem from="1531492159461" duration="3724000" />
       <workItem from="1531728246484" duration="441000" />
-      <workItem from="1531728837302" duration="4614000" />
+      <workItem from="1531728837302" duration="4883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79649000" />
+    <option name="totallyTimeSpent" value="79918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-7" width="1366" height="775" extended-state="6" />
@@ -707,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/test/unityTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -747,11 +736,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/unityController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="107" column="22" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+        <state relative-caret-position="151">
+          <caret line="31" column="81" selection-start-line="30" selection-start-column="61" selection-end-line="31" selection-end-column="81" />
           <folding>
             <element signature="e#14#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/test/unityTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="41" column="89" lean-forward="true" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
         </state>
       </provider>
     </entry>
