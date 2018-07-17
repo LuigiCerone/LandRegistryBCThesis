@@ -1,6 +1,7 @@
 const IPFS = require('ipfs');
 const OrbitDB = require('orbit-db');
 const logger = require('../../server/logger');
+const eventToPromise = require('event-to-promise');
 
 
 // OrbitDB uses Pubsub which is an experimental feature
@@ -16,16 +17,33 @@ const ipfsOptions = {
 // Create IPFS instance
 const ipfs = new IPFS(ipfsOptions);
 
-let orbitDB = null;
-ipfs.start()
-    .then(() => {// Create a database
-        orbitDB = new OrbitDB(ipfs);
-    })
-    .catch(e => logger.error(e));
-
-
 module.exports = {
-    getDatabase() {
-        return orbitDB.docstore('dbTest');
+    getDatabase: async function () {
+        await eventToPromise(ipfs, 'ready');
+
+        let orbitdb = new OrbitDB(ipfs);
+        let db = await orbitdb.docstore('/orbitdb/QmekaumXKQFtYXuUadzKHA9PQ1WagNjajdYUcisXniVdhs/test');
+        await db.load();
+        logger.info("here here");
     }
 };
+
+// let orbitdb, db;
+// let promise =
+// .
+// then(() =>)
+//     .then(() =>)
+//     .then(() =>)
+//     .catch((err) => logger.error("" + err));
+
+// var db = new Promise.all(ipfs.on('ready', async () => {
+//     const ;
+//
+//     // Create / Open a database
+//     const db = await orbitdb.docstore('dbTest');
+//     await db.load()
+//
+// });
+
+
+// module.exports = promise;

@@ -33,7 +33,7 @@ module.exports = {
         app.set('port', process.env.PORT || 3000);
 
         // Set routes.
-        // app.use('/rest/v1/', routes);
+        app.use('/rest/v1/', routes);
 
         // Setup logger for express HTTP requests.
         app.use(morgan('dev'));

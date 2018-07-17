@@ -1,7 +1,21 @@
 const web3 = require('../../server/web3');
 const unity_abi = require('../../ethereum/build/contracts/Unity');
 const logger = require('../../server/logger');
-const eventToPromise = require('event-to-promise');
+
+let db = null;
+
+// let db;
+// const orbitDB = require('./database').then(() => x
+//     )
+// ;
+// console.log(orbitDB);
+//
+// const orbitDB = require('./database').then((database) => {
+//     debugger;
+//     database.docstore('dbTest')
+//         .then(instance => db = instance)
+// })
+//     .catch(err => logger.error(err));
 
 
 var UnityContract = new web3.eth.Contract(unity_abi.abi);
@@ -17,6 +31,28 @@ web3.eth.getAccounts().then((accounts) => {
 }).catch((err) => logger.error(err));
 
 module.exports = {
+    insertEvent(event) {
+        if (db != null)
+            return db.put({_id: 1, event: event});
+    },
+
+    getEvent(id) {
+        return db.get(id);
+    },
+
+    getDatabase() {
+        return db;
+    },
+
+    async setupDatabase() {
+        try {
+            db = await require('./database').getDatabase();
+            debugger;
+        } catch (error) {
+            logger.error("" + error);
+        }
+    },
+
     getAddresses() {
         return addresses;
     },
