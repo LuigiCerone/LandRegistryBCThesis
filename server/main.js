@@ -3,8 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const dotenv = require('dotenv').config();
+const unityController = require('../api/controller/unityController');
+
 
 const logger = require('./logger');
+const routes = require('./routes');
 
 const app = express();
 
@@ -29,6 +32,9 @@ module.exports = {
         // Set application port.
         app.set('port', process.env.PORT || 3000);
 
+        // Set routes.
+        // app.use('/rest/v1/', routes);
+
         // Setup logger for express HTTP requests.
         app.use(morgan('dev'));
 
@@ -36,6 +42,10 @@ module.exports = {
         // app.get('/', (req, res) => {
         //     res.sendFile(__dirname + '/app/index.html');
         // });
+
+
+        // Subscribe to event.
+        unityController.subscribeToEvents();
 
         //If anything else is requested that's an error
         app.get('*', (req, res) => {
