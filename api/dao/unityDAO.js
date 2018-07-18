@@ -1,21 +1,7 @@
 const web3 = require('../../server/web3');
 const unity_abi = require('../../ethereum/build/contracts/Unity');
 const logger = require('../../server/logger');
-
-let db = null;
-
-// let db;
-// const orbitDB = require('./database').then(() => x
-//     )
-// ;
-// console.log(orbitDB);
-//
-// const orbitDB = require('./database').then((database) => {
-//     debugger;
-//     database.docstore('dbTest')
-//         .then(instance => db = instance)
-// })
-//     .catch(err => logger.error(err));
+const database = require('./database');
 
 
 var UnityContract = new web3.eth.Contract(unity_abi.abi);
@@ -30,6 +16,8 @@ web3.eth.getAccounts().then((accounts) => {
     addresses = accounts;
 }).catch((err) => logger.error(err));
 
+let db = null;
+
 module.exports = {
     insertEvent(event) {
         if (db != null)
@@ -37,35 +25,47 @@ module.exports = {
     },
 
     getEvent(id) {
+        logger.info(db.get(id));
         return db.get(id);
     },
 
     getDatabase() {
+        if (db == null) {
+            db = database.getDatabase();
+        }
         return db;
     },
 
-    async setupDatabase() {
-        try {
-            db = await require('./database').getDatabase();
-            debugger;
-        } catch (error) {
-            logger.error("" + error);
-        }
+    setupDatabase() {
+        return database.setupDatabase();
+        // // Deve tornare una promise.
+        // try {
+        //     await eventToPromise(ipfs, 'ready');
+        //     const orbitdb = new OrbitDB(ipfs);
+        //     db = await orbitdb.keyvalue('test.test');
+        //     return db.put(1, 'hello');
+        // }
+        // catch (error) {
+        //     logger.error("" + error);
+        // }
     },
 
     getAddresses() {
         return addresses;
-    },
+    }
+    ,
 
     getAddress(n) {
         if (n === undefined) throw "Param is undefined.";
         if (n >= addresses.length || n < 0) throw "Invalid param number.";
         return addresses[n];
-    },
+    }
+    ,
 
     getContractInfo() {
         return UnityContract;
-    },
+    }
+    ,
 
     insertUnity(newUnity) {
         // logger.info(addresses[2]);
@@ -81,20 +81,24 @@ module.exports = {
         // .on('data', function (event) {
         // logger.info("Event: %j", event);
         // }).on('error', (err) => logger.error(err));
-    },
+    }
+    ,
 
     async getList(address) {
-        let n = await UnityContract.methods.getNoOfLands(address).call();
+        let n = await
+            UnityContract.methods.getNoOfLands(address).call();
         let promises = [];
         for (let i = 0; i < n; i++) {
             promises.push(UnityContract.methods.getLand(address, i).call());
         }
         return Promise.all(promises);
-    },
+    }
+    ,
 
     getHistory(landId) {
         return UnityContract.methods.getHistoryForLand(landId).call();
-    },
+    }
+    ,
 
     transfer(buyerAddress, unity) {
         return UnityContract.methods.transferLand(buyerAddress, unity._landParcel).send({

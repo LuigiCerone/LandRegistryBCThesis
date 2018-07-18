@@ -4,18 +4,15 @@ const logger = require('../../server/logger');
 const Unity = require('../model/Unity');
 const unityDAO = require('../dao/unityDAO');
 
-async function handleAddEvent(error, event) {
-    if (unityDAO.getDatabase() == null) {
-        logger.info("Setting up DB");
-        await unityDAO.setupDatabase();
 
-        logger.info(`Received the event: %j`, event);
-        if (error) {
-            logger.error("" + error);
-            return;
-        }
-        await unityDAO.insertEvent(event);
+async function handleAddEvent(error, event) {
+    unityDAO.getDatabase();
+    logger.info(`Received the event: %j`, event);
+    if (error) {
+        logger.error("" + error);
+        return;
     }
+    await unityDAO.insertEvent(event);
 }
 
 module.exports = {
@@ -40,6 +37,11 @@ module.exports = {
             logger.error("" + error);
             res.status(500).send();
         }
+    },
+
+    setupDatabase() {
+        // Should return a promise.
+        return unityDAO.setupDatabase();
     }
     // // POST - /insert
     // // {}

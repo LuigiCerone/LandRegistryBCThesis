@@ -13,10 +13,14 @@ const app = express();
 
 
 module.exports = {
-    start({
-              env = process.env.NODE_ENV || 'development'
-          }) {
+    async start({
+                    env = process.env.NODE_ENV || 'development'
+                }) {
         logger.info(`Running mode ${env}`);
+
+        // Setup database.
+        let x = await unityController.setupDatabase();
+
         //Serve static assets (js, css, ...)
         app.use(express.static('app/dist'));
 
