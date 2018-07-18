@@ -3,9 +3,8 @@ import web3 from "./web3.wrapper";
 import Unity from './Unity';
 import UnityAbi from "BuildContracts/Unity";
 
-let contractAddress = Object.values(UnityAbi.networks).pop().address
-let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
-console.log("Contract account is:" + contractAddress);
+// let contractAddress = Object.values(UnityAbi.networks).pop().address;
+let UnityContract = new web3.eth.Contract(UnityAbi.abi);
 
 
 let addresses;
@@ -28,39 +27,21 @@ const unityController = {
             let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
             console.log("Nonce value is: " + nonce);
 
-            let result = await UnityContract.methods.addLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
-                from: web3.eth.defaultAccount,
-                nonce: web3.utils.toHex(++nonce),
-                gas: web3.utils.toHex(300000)
+
+            UnityContract.deploy({
+                data: UnityAbi.bytecode,
+                // (district, document, landParcel, subaltern, ownerAddress)
+                arguments: [web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                    newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
+            })
+                .send({
+                    from: web3.eth.defaultAccount,
+                    nonce: web3.utils.toHex(++nonce),
+                    // estimated gas 804653
+                    gas: web3.utils.toHex(1000000)
+                }).then(function (newContractInstance) {
+                console.log(newContractInstance.options.address) // instance with the new contract address
             });
-            console.log(result);
-            // bytes2 _district, uint _document, uint _landParcel, uint _subaltern, address _ownerAddress
-            // let encodedMethod = UnityContract.methods.addLand(newUnity._district, newUnity._document,
-            //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).encodeABI();
-            // console.log("EncodedMethod is: " + encodedMethod);
-            // console.log("Default account is:" + web3.eth.defaultAccount);
-
-            // let val = await web3.eth.getBalance(web3.eth.defaultAccount);
-            // console.log("Fund is:" + val);
-            // let transactionToSign = {
-            //     from: web3.eth.defaultAccount,
-            //     gas: web3.utils.toHex(32000),
-            //     gasPrice: '0x4a817c800',
-            //     to: contractAddress,
-            //     data: encodedMethod,
-            //     // nonce: web3.utils.toHex(++nonce)
-            // };
-
-            // console.log(transactionToSign);
-
-            // let signedTransaction = await  web3.eth.accounts.signTransaction(transactionToSign, web3.eth.defaultAccount);
-            // let result = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
-            // console.log(result);
-
-            // If here then correctly inserted into the contract.
-            // console.log(insert);
-            // TODO Update UI.
         } catch (error) {
             console.log("" + error);
         }

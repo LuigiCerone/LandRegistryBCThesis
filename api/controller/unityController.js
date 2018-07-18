@@ -12,7 +12,9 @@ async function handleAddEvent(error, event) {
         logger.error("" + error);
         return;
     }
-    await unityDAO.insertEvent(event);
+    let hash = await unityDAO.insertEvent(event);
+
+    // logger.info("Val: " + y);
 }
 
 module.exports = {
@@ -22,10 +24,7 @@ module.exports = {
         let UnityContract = unityDAO.getContractInfo();
 
         // Subscribe to event Add.
-        UnityContract.events.Add({
-            fromBlock: 0,
-            toBlock: 'latest'
-        }, (error, event) => handleAddEvent(error, event));
+        UnityContract.events.Add((error, event) => handleAddEvent(error, event));
     },
 
     getEvent(req, res) {

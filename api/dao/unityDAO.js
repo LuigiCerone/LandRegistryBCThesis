@@ -20,6 +20,7 @@ let db = null;
 
 module.exports = {
     insertEvent(event) {
+        logger.log(`%j`, event);
         if (db != null)
             return db.put({_id: 1, event: event});
     },
@@ -39,15 +40,6 @@ module.exports = {
     setupDatabase() {
         return database.setupDatabase();
         // // Deve tornare una promise.
-        // try {
-        //     await eventToPromise(ipfs, 'ready');
-        //     const orbitdb = new OrbitDB(ipfs);
-        //     db = await orbitdb.keyvalue('test.test');
-        //     return db.put(1, 'hello');
-        // }
-        // catch (error) {
-        //     logger.error("" + error);
-        // }
     },
 
     getAddresses() {

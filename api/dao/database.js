@@ -26,8 +26,7 @@ module.exports = {
         try {
             await eventToPromise(ipfs, 'ready');
             const orbitdb = new OrbitDB(ipfs);
-            db = await orbitdb.keyvalue('test.test');
-            return db.put(1, 'hello');
+            db = await orbitdb.docstore('test');
         }
         catch (error) {
             logger.error("" + error);
