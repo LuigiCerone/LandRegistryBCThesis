@@ -2,9 +2,12 @@
 import web3 from "./web3.wrapper";
 import Unity from './Unity';
 import UnityAbi from "BuildContracts/Unity";
+import LoggerAbi from "BuildContracts/Logger";
 
 // let contractAddress = Object.values(UnityAbi.networks).pop().address;
 let UnityContract = new web3.eth.Contract(UnityAbi.abi);
+let loggerContractAddress = Object.values(LoggerAbi.networks).pop().address;
+console.log(loggerContractAddress);
 
 
 let addresses;
@@ -26,22 +29,30 @@ const unityController = {
             // let [insert, event] = await unityDAO.insertUnity(newUnity);
             let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
             console.log("Nonce value is: " + nonce);
-
-
-            UnityContract.deploy({
+            let newContractInstance = await UnityContract.deploy({
                 data: UnityAbi.bytecode,
+                arguments: [loggerContractAddress]
                 // (district, document, landParcel, subaltern, ownerAddress)
-                arguments: [web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                    newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
+                // arguments: [web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
             })
                 .send({
                     from: web3.eth.defaultAccount,
-                    nonce: web3.utils.toHex(++nonce),
+                    nonce: web3.utils.toHex(nonce),
                     // estimated gas 804653
-                    gas: web3.utils.toHex(1000000)
-                }).then(function (newContractInstance) {
-                console.log(newContractInstance.options.address) // instance with the new contract address
+                    gas: web3.utils.toHex(1200000)
+                });
+            console.log("New address is: " + newContractInstance.options.address);
+
+
+            let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
+                from: web3.eth.defaultAccount,
+                nonce: web3.utils.toHex(++nonce),
+                gas: web3.utils.toHex(300000)
             });
+            console.log(result);
+
         } catch (error) {
             console.log("" + error);
         }
