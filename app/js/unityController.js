@@ -31,10 +31,9 @@ const unityController = {
             console.log("Nonce value is: " + nonce);
             let newContractInstance = await UnityContract.deploy({
                 data: UnityAbi.bytecode,
-                arguments: [loggerContractAddress]
                 // (district, document, landParcel, subaltern, ownerAddress)
-                // arguments: [web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
+                arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                    newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
             })
                 .send({
                     from: web3.eth.defaultAccount,
@@ -45,13 +44,13 @@ const unityController = {
             console.log("New address is: " + newContractInstance.options.address);
 
 
-            let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
-                from: web3.eth.defaultAccount,
-                nonce: web3.utils.toHex(++nonce),
-                gas: web3.utils.toHex(300000)
-            });
-            console.log(result);
+            // let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
+            //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
+            //     from: web3.eth.defaultAccount,
+            //     nonce: web3.utils.toHex(++nonce),
+            //     gas: web3.utils.toHex(300000)
+            // });
+            // console.log(result);
 
         } catch (error) {
             console.log("" + error);

@@ -9,10 +9,11 @@ const eventToPromise = require('event-to-promise');
 
 async function handleAddEvent(error, event) {
     if (error) {
-        logger.error("" + error);
+        logger.error("Error " + error);
         return;
     }
     unityDAO.getDatabase();
+    // console.log("Event: " + event);
     logger.info(`Received the event: %j`, event);
     // console.log("Event:" + event);
     // let hash = await unityDAO.insertEvent(event);
