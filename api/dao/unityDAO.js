@@ -20,9 +20,21 @@ let db = null;
 
 module.exports = {
     insertEvent(event) {
-        logger.log(`%j`, event);
-        if (db != null)
-            return db.put({_id: 1, event: event});
+        if (db != null) {
+            // Insert in the db transactionHash, returnValues.sender.
+            let toInsert = {
+                transactionHash: event.transactionHash,
+                contractAddress: event.returnValues.contractAddress,
+                land: {
+                    district: event.returnValues._district,
+                    document: event.returnValues._document,
+                    landParcel: event.returnValues._landParcel,
+                    subaltern: event.returnValues._subaltern,
+                    ownerAddress: event.returnValues._ownerAddress,
+                }
+            };
+            return db.put({_id: 1, contract: toInsert});
+        }
     },
 
     getEvent(id) {

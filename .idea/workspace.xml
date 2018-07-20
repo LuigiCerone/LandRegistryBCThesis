@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/controller/unityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/unityController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dao/unityDAO.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/unityDAO.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/unityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/unityController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" afterDir="false" />
@@ -10,11 +12,14 @@
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/contracts/Logger.sol" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/contracts/Logger.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/contracts/Unity.sol" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/contracts/Unity.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000512.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000538.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000540.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000543.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000546.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/MANIFEST-000509" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/MANIFEST-000545" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,8 +42,8 @@
       <file leaf-file-name="Unity.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ethereum/contracts/Unity.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="204">
+              <caret line="57" column="134" selection-start-line="57" selection-start-column="134" selection-end-line="57" selection-end-column="134" />
             </state>
           </provider>
         </entry>
@@ -46,8 +51,8 @@
       <file leaf-file-name="Logger.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ethereum/contracts/Logger.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="204">
+              <caret line="24" column="101" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -55,8 +60,8 @@
       <file leaf-file-name="unityController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            <state relative-caret-position="136">
+              <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -64,20 +69,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
+            <state relative-caret-position="399">
               <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unityController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/js/unityController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="52" column="35" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="52" selection-end-column="35" />
-              <folding>
-                <element signature="e#14#48#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -91,20 +84,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Logger.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ethereum/build/contracts/Logger.json">
+      <file leaf-file-name="unityDAO.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-398">
-              <caret line="1010" column="2" selection-start-line="1010" selection-start-column="2" selection-end-line="1010" selection-end-column="2" />
+            <state relative-caret-position="241">
+              <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unityDAO.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
+      <file leaf-file-name="database.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/dao/database.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="34">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -167,16 +160,16 @@
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/ethereum/migrations/2_deploy_unit.js" />
         <option value="$PROJECT_DIR$/api/dao/database.js" />
-        <option value="$PROJECT_DIR$/api/dao/unityDAO.js" />
         <option value="$PROJECT_DIR$/ethereum/migrations/2_deploy_logger.js" />
         <option value="$PROJECT_DIR$/server/web3.js" />
         <option value="$PROJECT_DIR$/app/js/web3.wrapper.js" />
         <option value="$PROJECT_DIR$/api/dao/loggerDAO.js" />
         <option value="$PROJECT_DIR$/ethereum/migrations/1_initial_migration.js" />
-        <option value="$PROJECT_DIR$/ethereum/contracts/Logger.sol" />
-        <option value="$PROJECT_DIR$/api/controller/unityController.js" />
-        <option value="$PROJECT_DIR$/ethereum/contracts/Unity.sol" />
         <option value="$PROJECT_DIR$/app/js/unityController.js" />
+        <option value="$PROJECT_DIR$/api/controller/unityController.js" />
+        <option value="$PROJECT_DIR$/ethereum/contracts/Logger.sol" />
+        <option value="$PROJECT_DIR$/ethereum/contracts/Unity.sol" />
+        <option value="$PROJECT_DIR$/api/dao/unityDAO.js" />
       </list>
     </option>
   </component>
@@ -207,7 +200,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,6 +274,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -358,12 +351,13 @@
       <workItem from="1531900195970" duration="8708000" />
       <workItem from="1531918473926" duration="4775000" />
       <workItem from="1531925146278" duration="980000" />
-      <workItem from="1532009270174" duration="7034000" />
+      <workItem from="1532009270174" duration="7231000" />
+      <workItem from="1532094784597" duration="914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111673000" />
+    <option name="totallyTimeSpent" value="112784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,7 +377,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5014881" side_tool="true" weight="0.32724252" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43189368" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43189368" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Quokka" order="8" sideWeight="0.4985119" weight="0.32724252" />
       <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.16741072" />
@@ -400,24 +394,24 @@
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3255814" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.16741072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5813953" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32392028" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5014881" side_tool="true" weight="0.32724252" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Quokka" order="11" sideWeight="0.4985119" weight="0.32724252" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
@@ -443,28 +437,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/api/dao/unityDAO.js</url>
-          <line>23</line>
+          <line>22</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/api/controller/unityController.js</url>
-          <line>27</line>
+          <line>26</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/api/controller/unityController.js</url>
-          <line>17</line>
+          <line>16</line>
           <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/unityController.js</url>
-          <line>42</line>
-          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/js/unityController.js</url>
           <line>27</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
@@ -733,20 +721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/migrations/2_deploy_logger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/dao/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="35" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/migrations/2_deploy_logger.js" />
     <entry file="file://$PROJECT_DIR$/server/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -768,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -784,7 +752,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/build/contracts/Logger.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-398">
+        <state relative-caret-position="17170">
           <caret line="1010" column="2" selection-start-line="1010" selection-start-column="2" selection-end-line="1010" selection-end-column="2" />
         </state>
       </provider>
@@ -796,10 +764,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
+    <entry file="file://$PROJECT_DIR$/app/js/unityController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="374">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+          <folding>
+            <element signature="e#14#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -810,34 +788,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/dao/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/Logger.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="204">
+          <caret line="24" column="101" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="101" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/contracts/Unity.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="204">
+          <caret line="57" column="134" selection-start-line="57" selection-start-column="134" selection-end-line="57" selection-end-column="134" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        <state relative-caret-position="136">
+          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/unityController.js">
+    <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="52" selection-end-column="35" />
-          <folding>
-            <element signature="e#14#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="241">
+          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
         </state>
       </provider>
     </entry>

@@ -5,7 +5,6 @@ const Unity = require('../model/Unity');
 const unityDAO = require('../dao/unityDAO');
 const loggerDAO = require('../dao/loggerDAO');
 
-const eventToPromise = require('event-to-promise');
 
 async function handleAddEvent(error, event) {
     if (error) {
@@ -13,10 +12,10 @@ async function handleAddEvent(error, event) {
         return;
     }
     unityDAO.getDatabase();
-    // console.log("Event: " + event);
+
     logger.info(`Received the event: %j`, event);
     // console.log("Event:" + event);
-    // let hash = await unityDAO.insertEvent(event);
+    let hash = await unityDAO.insertEvent(event);
 
     // logger.info("Val: " + y);
 }
@@ -30,18 +29,7 @@ module.exports = {
         //
         // Subscribe to event Add.
         let x = LoggerContract.events.NewDeploy({fromBlock: 0}, (error, event) => handleAddEvent(error, event));
-        x.on('error', (err) => console.error(err));
-        // let emitter = web3.eth.subscribe("pendingTransactions", (error, result) => handleAddEvent(result));
-        //
-        // emitter.on('data', (data) => handleAddEvent(data));
-        //
-        // , {
-        //         fromBlock: 0,
-        //             address: web3.eth.defaultAccount
-        //     }
-
-        // let x = await eventToPromise(emitter, "data");
-        // (log) => handleAddEvent(log));
+        x.on('error', (err) => logger.error(err));
     },
 
     getEvent(req, res) {

@@ -41,7 +41,7 @@ const unityController = {
                     // estimated gas 804653
                     gas: web3.utils.toHex(1200000)
                 });
-            console.log("New address is: " + newContractInstance.options.address);
+            console.log("New contract address is: " + newContractInstance.options.address);
 
 
             // let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
@@ -53,7 +53,7 @@ const unityController = {
             // console.log(result);
 
         } catch (error) {
-            console.log("" + error);
+            console.error("" + error);
         }
     },
 
@@ -62,7 +62,7 @@ const unityController = {
             let result = await this.getAllHistoryEntries(landId);
             console.log(result);
         } catch (error) {
-            console.log("" + error);
+            console.error("" + error);
         }
     },
 

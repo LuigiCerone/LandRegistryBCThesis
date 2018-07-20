@@ -54,7 +54,8 @@ contract Unity {
         __history.push(myEntry);
 
         //        emit Add(_ownerAddress, _landParcel);
-        logger.emitNewDeployEvent(address(this));
+        //        _contractAddress, _district, _document, _landParcel, _subaltern, _ownerAddress
+        logger.emitNewDeployEvent(address(this), _land.district, _land.document, _land.landParcel, _land.subaltern, _land.ownerAddress);
     }
 
     // Land transfer event, also use this tho synchronize with the backend.
