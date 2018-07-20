@@ -43,6 +43,17 @@ module.exports = {
         }
     },
 
+    getEvents(req, res) {
+        logger.info(`Just received a get events request.`);
+
+        try {
+            res.json(unityDAO.getEvents());
+        } catch (error) {
+            logger.error("" + error);
+            res.status(500).send();
+        }
+    },
+
     setupDatabase() {
         // Should return a promise.
         return unityDAO.setupDatabase();

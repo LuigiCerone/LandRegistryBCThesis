@@ -33,13 +33,21 @@ module.exports = {
                     ownerAddress: event.returnValues._ownerAddress,
                 }
             };
-            return db.put({_id: 1, contract: toInsert});
+
+            let id = toInsert.land.landParcel;
+            toInsert.land.subaltern !== "" ? id += toInsert.land.subaltern : id += "";
+            logger.info("ID is: " + id);
+            return db.put({_id: id, contract: toInsert});
         }
     },
 
     getEvent(id) {
         logger.info(db.get(id));
         return db.get(id);
+    },
+
+    getEvents() {
+        return db.query((doc) => doc._id != null);
     },
 
     getDatabase() {

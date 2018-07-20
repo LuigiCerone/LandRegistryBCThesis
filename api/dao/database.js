@@ -1,21 +1,11 @@
-const IPFS = require('ipfs');
+const IpfsApi = require('ipfs-api');
 const OrbitDB = require('orbit-db');
 const eventToPromise = require('event-to-promise');
 const logger = require('../../server/logger');
 
 
-// OrbitDB uses Pubsub which is an experimental feature
-// and need to be turned on manually.
-// Note that these options need to be passed to IPFS in
-// all examples even if not specfied so.
-const ipfsOptions = {
-    EXPERIMENTAL: {
-        pubsub: true
-    },
-};
-
-// Create IPFS instance
-const ipfs = new IPFS(ipfsOptions);
+// Create IPFS instance.
+const ipfs = IpfsApi('localhost', '5001');
 
 let db = null;
 
@@ -24,7 +14,7 @@ module.exports = {
     async setupDatabase() {
         // Deve tornare una promise.
         try {
-            await eventToPromise(ipfs, 'ready');
+            // await eventToPromise(ipfs, 'ready');
             const orbitdb = new OrbitDB(ipfs);
             db = await orbitdb.docstore('test');
         }

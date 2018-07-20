@@ -13,5 +13,6 @@ const router = express.Router();
 // router.post('/transfer', unityController.transfer);
 // router.get('/history/:landId', unityController.getHistory);
 router.get('/event/:eventId', unityController.getEvent);
+router.get('/events', unityController.getEvents);
 
 module.exports = router;
