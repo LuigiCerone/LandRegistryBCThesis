@@ -48,6 +48,7 @@ module.exports = {
 
     getEvents() {
         return db.query((doc) => doc._id != null);
+        // return db.iterator({limit: 2}).collect();
     },
 
     getDatabase() {

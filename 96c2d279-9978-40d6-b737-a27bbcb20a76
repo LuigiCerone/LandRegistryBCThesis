@@ -1,0 +1,579 @@
+Time	Sum	Command
+1360	3475	> builtin source /usr/share/fish/config.fish
+28	28	-> set -g IFS \n\ \t
+8	8	-> set -qg __fish_added_user_paths
+9	9	-> or set -g __fish_added_user_paths
+7	7	-> function __fish_default_command_not_found_handler...
+15	15	-> set -g version $FISH_VERSION
+4	353	-> if status --is-interactive...
+9	9	--> status --is-interactive
+6	340	--> if not contains -- "string" (builtin -n)...
+174	206	---> not contains -- "string" (builtin -n)
+32	32	----> builtin -n
+11	128	---> if not set -q NVIM_LISTEN_ADDRESS...
+11	11	----> not set -q NVIM_LISTEN_ADDRESS
+7	7	----> and not set -q STY
+15	15	----> and not string match -q -- 'eterm*' $TERM
+13	63	----> and begin
+                set -q KONSOLE_PROFILE_NAME # KDE's konsole
+                or string match -q -- "*:*" $ITERM_SESSION_ID # Supporting versions of iTerm2 will include a colon here
+                or string match -q -- "st-*" $TERM # suckless' st
+                or test -n "$VTE_VERSION" -a "$VTE_VERSION" -ge 3600 # Should be all gtk3-vte-based terms after version 3.6.0.0
+                or test "$COLORTERM" = truecolor -o "$COLORTERM" = 24bit # slang expects this
+            end
+7	7	-----> set -q KONSOLE_PROFILE_NAME
+12	12	-----> or string match -q -- "*:*" $ITERM_SESSION_ID
+10	10	-----> or string match -q -- "st-*" $TERM
+21	21	-----> or test -n "$VTE_VERSION" -a "$VTE_VERSION" -ge 3600
+7	7	----> set -q fish_term24bit
+14	14	----> or set -g fish_term24bit 1
+32	32	-> set -l configdir ~/.config
+4	10	-> if set -q XDG_CONFIG_HOME...
+6	6	--> set -q XDG_CONFIG_HOME
+16	16	-> set -l userdatadir ~/.local/share
+2	8	-> if set -q XDG_DATA_HOME...
+6	6	--> set -q XDG_DATA_HOME
+8	8	-> set -l __extra_completionsdir
+8	8	-> set -l __extra_functionsdir
+8	8	-> set -l __extra_confdir
+4	130	-> if test -f $__fish_datadir/__fish_build_paths.fish...
+16	16	--> test -f $__fish_datadir/__fish_build_paths.fish
+80	110	--> source $__fish_datadir/__fish_build_paths.fish
+12	12	---> set __extra_completionsdir /usr/share/fish/vendor_completions.d
+9	9	---> set __extra_functionsdir /usr/share/fish/vendor_functions.d
+9	9	---> set __extra_confdir /usr/share/fish/vendor_conf.d
+4	38	-> if not set -q fish_function_path...
+7	7	--> not set -q fish_function_path
+27	27	--> set fish_function_path $configdir/fish/functions $__fish_sysconfdir/functions $__extra_functionsdir $__fish_datadir/functions
+3	43	-> if not contains -- $__fish_datadir/functions $fish_function_path...
+40	40	--> not contains -- $__fish_datadir/functions $fish_function_path
+5	57	-> if not set -q fish_complete_path...
+19	19	--> not set -q fish_complete_path
+33	33	--> set fish_complete_path $configdir/fish/completions $__fish_sysconfdir/completions $__extra_completionsdir $__fish_datadir/completions $userdatadir/fish/generated_completions
+4	29	-> if not contains -- $__fish_datadir/completions $fish_complete_path...
+25	25	--> not contains -- $__fish_datadir/completions $fish_complete_path
+3	23	-> if test -d /usr/xpg4/bin...
+20	20	--> test -d /usr/xpg4/bin
+25	25	-> set -g __fish_tmp_path $PATH
+7	7	-> function __fish_load_path_helper_paths...
+10	10	-> test -r /etc/paths
+15	15	-> for pathfile in /etc/paths.d/*...
+29	29	-> set -xg PATH $__fish_tmp_path
+10	10	-> set -e __fish_tmp_path
+21	21	-> functions -e __fish_load_path_helper_paths
+2	9	-> if set -q MANPATH...
+7	7	--> set -q MANPATH
+15	15	-> function __fish_reconstruct_path -d "Update PATH when fish_user_paths changes" --on-variable fish_user_paths...
+114	193	-> __fish_reconstruct_path
+27	27	--> set -l local_path $PATH
+6	6	--> for x in $__fish_added_user_paths...
+10	10	--> set -g __fish_added_user_paths
+3	10	--> if set -q fish_user_paths...
+7	7	---> set -q fish_user_paths
+26	26	--> set -xg PATH $local_path
+14	14	-> function fish_sigtrap_handler --on-signal TRAP --no-scope-shadowing --description "Signal handler for the TRAP signal. Launches a debug prompt."...
+5	5	-> function __fish_on_interactive --on-event fish_prompt...
+8	8	-> function . --description 'Evaluate contents of file (deprecated, see "source")' --no-scope-shadowing...
+233	820	-> __fish_set_locale
+453	469	--> source /usr/share/fish/functions/__fish_set_locale.fish
+16	16	---> function __fish_set_locale...
+14	14	--> set -l LOCALE_VARS
+16	16	--> set LOCALE_VARS $LOCALE_VARS LANG LANGUAGE LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE
+23	23	--> set LOCALE_VARS $LOCALE_VARS LC_MONETARY LC_MESSAGES LC_PAPER LC_NAME LC_ADDRESS
+25	25	--> set LOCALE_VARS $LOCALE_VARS LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION
+22	40	--> for locale_var in $LOCALE_VARS LC_ALL...
+4	18	---> if set -q $locale_var...
+10	10	----> set -q $locale_var
+4	4	----> return 0
+10	10	-> set -l sourcelist
+58	58	-> for file in $configdir/fish/conf.d/*.fish $__fish_sysconfdir/conf.d/*.fish $__extra_confdir/*.fish...
+4	14	-> if not set -q __fish_init_2_3_0...
+10	10	--> not set -q __fish_init_2_3_0
+3	22	-> if status --is-login...
+19	19	--> status --is-login
+35	35	> builtin source /etc/fish/config.fish
+43	349	> builtin source /home/debian-luigi/.config/fish/config.fish
+26	26	-> [ -f /home/debian-luigi/ganache/node_modules/tabtab/.completions/electron-forge.fish ]
+51	280	-> and . /home/debian-luigi/ganache/node_modules/tabtab/.completions/electron-forge.fish
+3	229	--> if begin...
+6	63	---> begin...
+31	57	----> test (count $argv) -eq 0
+26	26	-----> count $argv
+114	163	---> source $argv
+6	6	----> function _electron-forge_completion...
+43	43	----> complete -f -d 'electron-forge' -c electron-forge -a "(eval _electron-forge_completion)"
+26	26	> echo $_ " "
+62	847	> __fish_pwd
+79	757	-> source /usr/share/fish/functions/__fish_pwd.fish
+37	678	--> switch (uname)...
+630	630	---> uname
+11	11	---> function __fish_pwd --description "Show current path"...
+28	28	-> pwd
+27	18554	> __fish_on_interactive
+1760	18488	-> __fish_config_interactive
+1514	1544	--> source /usr/share/fish/functions/__fish_config_interactive.fish
+30	30	---> function __fish_config_interactive -d "Initializations that should be performed when entering interactive mode"...
+16	113	--> if set -q __fish_config_interactive_done...
+97	97	---> set -q __fish_config_interactive_done
+39	39	--> set -g __fish_config_interactive_done
+27	27	--> set -g __fish_active_key_bindings
+62	62	--> set -l configdir ~/.config
+13	37	--> if set -q XDG_CONFIG_HOME...
+24	24	---> set -q XDG_CONFIG_HOME
+55	55	--> set -l userdatadir ~/.local/share
+11	33	--> if set -q XDG_DATA_HOME...
+22	22	---> set -q XDG_DATA_HOME
+9	28	--> if not set -q fish_greeting...
+19	19	---> not set -q fish_greeting
+9	28	--> if not set -q __fish_init_2_39_8...
+19	19	---> not set -q __fish_init_2_39_8
+28	120	--> if not set -q FISH_UNIT_TESTS_RUNNING...
+20	20	---> not set -q FISH_UNIT_TESTS_RUNNING
+12	72	---> if not test -d $userdatadir/fish/generated_completions...
+60	60	----> not test -d $userdatadir/fish/generated_completions
+15	221	--> if status --is-interactive...
+29	29	---> status --is-interactive
+16	177	---> if functions -q fish_greeting...
+64	64	----> functions -q fish_greeting
+39	39	----> test -n "$fish_greeting"
+58	58	----> and echo $fish_greeting
+56	56	--> function __fish_repaint --on-variable fish_color_cwd --description "Event handler, repaints the prompt when fish_color_cwd changes"...
+22	22	--> function __fish_repaint_root --on-variable fish_color_cwd_root --description "Event handler, repaints the prompt when fish_color_cwd_root changes"...
+26	286	--> if test -d /etc/init.d...
+47	47	---> test -d /etc/init.d
+42	42	---> complete -x -p "/etc/init.d/*" -a start --description 'Start service'
+26	26	---> complete -x -p "/etc/init.d/*" -a stop --description 'Stop service'
+29	29	---> complete -x -p "/etc/init.d/*" -a status --description 'Print service status'
+57	57	---> complete -x -p "/etc/init.d/*" -a restart --description 'Stop and then start service'
+59	59	---> complete -x -p "/etc/init.d/*" -a reload --description 'Reload service configuration'
+8	25	--> if not set -q fish_key_bindings...
+17	17	---> not set -q fish_key_bindings
+22	22	--> function __fish_reload_key_bindings -d "Reload key bindings when binding variable change" --on-variable fish_key_bindings...
+462	6839	--> __fish_reload_key_bindings
+9	68	---> if test "$fish_key_bindings" = "$__fish_active_key_bindings" -a -n "$fish_key_bindings"...
+59	59	----> test "$fish_key_bindings" = "$__fish_active_key_bindings" -a -n "$fish_key_bindings"
+6	885	---> if not functions -q "$fish_key_bindings"...
+110	879	----> not functions -q "$fish_key_bindings"
+746	769	-----> source /usr/share/fish/functions/fish_default_key_bindings.fish
+23	23	------> function fish_default_key_bindings -d "Default (Emacs-like) key bindings for fish"...
+39	39	---> set -g __fish_active_key_bindings "$fish_key_bindings"
+43	43	---> set -g fish_bind_mode default
+7	5301	---> if test "$fish_key_bindings" = fish_default_key_bindings...
+18	18	----> test "$fish_key_bindings" = fish_default_key_bindings
+449	5276	----> fish_default_key_bindings ^/dev/null
+7	30	-----> if contains -- -h $argv...
+15	15	------> contains -- -h $argv
+8	8	------> or contains -- --help $argv
+6	77	-----> if not set -q argv[1]...
+11	11	------> not set -q argv[1]
+33	33	------> bind --erase --all
+6	27	------> if test "$fish_key_bindings" != "fish_default_key_bindings"...
+21	21	-------> test "$fish_key_bindings" != "fish_default_key_bindings"
+806	4227	-----> __fish_shared_key_bindings $argv
+1163	1223	------> source /usr/share/fish/functions/__fish_shared_key_bindings.fish
+25	25	-------> function __fish_shared_key_bindings -d "Bindings shared between emacs and vi mode"...
+23	23	-------> function __fish_commandline_insert_escaped --description 'Insert the first arg escaped if a second arg is given'...
+6	6	-------> function __fish_start_bracketed_paste...
+6	6	-------> function __fish_stop_bracketed_paste...
+11	47	------> if contains -- -h $argv...
+24	24	-------> contains -- -h $argv
+12	12	-------> or contains -- --help $argv
+16	16	------> bind $argv \cy yank
+14	14	------> bind $argv \ey yank-pop
+17	17	------> bind $argv -k right forward-char
+15	15	------> bind $argv -k left backward-char
+15	15	------> bind $argv \e\[C forward-char
+14	14	------> bind $argv \e\[D backward-char
+14	14	------> bind $argv \eOC forward-char
+10	10	------> bind $argv \eOD backward-char
+10	10	------> bind $argv -k ppage beginning-of-history
+9	9	------> bind $argv -k npage end-of-history
+9	9	------> bind $argv \cx fish_clipboard_copy
+9	9	------> bind $argv \cv fish_clipboard_paste
+7	7	------> bind $argv \e cancel
+8	8	------> bind $argv \t complete
+9	9	------> bind $argv --key btab complete-and-search
+10	10	------> bind $argv \e\n "commandline -i \n"
+9	9	------> bind $argv \e\r "commandline -i \n"
+8	8	------> bind $argv -k down down-or-search
+10	10	------> bind $argv -k up up-or-search
+9	9	------> bind $argv \e\[A up-or-search
+8	8	------> bind $argv \e\[B down-or-search
+7	7	------> bind $argv \eOA up-or-search
+7	7	------> bind $argv \eOB down-or-search
+8	8	------> bind $argv \e\eOC nextd-or-forward-word
+8	8	------> bind $argv \e\eOD prevd-or-backward-word
+9	9	------> bind $argv \e\e\[C nextd-or-forward-word
+7	7	------> bind $argv \e\e\[D prevd-or-backward-word
+7	7	------> bind $argv \eO3C nextd-or-forward-word
+7	7	------> bind $argv \eO3D prevd-or-backward-word
+10	10	------> bind $argv \e\[3C nextd-or-forward-word
+8	8	------> bind $argv \e\[3D prevd-or-backward-word
+9	9	------> bind $argv \e\[1\;3C nextd-or-forward-word
+8	8	------> bind $argv \e\[1\;3D prevd-or-backward-word
+8	8	------> bind $argv \e\[1\;9C nextd-or-forward-word
+8	8	------> bind $argv \e\[1\;9D prevd-or-backward-word
+9	9	------> bind $argv \e\eOA history-token-search-backward
+9	9	------> bind $argv \e\eOB history-token-search-forward
+8	8	------> bind $argv \e\e\[A history-token-search-backward
+9	9	------> bind $argv \e\e\[B history-token-search-forward
+9	9	------> bind $argv \eO3A history-token-search-backward
+8	8	------> bind $argv \eO3B history-token-search-forward
+9	9	------> bind $argv \e\[3A history-token-search-backward
+8	8	------> bind $argv \e\[3B history-token-search-forward
+8	8	------> bind $argv \e\[1\;3A history-token-search-backward
+9	9	------> bind $argv \e\[1\;3B history-token-search-forward
+9	9	------> bind $argv \e\[1\;9A history-token-search-backward
+8	8	------> bind $argv \e\[1\;9B history-token-search-forward
+9	9	------> bind $argv \e. history-token-search-backward
+8	8	------> bind $argv \el __fish_list_current_token
+11	11	------> bind $argv \ew 'set tok (commandline -pt); if test $tok[1]; echo; whatis $tok[1]; commandline -f repaint; end'
+11	11	------> bind $argv \cl 'echo -n (clear | string replace \e\[3J ""); commandline -f repaint'
+9	9	------> bind $argv \cc __fish_cancel_commandline
+8	8	------> bind $argv \cu backward-kill-line
+9	9	------> bind $argv \cw backward-kill-path-component
+9	9	------> bind $argv \e\[F end-of-line
+9	9	------> bind $argv \e\[H beginning-of-line
+11	11	------> bind $argv \ed 'set -l cmd (commandline); if test -z "$cmd"; echo; dirh; commandline -f repaint; else; commandline -f kill-word; end'
+8	8	------> bind $argv \cd delete-or-exit
+10	10	------> bind $argv -k f1 __fish_man_page
+9	9	------> bind $argv \eh __fish_man_page
+10	10	------> bind $argv \ep '__fish_paginate'
+9	9	------> bind $argv \e\# __fish_toggle_comment_commandline
+8	8	------> bind \ee edit_command_buffer
+7	7	------> bind \ev edit_command_buffer
+93	1467	------> for mode in (bind --list-modes | string match -v paste)...
+688	1343	-------> bind --list-modes | string match -v paste
+358	655	--------> source /usr/share/fish/functions/string.fish
+5	297	---------> if not contains string (builtin -n)...
+241	292	----------> not contains string (builtin -n)
+51	51	-----------> builtin -n
+31	31	-------> bind -M $mode -m paste \e\[200~ '__fish_start_bracketed_paste'
+15	15	------> bind -M paste \e\[201~ '__fish_stop_bracketed_paste'
+12	12	------> bind -M paste "" self-insert
+17	17	------> bind -M paste \r "commandline -i \n"
+23	23	------> bind -M paste "'" "__fish_commandline_insert_escaped \' \$__fish_paste_quoted"
+18	18	------> bind -M paste \\ "__fish_commandline_insert_escaped \\\ \$__fish_paste_quoted"
+18	18	-----> bind $argv "" self-insert
+16	16	-----> bind $argv \n execute
+14	14	-----> bind $argv \r execute
+14	14	-----> bind $argv \ck kill-line
+14	14	-----> bind $argv \eOC forward-char
+8	8	-----> bind $argv \eOD backward-char
+8	8	-----> bind $argv \e\[C forward-char
+8	8	-----> bind $argv \e\[D backward-char
+12	12	-----> bind $argv -k right forward-char
+13	13	-----> bind $argv -k left backward-char
+14	14	-----> bind $argv -k dc delete-char
+9	9	-----> bind $argv -k backspace backward-delete-char
+15	15	-----> bind $argv \x7f backward-delete-char
+16	16	-----> bind $argv \e\[1~ beginning-of-line
+15	15	-----> bind $argv \e\[3~ delete-char
+14	14	-----> bind $argv \e\[4~ end-of-line
+20	20	-----> bind $argv -k home beginning-of-line 2>/dev/null
+20	20	-----> bind $argv -k end end-of-line 2>/dev/null
+18	18	-----> bind $argv \e\[3\;2~ backward-delete-char
+15	15	-----> bind $argv \ca beginning-of-line
+15	15	-----> bind $argv \ce end-of-line
+17	17	-----> bind $argv \ch backward-delete-char
+10	10	-----> bind $argv \cp up-or-search
+8	8	-----> bind $argv \cn down-or-search
+9	9	-----> bind $argv \cf forward-char
+8	8	-----> bind $argv \cb backward-char
+9	9	-----> bind $argv \ct transpose-chars
+10	10	-----> bind $argv \et transpose-words
+9	9	-----> bind $argv \eu upcase-word
+9	9	-----> bind $argv \ec capitalize-word
+9	9	-----> bind $argv \e\x7f backward-kill-word
+9	9	-----> bind $argv \eb backward-word
+9	9	-----> bind $argv \ef forward-word
+11	11	-----> bind $argv \e\[1\;5C forward-word
+11	11	-----> bind $argv \e\[1\;5D backward-word
+9	9	-----> bind $argv \e\< beginning-of-buffer
+9	9	-----> bind $argv \e\> end-of-buffer
+8	8	-----> bind \ed kill-word
+10	10	-----> bind \e\[I 'begin;end'
+10	10	-----> bind \e\[O 'begin;end'
+13	13	-----> switch "$TERM"...
+4	41	---> if functions --query fish_user_key_bindings >/dev/null...
+37	37	----> functions --query fish_user_key_bindings >/dev/null
+7	99	--> if not set -q FISH_UNIT_TESTS_RUNNING...
+12	12	---> not set -q FISH_UNIT_TESTS_RUNNING
+9	9	---> function __fish_enable_bracketed_paste --on-event fish_prompt...
+10	10	---> function __fish_disable_bracketed_paste --on-event fish_preexec --on-process-exit %self...
+24	61	---> __fish_enable_bracketed_paste
+37	37	----> printf "\e[?2004h"
+13	13	--> function __fish_winch_handler --on-signal WINCH -d "Repaint screen when window changes size"...
+9	9	--> set -q VTE_VERSION
+7	7	--> set -q TERM_PROGRAM
+10	10	--> or set -l TERM_PROGRAM
+7	2091	--> if test "$VTE_VERSION" -ge 3405 -o "$TERM_PROGRAM" = "Apple_Terminal"...
+23	23	---> test "$VTE_VERSION" -ge 3405 -o "$TERM_PROGRAM" = "Apple_Terminal"
+9	9	---> function __update_cwd_osc --on-variable PWD --description 'Notify capable terminals when $PWD changes'...
+48	2052	---> __update_cwd_osc
+5	22	----> if status --is-command-substitution...
+9	9	-----> status --is-command-substitution
+8	8	-----> or set -q INSIDE_EMACS
+151	1982	----> printf \e\]7\;file://\%s\%s\a (hostname) (string escape --style=url $PWD)
+1682	1784	-----> hostname
+91	102	------> source /usr/share/fish/functions/hostname.fish
+11	11	-------> set -q USERDOMAIN
+47	47	-----> string escape --style=url $PWD
+12	4942	--> if not type -q __fish_command_not_found_handler...
+528	1916	---> not type -q __fish_command_not_found_handler
+632	662	----> source /usr/share/fish/functions/type.fish
+30	30	-----> function type --description 'Print the type of a command'...
+17	17	----> set -q argv[1]
+30	30	----> set -l options 'h/help' 'a/all' 'f/no-functions' 't/type' 'p/path' 'P/force-path' 'q/quiet'
+95	95	----> argparse -n type --min-args=1 -x t,p,P $options -- $argv
+6	38	----> if set -q _flag_help...
+32	32	-----> set -q _flag_help
+13	13	----> set -l res 1
+10	10	----> set -l mode normal
+10	10	----> set -l multi no
+9	9	----> set -l selection all
+5	21	----> if set -q _flag_quiet...
+7	7	-----> set -q _flag_quiet
+9	9	-----> set mode quiet
+7	7	----> set -q _flag_all
+7	7	----> set -q _flag_no_functions
+17	463	----> for i in $argv...
+10	10	-----> set -l found 0
+7	286	-----> if test $selection != files...
+13	13	------> test $selection != files
+3	35	------> if functions -q -- $i...
+32	32	-------> functions -q -- $i
+6	231	------> if contains -- $i (builtin -n)...
+182	225	-------> contains -- $i (builtin -n)
+43	43	--------> builtin -n
+13	13	-----> set -l paths
+6	106	-----> if test $multi != yes...
+13	13	------> test $multi != yes
+39	87	------> set paths (command -s -- $i)
+48	48	-------> command -s -- $i
+5	5	-----> for path in $paths...
+5	26	-----> if test $found = 0...
+11	11	------> test $found = 0
+10	10	------> and test $mode != quiet
+6	6	----> return $res
+11	11	---> set -l os
+8	917	---> if test -r /etc/os-release...
+11	11	----> test -r /etc/os-release
+70	898	----> set os (string match -r '^ID(?:_LIKE)?\s*=.*' < /etc/os-release | \
+            string replace -r '^ID(?:_LIKE)?\s*=(.*)' '$1' | string trim -c '\'"')
+828	828	-----> string match -r '^ID(?:_LIKE)?\s*=.*' < /etc/os-release | \
+            string replace -r '^ID(?:_LIKE)?\s*=(.*)' '$1' | string trim -c '\'"'
+19	2086	---> if contains -- suse $os...
+20	20	----> contains -- suse $os
+12	12	----> test -f /usr/libexec/pk-command-not-found
+9	9	----> test -f /usr/lib/command-not-found
+11	11	----> test -f /run/current-system/sw/bin/command-not-found
+373	908	----> type -q command-not-found
+12	12	-----> set -q argv[1]
+25	25	-----> set -l options 'h/help' 'a/all' 'f/no-functions' 't/type' 'p/path' 'P/force-path' 'q/quiet'
+52	52	-----> argparse -n type --min-args=1 -x t,p,P $options -- $argv
+4	13	-----> if set -q _flag_help...
+9	9	------> set -q _flag_help
+10	10	-----> set -l res 1
+9	9	-----> set -l mode normal
+9	9	-----> set -l multi no
+9	9	-----> set -l selection all
+6	20	-----> if set -q _flag_quiet...
+6	6	------> set -q _flag_quiet
+8	8	------> set mode quiet
+6	6	-----> set -q _flag_all
+6	6	-----> set -q _flag_no_functions
+15	358	-----> for i in $argv...
+9	9	------> set -l found 0
+6	209	------> if test $selection != files...
+11	11	-------> test $selection != files
+4	33	-------> if functions -q -- $i...
+29	29	--------> functions -q -- $i
+4	159	-------> if contains -- $i (builtin -n)...
+122	155	--------> contains -- $i (builtin -n)
+33	33	---------> builtin -n
+11	11	------> set -l paths
+6	87	------> if test $multi != yes...
+10	10	-------> test $multi != yes
+33	71	-------> set paths (command -s -- $i)
+38	38	--------> command -s -- $i
+4	4	------> for path in $paths...
+4	23	------> if test $found = 0...
+10	10	-------> test $found = 0
+9	9	-------> and test $mode != quiet
+6	6	-----> return $res
+371	1092	----> type -p -q pkgfile
+11	11	-----> set -q argv[1]
+24	24	-----> set -l options 'h/help' 'a/all' 'f/no-functions' 't/type' 'p/path' 'P/force-path' 'q/quiet'
+53	53	-----> argparse -n type --min-args=1 -x t,p,P $options -- $argv
+4	12	-----> if set -q _flag_help...
+8	8	------> set -q _flag_help
+10	10	-----> set -l res 1
+8	8	-----> set -l mode normal
+9	9	-----> set -l multi no
+9	9	-----> set -l selection all
+5	19	-----> if set -q _flag_quiet...
+6	6	------> set -q _flag_quiet
+8	8	------> set mode quiet
+7	7	-----> set -q _flag_all
+6	6	-----> set -q _flag_no_functions
+19	543	-----> for i in $argv...
+18	18	------> set -l found 0
+7	301	------> if test $selection != files...
+18	18	-------> test $selection != files
+5	37	-------> if functions -q -- $i...
+32	32	--------> functions -q -- $i
+4	239	-------> if contains -- $i (builtin -n)...
+199	235	--------> contains -- $i (builtin -n)
+36	36	---------> builtin -n
+15	15	------> set -l paths
+8	141	------> if test $multi != yes...
+35	35	-------> test $multi != yes
+49	98	-------> set paths (command -s -- $i)
+49	49	--------> command -s -- $i
+6	6	------> for path in $paths...
+7	43	------> if test $found = 0...
+14	14	-------> test $found = 0
+22	22	-------> and test $mode != quiet
+10	10	-----> return $res
+15	15	----> function __fish_command_not_found_handler --on-event fish_command_not_found...
+39	39	-> functions -e __fish_on_interactive
+257	274	> source /usr/share/fish/functions/fish_prompt.fish
+17	17	-> function fish_prompt --description "Write out the prompt"...
+84	100	> source /usr/share/fish/functions/fish_mode_prompt.fish
+16	16	-> function fish_mode_prompt --description "Displays the current mode"...
+31	568	> fish_mode_prompt
+233	537	-> fish_default_mode_prompt
+214	230	--> source /usr/share/fish/functions/fish_default_mode_prompt.fish
+16	16	---> function fish_default_mode_prompt --description "Display the default mode for the prompt"...
+10	74	--> if test "$fish_key_bindings" = "fish_vi_key_bindings"...
+37	37	---> test "$fish_key_bindings" = "fish_vi_key_bindings"
+27	27	---> or test "$fish_key_bindings" = "fish_hybrid_key_bindings"
+114	1792	> fish_prompt
+24	24	-> set -l color_cwd
+13	13	-> set -l suffix
+15	41	-> switch "$USER"...
+15	15	--> set color_cwd $fish_color_cwd
+11	11	--> set suffix '>'
+117	1600	-> echo -n -s "$USER" @ (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
+82	846	--> prompt_hostname
+118	745	---> source /usr/share/fish/functions/prompt_hostname.fish
+6	617	----> if not set -q __fish_prompt_hostname...
+14	14	-----> not set -q __fish_prompt_hostname
+69	597	-----> set -g __fish_prompt_hostname (hostname | string split '.')[1]
+528	528	------> hostname | string split '.'
+10	10	----> function prompt_hostname...
+19	19	---> echo $__fish_prompt_hostname
+44	44	--> set_color $color_cwd
+142	578	--> prompt_pwd
+168	182	---> source /usr/share/fish/functions/prompt_pwd.fish
+14	14	----> function prompt_pwd --description "Print the current working directory, shortened to fit the prompt"...
+18	18	---> set -l options 'h/help'
+24	24	---> argparse -n prompt_pwd --max-args=0 $options -- $argv
+5	36	---> if set -q _flag_help...
+31	31	----> set -q _flag_help
+10	10	---> set -q fish_prompt_pwd_dir_length
+12	12	---> or set -l fish_prompt_pwd_dir_length 1
+20	20	---> set realhome ~
+43	79	---> set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
+36	36	----> string replace -r '^'"$realhome"'($|/)' '~$1' $PWD
+6	55	---> if [ $fish_prompt_pwd_dir_length -eq 0 ]...
+17	17	----> [ $fish_prompt_pwd_dir_length -eq 0 ]
+32	32	----> string replace -ar '(\.?[^/]{'"$fish_prompt_pwd_dir_length"'})[^/]*/' '$1/' $tmp
+15	15	--> set_color normal
+12	12	> echo $_ " "
+19	31	> __fish_pwd
+12	12	-> pwd
+38	65	> __fish_disable_bracketed_paste pwd
+27	27	-> printf "\e[?2004l"
+22	22	> echo $_ " "
+27	42	> __fish_pwd
+15	15	-> pwd
+17	17	> pwd
+20	36	> __fish_enable_bracketed_paste
+16	16	-> printf "\e[?2004h"
+22	180	> fish_mode_prompt
+107	158	-> fish_default_mode_prompt
+8	51	--> if test "$fish_key_bindings" = "fish_vi_key_bindings"...
+26	26	---> test "$fish_key_bindings" = "fish_vi_key_bindings"
+17	17	---> or test "$fish_key_bindings" = "fish_hybrid_key_bindings"
+102	660	> fish_prompt
+19	19	-> set -l color_cwd
+13	13	-> set -l suffix
+14	40	-> switch "$USER"...
+15	15	--> set color_cwd $fish_color_cwd
+11	11	--> set suffix '>'
+102	486	-> echo -n -s "$USER" @ (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
+21	35	--> prompt_hostname
+14	14	---> echo $__fish_prompt_hostname
+17	17	--> set_color $color_cwd
+102	318	--> prompt_pwd
+14	14	---> set -l options 'h/help'
+21	21	---> argparse -n prompt_pwd --max-args=0 $options -- $argv
+4	13	---> if set -q _flag_help...
+9	9	----> set -q _flag_help
+8	8	---> set -q fish_prompt_pwd_dir_length
+12	12	---> or set -l fish_prompt_pwd_dir_length 1
+21	21	---> set realhome ~
+40	75	---> set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
+35	35	----> string replace -r '^'"$realhome"'($|/)' '~$1' $PWD
+7	52	---> if [ $fish_prompt_pwd_dir_length -eq 0 ]...
+15	15	----> [ $fish_prompt_pwd_dir_length -eq 0 ]
+30	30	----> string replace -ar '(\.?[^/]{'"$fish_prompt_pwd_dir_length"'})[^/]*/' '$1/' $tmp
+14	14	--> set_color normal
+14	14	> echo $_ " "
+21	33	> __fish_pwd
+12	12	-> pwd
+165	543	> up-or-search
+210	228	-> source /usr/share/fish/functions/up-or-search.fish
+18	18	--> function up-or-search -d "Depending on cursor position and current mode, either search backward or move up one line"...
+7	40	-> if commandline --search-mode...
+33	33	--> commandline --search-mode
+4	13	-> if commandline --paging-mode...
+9	9	--> commandline --paging-mode
+65	77	-> set lineno (commandline -L)
+12	12	--> commandline -L
+11	20	-> switch $lineno...
+9	9	--> commandline -f history-search-backward
+43	82	> __fish_disable_bracketed_paste 'fish --help'
+39	39	-> printf "\e[?2004l"
+33	33	> echo $_ " "
+44	69	> __fish_pwd
+25	25	-> pwd
+46251	46251	> fish --help
+44	77	> __fish_enable_bracketed_paste
+33	33	-> printf "\e[?2004h"
+28	251	> fish_mode_prompt
+134	223	-> fish_default_mode_prompt
+8	89	--> if test "$fish_key_bindings" = "fish_vi_key_bindings"...
+63	63	---> test "$fish_key_bindings" = "fish_vi_key_bindings"
+18	18	---> or test "$fish_key_bindings" = "fish_hybrid_key_bindings"
+93	865	> fish_prompt
+18	18	-> set -l color_cwd
+12	12	-> set -l suffix
+19	49	-> switch "$USER"...
+18	18	--> set color_cwd $fish_color_cwd
+12	12	--> set suffix '>'
+116	693	-> echo -n -s "$USER" @ (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
+44	59	--> prompt_hostname
+15	15	---> echo $__fish_prompt_hostname
+42	42	--> set_color $color_cwd
+141	461	--> prompt_pwd
+18	18	---> set -l options 'h/help'
+44	44	---> argparse -n prompt_pwd --max-args=0 $options -- $argv
+5	21	---> if set -q _flag_help...
+16	16	----> set -q _flag_help
+10	10	---> set -q fish_prompt_pwd_dir_length
+15	15	---> or set -l fish_prompt_pwd_dir_length 1
+36	36	---> set realhome ~
+43	96	---> set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
+53	53	----> string replace -r '^'"$realhome"'($|/)' '~$1' $PWD
+6	80	---> if [ $fish_prompt_pwd_dir_length -eq 0 ]...
+29	29	----> [ $fish_prompt_pwd_dir_length -eq 0 ]
+45	45	----> string replace -ar '(\.?[^/]{'"$fish_prompt_pwd_dir_length"'})[^/]*/' '$1/' $tmp
+15	15	--> set_color normal
+14	14	> echo $_ " "
+21	33	> __fish_pwd
+12	12	-> pwd
+46	1696	> __fish_disable_bracketed_paste PROCESS_EXIT 9182 0
+1650	1650	-> printf "\e[?2004l"
