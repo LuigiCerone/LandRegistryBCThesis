@@ -14,5 +14,7 @@ const router = express.Router();
 // router.get('/history/:landId', unityController.getHistory);
 router.get('/event/:eventId', unityController.getEvent);
 router.get('/events', unityController.getEvents);
+router.get('/getHistory', unityController.getHistoryByLandId);
+router.get('/getLandsForAddress', unityController.getLands);
 
 module.exports = router;

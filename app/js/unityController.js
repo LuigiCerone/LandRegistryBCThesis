@@ -4,8 +4,6 @@ import Unity from './Unity';
 import UnityAbi from "BuildContracts/Unity";
 import LoggerAbi from "BuildContracts/Logger";
 
-// let contractAddress = Object.values(UnityAbi.networks).pop().address;
-let UnityContract = new web3.eth.Contract(UnityAbi.abi);
 let loggerContractAddress = Object.values(LoggerAbi.networks).pop().address;
 console.log(loggerContractAddress);
 
@@ -58,26 +56,26 @@ const unityController = {
     },
 
     async getHistory(landId) {
+
+        // First we need to query the server in order to find the smart contract address.
         try {
-            let result = await this.getAllHistoryEntries(landId);
-            console.log(result);
+            let response = await fetch('/rest/v1/getHistory?id=' + landId);
+            let result = await response.json();
+
+            // let contractAddress = result[0].contract.contractAddress;
+            // console.log(contractAddress);
+
+            // let result = await this.getAllHistoryEntries(landId);
+            // console.log(result);
         } catch (error) {
             console.error("" + error);
         }
     },
 
-    async getAllHistoryEntries(landId) {
-        let n = await UnityContract.methods.getNoOfEntries(landId).call();
-        let promises = [];
-        for (let i = 0; i < n; i++) {
-            promises.push(UnityContract.methods.getHistory(landId, i).call());
-        }
-        return Promise.all(promises);
-    },
-
     async getListOfLands(searchAddress) {
         try {
-            let result = await this.getAllLands(searchAddress);
+            let response = await fetch('rest/v1/getLandsForAddress?addr=' + searchAddress);
+            let result = await response.json();
             console.log(result);
         } catch (error) {
             console.log("" + error);

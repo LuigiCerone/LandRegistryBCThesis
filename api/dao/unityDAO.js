@@ -63,39 +63,13 @@ module.exports = {
         // // Deve tornare una promise.
     },
 
-    getAddresses() {
-        return addresses;
-    }
-    ,
-
-    getAddress(n) {
-        if (n === undefined) throw "Param is undefined.";
-        if (n >= addresses.length || n < 0) throw "Invalid param number.";
-        return addresses[n];
-    }
-    ,
+    findById(id) {
+        return db.query((doc) => doc._id === id);
+    },
 
     getContractInfo() {
         return UnityContract;
-    }
-    ,
-
-    insertUnity(newUnity) {
-        // logger.info(addresses[2]);
-
-        let addPromise = UnityContract.methods.addLand(newUnity._landParcel, newUnity._ownerAddress).send({
-            from: web3.eth.defaultAccount,
-            gas: 300000
-        });
-        // .then((res) => logger.info("Result: %j", res)).catch((err) => logger.error("Error" + err));
-
-        // let emitter =
-        // return Promise.all([addPromise, eventToPromise(emitter, 'data')]);
-        // .on('data', function (event) {
-        // logger.info("Event: %j", event);
-        // }).on('error', (err) => logger.error(err));
-    }
-    ,
+    },
 
     async getList(address) {
         let n = await

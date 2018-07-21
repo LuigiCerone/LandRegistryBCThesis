@@ -57,6 +57,12 @@ module.exports = {
     setupDatabase() {
         // Should return a promise.
         return unityDAO.setupDatabase();
+    },
+
+    getHistoryByLandId(req, res) {
+        logger.info(`Just received a find contract request with id: ${req.query.id}`);
+
+        res.json(unityDAO.findById(req.query.id));
     }
     // // POST - /insert
     // // {}
