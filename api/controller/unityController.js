@@ -60,9 +60,23 @@ module.exports = {
     },
 
     getHistoryByLandId(req, res) {
-        logger.info(`Just received a find contract request with id: ${req.query.id}`);
+        logger.info(`Just received a get history request with id: ${req.query.id}`);
 
-        res.json(unityDAO.findById(req.query.id));
+        res.json(unityDAO.getHistoryByLandId(req.query.id));
+    },
+
+    getLandById(req, res) {
+        logger.info(`Just received a get land by id request with id: ${req.query.id}`);
+
+        res.json(unityDAO.getLandById(req.query.id));
+    },
+
+
+
+    getLandsForAddress(req, res) {
+        logger.info(`Just received a get lands by address request with address: ${req.query.addr}`);
+
+        res.json(unityDAO.getLandsForAddress(req.query.addr));
     }
     // // POST - /insert
     // // {}

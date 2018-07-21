@@ -63,8 +63,17 @@ module.exports = {
         // // Deve tornare una promise.
     },
 
-    findById(id) {
+    getHistoryByLandId(id) {
         return db.query((doc) => doc._id === id);
+    },
+
+
+    getLandById(id) {
+        return db.query((doc) => doc._id === id);
+    },
+
+    getLandsForAddress(searchAddress) {
+        return db.query((doc) => doc.contract.land.ownerAddress === searchAddress).map((item) => item.contract.land);
     },
 
     getContractInfo() {

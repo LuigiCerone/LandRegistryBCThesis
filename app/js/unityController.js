@@ -74,7 +74,7 @@ const unityController = {
 
     async getListOfLands(searchAddress) {
         try {
-            let response = await fetch('rest/v1/getLandsForAddress?addr=' + searchAddress);
+            let response = await fetch('/rest/v1/getLandsForAddress?addr=' + searchAddress);
             let result = await response.json();
             console.log(result);
         } catch (error) {
@@ -82,21 +82,27 @@ const unityController = {
         }
     },
 
-    async getAllLands(searchAddress) {
-        let n = await UnityContract.methods.getNoOfLands(searchAddress).call();
-        let promises = [];
-        for (let i = 0; i < n; i++) {
-            promises.push(UnityContract.methods.getLand(searchAddress, i).call());
-        }
-        return Promise.all(promises);
-    },
-
-    async transfer(landParcel, ownerAddress, buyerAddress) {
+    async transfer(landId, ownerAddress, buyerAddress) {
         try {
-            await UnityContract.methods.transferLand(buyerAddress, landParcel).send({
+            // (1) get contract address by searching with landId.
+            // (2) check owner address.
+            // (3) load smart contract somehow.
+            // (4) change owner address in smart contract.
+            // (5) store the history in the db.
+
+            let response = await fetch('/rest/v1/getLandById?id=' + landId + "&addr=" + ownerAddress);
+            let contractStored = await response.json();
+            let contractAddress = contractStored.contract.contractAddress;
+
+            let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
+
+            await UnityContract.methods.transferLand(buyerAddress, contractStored.contract.land.landParcel).send({
                 from: ownerAddress,
                 gas: 300000
             });
+
+            // TODO store history in the DB.
+            // TODO test.
         } catch (error) {
             console.log("" + error);
         }

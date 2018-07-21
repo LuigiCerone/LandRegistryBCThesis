@@ -31,6 +31,6 @@ $(function () {
     // Trasfer land from owner address to buyer address.
     $('#transferLand').on('submit', function (event) {
         event.preventDefault();
-        return unityController.transfer($('#landParcelTransfer').val(), $('#ownerAddressTransfer').val(), $('#buyerAddress').val());
+        return unityController.transfer($('#landIdTransfer').val(), $('#ownerAddressTransfer').val(), $('#buyerAddress').val());
     });
 });
