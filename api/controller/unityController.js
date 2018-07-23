@@ -5,6 +5,8 @@ const unityDAO = require('../dao/unityDAO');
 const loggerDAO = require('../dao/loggerDAO');
 
 
+unityDAO.getDatabase();
+
 async function handleNewDeployEvent(error, event) {
     if (error) {
         logger.error("Error " + error);
@@ -27,7 +29,7 @@ async function handleTransferEvent(error, event) {
     unityDAO.getDatabase();
 
     logger.info(`Received the event: %j`, event);
-    // console.log("Event:" + event);
+
     let hash = await unityDAO.insertTransferEvent(event);
 
     // logger.info("Val: " + y);
@@ -40,11 +42,11 @@ module.exports = {
         // let UnityContract = unityDAO.getContractInfo();
         let LoggerContract = loggerDAO.getContractInfo();
         // Subscribe to event NewDeploy.
-        let newDeployEmitter = LoggerContract.events.NewDeploy({fromBlock: 0}, (error, event) => handleNewDeployEvent(error, event));
+        let newDeployEmitter = LoggerContract.events.NewDeploy({fromBlock: 'latest'}, (error, event) => handleNewDeployEvent(error, event));
         newDeployEmitter.on('error', (err) => logger.error(err));
 
         // Subscribe to event Transfer.
-        let transferEmitter = LoggerContract.events.Transfer({fromBlock: 0}, (error, event) => handleTransferEvent(error, event));
+        let transferEmitter = LoggerContract.events.Transfer({fromBlock: 'latest'}, (error, event) => handleTransferEvent(error, event));
         transferEmitter.on('error', (err) => logger.error(err));
     },
 

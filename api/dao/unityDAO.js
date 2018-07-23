@@ -31,6 +31,12 @@ module.exports = {
                     landParcel: event.returnValues._landParcel,
                     subaltern: event.returnValues._subaltern,
                     ownerAddress: event.returnValues._ownerAddress,
+                    history: [
+                        {
+                            owner: event.returnValues._ownerAddress,
+                            timestamp: new Date().getTime()
+                        }
+                    ]
                 }
             };
 
@@ -42,20 +48,38 @@ module.exports = {
     },
 
     insertTransferEvent(event) {
-        if (db != null){
+        if (db != null) {
 
-            // (1) get already inserted element.
+            // Get already inserted element.
+            let id = event.returnValues._landParcel + event.returnValues._subaltern;
+            // logger.info(id);
+            let storedContract = db.get(id)[0];
+
+            if (storedContract != null) {
+                logger.info(storedContract);
+                // Add new history entry.
+                storedContract.contract.land.history.push({
+                    owner: event.returnValues._landBuyer,
+                    timestamp: new Date().getTime()
+                });
+
+                storedContract.contract.land.ownerAddress = event.returnValues._landBuyer;
+
+                // Update in DB.
+                db.put({_id: id, contract: storedContract.contract});
+
+            } else {
+                logger.info(`Cannot find the contract with id: ${id}.`);
+            }
         }
     },
 
     getEvent(id) {
-        logger.info(db.get(id));
         return db.get(id);
     },
 
     getEvents() {
         return db.query((doc) => doc._id != null);
-        // return db.iterator({limit: 2}).collect();
     },
 
     getDatabase() {
@@ -67,11 +91,15 @@ module.exports = {
 
     setupDatabase() {
         return database.setupDatabase();
-        // // Deve tornare una promise.
+        // Deve tornare una promise.
     },
 
     getHistoryByLandId(id) {
-        return db.query((doc) => doc._id === id);
+        try {
+            return db.query((doc) => doc._id === id).map((item) => item.contract.land.history);
+        } catch (error) {
+            logger.error("" + error);
+        }
     },
 
 

@@ -5,8 +5,9 @@ import UnityAbi from "BuildContracts/Unity";
 import LoggerAbi from "BuildContracts/Logger";
 
 let loggerContractAddress = Object.values(LoggerAbi.networks).pop().address;
-console.log(loggerContractAddress);
+// console.log(loggerContractAddress);
 
+let UnityContract = new web3.eth.Contract(UnityAbi.abi);
 
 let addresses;
 web3.eth.getAccounts().then((accounts) => {
@@ -66,7 +67,7 @@ const unityController = {
             // console.log(contractAddress);
 
             // let result = await this.getAllHistoryEntries(landId);
-            // console.log(result);
+            console.log(result);
         } catch (error) {
             console.error("" + error);
         }
@@ -92,17 +93,16 @@ const unityController = {
 
             let response = await fetch('/rest/v1/getLandById?id=' + landId + "&addr=" + ownerAddress);
             let contractStored = await response.json();
-            let contractAddress = contractStored.contract.contractAddress;
+
+            console.log(contractStored);
+            let contractAddress = contractStored[0].contract.contractAddress;
 
             let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
 
-            await UnityContract.methods.transferLand(buyerAddress, contractStored.contract.land.landParcel).send({
+            await UnityContract.methods.transferLand(buyerAddress, contractStored[0].contract.land.landParcel).send({
                 from: ownerAddress,
                 gas: 300000
             });
-
-            // TODO store history in the DB.
-            // TODO test.
         } catch (error) {
             console.log("" + error);
         }
