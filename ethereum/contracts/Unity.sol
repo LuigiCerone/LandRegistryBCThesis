@@ -81,8 +81,8 @@ contract Unity {
             __history.push(myEntry);
 
             // Inform the backend or who is subscribed to the event.
-            emit Transfer(msg.sender, _landBuyer, _landParcel);
-
+//            emit Transfer(msg.sender, _landBuyer, _landParcel);
+            logger.emitTransfer(address(this), _land.landParcel, _land.subaltern, _landBuyer);
             return true;
         }
         return false;

@@ -19,7 +19,7 @@ web3.eth.getAccounts().then((accounts) => {
 let db = null;
 
 module.exports = {
-    insertEvent(event) {
+    insertNewDeployEvent(event) {
         if (db != null) {
             // Insert in the db transactionHash, returnValues.sender.
             let toInsert = {
@@ -38,6 +38,13 @@ module.exports = {
             toInsert.land.subaltern !== "" ? id += toInsert.land.subaltern : id += "";
             logger.info("ID is: " + id);
             return db.put({_id: id, contract: toInsert});
+        }
+    },
+
+    insertTransferEvent(event) {
+        if (db != null){
+
+            // (1) get already inserted element.
         }
     },
 
@@ -88,18 +95,5 @@ module.exports = {
             promises.push(UnityContract.methods.getLand(address, i).call());
         }
         return Promise.all(promises);
-    }
-    ,
-
-    getHistory(landId) {
-        return UnityContract.methods.getHistoryForLand(landId).call();
-    }
-    ,
-
-    transfer(buyerAddress, unity) {
-        return UnityContract.methods.transferLand(buyerAddress, unity._landParcel).send({
-            from: unity._ownerAddress,
-            gas: 300000
-        });
     }
 };
