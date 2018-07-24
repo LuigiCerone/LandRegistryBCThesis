@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/api/controller/unityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/unityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/dao/unityDAO.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/unityDAO.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/unityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/unityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/contracts/Logger.sol" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/contracts/Logger.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000172.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000174.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000177.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000180.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/MANIFEST-000179" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/MANIFEST-000299" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/blocks/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/blocks/CURRENT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/blocks/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/blocks/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/blocks/MANIFEST-000002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/config" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/datastore/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/datastore/CURRENT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/datastore/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/datastore/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/datastore/MANIFEST-000002" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -97,8 +92,8 @@
       <file leaf-file-name="unityDAO.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="65" column="90" selection-start-line="65" selection-start-column="90" selection-end-line="65" selection-end-column="90" />
+            <state relative-caret-position="90">
+              <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -191,7 +186,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="163" />
     <option name="y" value="374" />
     <option name="width" value="1004" />
@@ -358,12 +353,12 @@
       <workItem from="1532162612779" duration="3822000" />
       <workItem from="1532166948816" duration="885000" />
       <workItem from="1532182382568" duration="5352000" />
-      <workItem from="1532335320046" duration="4793000" />
+      <workItem from="1532335320046" duration="5012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131173000" />
+    <option name="totallyTimeSpent" value="131392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +371,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-7" width="1366" height="775" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5014881" side_tool="true" weight="0.32724252" />
@@ -459,6 +453,11 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
+        <expression-string>db.id</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>db.get(1111)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
@@ -503,11 +502,6 @@
       </expression>
       <expression>
         <expression-string>db.query((doc) =&gt; doc._id === id).map((item) =&gt; item)</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>db.query((doc) =&gt; doc._id === id).map((item) =&gt; item.land)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -827,8 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="65" column="90" selection-start-line="65" selection-start-column="90" selection-end-line="65" selection-end-column="90" />
+        <state relative-caret-position="90">
+          <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
         </state>
       </provider>
     </entry>
