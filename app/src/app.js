@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AddLand from './AddLand';
+import AddLand from './components/AddLand/AddLand';
 import web3 from './web3.wrapper';
 
 let addresses;
