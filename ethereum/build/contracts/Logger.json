@@ -2608,8 +2608,14 @@
       "links": {},
       "address": "0x80ef640c0b5547ce46477ab90bfc4beb46003faa",
       "transactionHash": "0x9ad87b62a61fee64477dd61a8866245c3f8551cdf721e22c0e35bff9abf96263"
+    },
+    "1532509471434": {
+      "events": {},
+      "links": {},
+      "address": "0xaf181f78b0634bfd1223f0de89ca74e3a03db809",
+      "transactionHash": "0x9ad87b62a61fee64477dd61a8866245c3f8551cdf721e22c0e35bff9abf96263"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-07-24T09:17:36.725Z"
+  "updatedAt": "2018-07-25T09:05:08.139Z"
 }

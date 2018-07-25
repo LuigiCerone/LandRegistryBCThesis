@@ -2,11 +2,7 @@ import React from "react";
 import './AddLand.css';
 import Unity from "./Unity";
 import web3 from './web3.wrapper';
-import UnityAbi from "BuildContracts/Unity";
-
-
-let loggerContractAddress = Object.values(LoggerAbi.networks).pop().address;
-
+import {loggerContractAddress, UnityContract, UnityContractByteCode} from './costant';
 
 class AddLand extends React.Component {
     constructor(props) {
@@ -19,28 +15,31 @@ class AddLand extends React.Component {
     }
 
     onFormSubmit(event) {
-        console.log(event.target);
-        const data = new FormData(event.target);
         event.preventDefault();
-        console.log(data);
-
 
         // TODO Add validation.
+
+        this.insertUnity({
+            district: event.target.district.value,
+            document: event.target.document.value,
+            landParcel: event.target.landParcel.value,
+            subaltern: event.target.subaltern.value,
+            ownerAddress: event.target.ownerAddress.value,
+        });
     };
 
     // district, document, landParcel, subaltern, ownerAddress.
-    async insertUnity(district, document, landParcel, subaltern, ownerAddress) {
+    async insertUnity({district, document, landParcel, subaltern, ownerAddress}) {
 
         // First we need to create a new unity.
         let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
 
         // Now I need to insert newUnity into the contract.
         try {
-            // let [insert, event] = await unityDAO.insertUnity(newUnity);
             let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
             console.log("Nonce value is: " + nonce);
             let newContractInstance = await UnityContract.deploy({
-                data: UnityAbi.bytecode,
+                data: UnityContractByteCode,
                 // (district, document, landParcel, subaltern, ownerAddress)
                 arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
                     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
@@ -66,8 +65,6 @@ class AddLand extends React.Component {
             console.error("" + error);
         }
     }
-
-,
 
     render() {
         return (
