@@ -1,21 +1,39 @@
 import React from "react";
 import './AddLand.css';
-import Unity from "./Unity";
-import web3 from './web3.wrapper';
-import {loggerContractAddress, UnityContract, UnityContractByteCode} from './costant';
+import Unity from "../../Unity";
+import web3 from '../../web3.wrapper';
+import {loggerContractAddress, UnityContract, UnityContractByteCode} from '../../costant';
+import Modal from '../Modal/Modal';
 
 class AddLand extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            show: false,
+            done: false
+        };
 
         // Bind methods.
         this.onFormSubmit = this.onFormSubmit.bind(this);
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
     }
+
+    showModal() {
+        this.setState({show: true});
+    };
+
+
+    hideModal() {
+        this.setState({show: false});
+    };
 
     onFormSubmit(event) {
         event.preventDefault();
+        event.stopPropagation();
+
+        if (this.state.done) return;
 
         // TODO Add validation.
 
@@ -25,7 +43,13 @@ class AddLand extends React.Component {
             landParcel: event.target.landParcel.value,
             subaltern: event.target.subaltern.value,
             ownerAddress: event.target.ownerAddress.value,
-        });
+        }).then(() => {
+                this.setState({
+                    done: true
+                });
+                this.showModal();
+            }
+        ).catch((err) => console.error(err));
     };
 
     // district, document, landParcel, subaltern, ownerAddress.
@@ -70,6 +94,9 @@ class AddLand extends React.Component {
         return (
             <form onSubmit={this.onFormSubmit}>
                 <h2>Insert new land</h2>
+                <Modal show={this.state.show} handleClose={this.hideModal}>
+                    <p>New land has been correctly inserted into the blockchain!</p>
+                </Modal>
 
                 <input type="text" maxLength="2" placeholder="District" name="district" required/>
                 <input type="number" placeholder="Document" name="document" required/>

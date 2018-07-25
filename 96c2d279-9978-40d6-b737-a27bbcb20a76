@@ -1,4 +1,4 @@
-Time	Sum	Command
+ime	Sum	Command
 1360	3475	> builtin source /usr/share/fish/config.fish
 28	28	-> set -g IFS \n\ \t
 8	8	-> set -qg __fish_added_user_paths
