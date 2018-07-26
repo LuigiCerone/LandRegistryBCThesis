@@ -18,16 +18,20 @@ class AddLand extends React.Component {
         this.onFormSubmit = this.onFormSubmit.bind(this);
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
+        this.resetDone = this.resetDone.bind(this);
     }
 
     showModal() {
         this.setState({show: true});
     };
 
-
     hideModal() {
         this.setState({show: false});
     };
+
+    resetDone() {
+        this.setState({done: false});
+    }
 
     onFormSubmit(event) {
         event.preventDefault();
@@ -47,7 +51,7 @@ class AddLand extends React.Component {
                 this.setState({
                     done: true
                 });
-                this.showModal();
+                return this.showModal();
             }
         ).catch((err) => console.error(err));
     };
@@ -92,7 +96,7 @@ class AddLand extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onFormSubmit}>
+            <form onInput={this.resetDone} onSubmit={this.onFormSubmit}>
                 <h2>Insert new land</h2>
                 <Modal show={this.state.show} handleClose={this.hideModal}>
                     <p>New land has been correctly inserted into the blockchain!</p>
