@@ -80,7 +80,7 @@ module.exports = {
     getHistoryByLandId(req, res) {
         logger.info(`Just received a get history request with id: ${req.query.id}`);
 
-        res.json(unityDAO.getHistoryByLandId(req.query.id));
+        res.send(unityDAO.getHistoryByLandId(req.query.id));
     },
 
     getLandById(req, res) {

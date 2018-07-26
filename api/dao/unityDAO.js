@@ -96,6 +96,9 @@ module.exports = {
 
     getHistoryByLandId(id) {
         try {
+            if (db == null) {
+                this.getDatabase();
+            }
             return db.query((doc) => doc._id === id).map((item) => item.contract.land.history);
         } catch (error) {
             logger.error("" + error);

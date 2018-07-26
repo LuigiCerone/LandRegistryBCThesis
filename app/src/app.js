@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import AddLand from './components/AddLand/AddLand';
+import HistorySearch from './components/HistorySearch/HistorySearch';
+
 import web3 from './web3.wrapper';
 
 let addresses;
@@ -10,4 +12,9 @@ web3.eth.getAccounts().then((accounts) => {
     addresses = accounts;
 }).catch((err) => console.log(err));
 
-ReactDOM.render(<AddLand/>, document.getElementById("app"));
+ReactDOM.render(
+    <div>
+        <AddLand/>
+        <HistorySearch/>
+    </div>,
+    document.getElementById("app"));
