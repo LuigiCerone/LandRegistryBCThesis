@@ -11,7 +11,8 @@ class HistorySearch extends React.Component {
 
         this.state = {
             historyEntries: [],
-            landId: ''
+            landId: '',
+            notFound: false
         };
 
         this.onSearchChange = this.onSearchChange.bind(this);
@@ -19,8 +20,6 @@ class HistorySearch extends React.Component {
     }
 
     onSearchChange(event) {
-        console.log(event.target.value);
-
         this.setState({landId: event.target.value});
     }
 
@@ -30,8 +29,11 @@ class HistorySearch extends React.Component {
         if (this.state.landId && this.state.landId > 1) {
             this.getHistory(this.state.landId)
                 .then((res) => {
-                    console.log(res);
-                    this.setState({historyEntry: res});
+                    console.log("Result:" + res);
+                    if (res)
+                        this.setState({historyEntries: res, notFound: false});
+                    else
+                        this.setState({historyEntries: [], notFound: true});
                 })
                 .catch((err) => this.setState({err: err}));
         }
@@ -43,10 +45,10 @@ class HistorySearch extends React.Component {
         try {
             let response = await
                 fetch('/rest/v1/getHistory?id=' + landId);
-            let result = await
-                response.json();
-            return result;
-
+            if (!response.ok) {
+                return null;
+            } else
+                return await response.json();
         } catch (error) {
             console.error("" + error);
         }
@@ -59,7 +61,7 @@ class HistorySearch extends React.Component {
                 <input type="number" value={this.state.landId} placeholder="landId" name="landId"
                        onChange={this.onSearchChange} required/>
                 <input type="submit" value="Get history"/>
-                <HistoryEntry results={[].concat.apply(this.state.historyEntries)}/>
+                <HistoryEntry results={this.state.historyEntries} notFound={this.state.notFound}/>
             </form>
         );
     }

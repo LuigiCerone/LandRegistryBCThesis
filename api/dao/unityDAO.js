@@ -99,7 +99,10 @@ module.exports = {
             if (db == null) {
                 this.getDatabase();
             }
-            return db.query((doc) => doc._id === id).map((item) => item.contract.land.history);
+            let result = db.query((doc) => doc._id === id);
+            if (result.length !== 0)
+                return result[0].contract.land.history;
+            else return null;
         } catch (error) {
             logger.error("" + error);
         }
