@@ -4,6 +4,7 @@ import AddLand from './components/AddLand/AddLand';
 import HistorySearch from './components/HistorySearch/HistorySearch';
 
 import web3 from './web3.wrapper';
+import SearchLand from "./components/SearchLand/SearchLand";
 
 let addresses;
 web3.eth.getAccounts().then((accounts) => {
@@ -16,5 +17,6 @@ ReactDOM.render(
     <div>
         <AddLand/>
         <HistorySearch/>
+        <SearchLand/>
     </div>,
     document.getElementById("app"));

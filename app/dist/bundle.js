@@ -106,7 +106,7 @@ eval("\n\nvar _createClass = function () { function defineProperties(target, pro
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _AddLand = __webpack_require__(/*! ./components/AddLand/AddLand */ \"./app/src/components/AddLand/AddLand.js\");\n\nvar _AddLand2 = _interopRequireDefault(_AddLand);\n\nvar _HistorySearch = __webpack_require__(/*! ./components/HistorySearch/HistorySearch */ \"./app/src/components/HistorySearch/HistorySearch.js\");\n\nvar _HistorySearch2 = _interopRequireDefault(_HistorySearch);\n\nvar _web = __webpack_require__(/*! ./web3.wrapper */ \"./app/src/web3.wrapper.js\");\n\nvar _web2 = _interopRequireDefault(_web);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar addresses = void 0;\n_web2.default.eth.getAccounts().then(function (accounts) {\n    _web2.default.eth.defaultAccount = accounts[0];\n    console.log(\"Default account is: \" + _web2.default.eth.defaultAccount);\n    addresses = accounts;\n}).catch(function (err) {\n    return console.log(err);\n});\n\n_reactDom2.default.render(_react2.default.createElement(\n    \"div\",\n    null,\n    _react2.default.createElement(_AddLand2.default, null),\n    _react2.default.createElement(_HistorySearch2.default, null)\n), document.getElementById(\"app\"));\n\n//# sourceURL=webpack:///./app/src/app.js?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _AddLand = __webpack_require__(/*! ./components/AddLand/AddLand */ \"./app/src/components/AddLand/AddLand.js\");\n\nvar _AddLand2 = _interopRequireDefault(_AddLand);\n\nvar _HistorySearch = __webpack_require__(/*! ./components/HistorySearch/HistorySearch */ \"./app/src/components/HistorySearch/HistorySearch.js\");\n\nvar _HistorySearch2 = _interopRequireDefault(_HistorySearch);\n\nvar _web = __webpack_require__(/*! ./web3.wrapper */ \"./app/src/web3.wrapper.js\");\n\nvar _web2 = _interopRequireDefault(_web);\n\nvar _SearchLand = __webpack_require__(/*! ./components/SearchLand/SearchLand */ \"./app/src/components/SearchLand/SearchLand.js\");\n\nvar _SearchLand2 = _interopRequireDefault(_SearchLand);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar addresses = void 0;\n_web2.default.eth.getAccounts().then(function (accounts) {\n    _web2.default.eth.defaultAccount = accounts[0];\n    console.log(\"Default account is: \" + _web2.default.eth.defaultAccount);\n    addresses = accounts;\n}).catch(function (err) {\n    return console.log(err);\n});\n\n_reactDom2.default.render(_react2.default.createElement(\n    \"div\",\n    null,\n    _react2.default.createElement(_AddLand2.default, null),\n    _react2.default.createElement(_HistorySearch2.default, null),\n    _react2.default.createElement(_SearchLand2.default, null)\n), document.getElementById(\"app\"));\n\n//# sourceURL=webpack:///./app/src/app.js?");
 
 /***/ }),
 
@@ -179,6 +179,29 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 
 /***/ }),
 
+/***/ "./app/src/components/LandEntry/LandEntry.css":
+/*!****************************************************!*\
+  !*** ./app/src/components/LandEntry/LandEntry.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../../node_modules/css-loader!./LandEntry.css */ \"./node_modules/css-loader/index.js!./app/src/components/LandEntry/LandEntry.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./app/src/components/LandEntry/LandEntry.css?");
+
+/***/ }),
+
+/***/ "./app/src/components/LandEntry/LandEntry.js":
+/*!***************************************************!*\
+  !*** ./app/src/components/LandEntry/LandEntry.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\n__webpack_require__(/*! ./LandEntry.css */ \"./app/src/components/LandEntry/LandEntry.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar LandEntry = function LandEntry(props) {\n    // console.log(\"Invoked with props: \" + JSON.stringify(props));\n    var options = void 0;\n    if (props.notFound === true) {\n        options = _react2.default.createElement(\n            'li',\n            null,\n            'No lands associated to this account.'\n        );\n    } else {\n        options = props.results.map(function (result) {\n            return _react2.default.createElement(\n                'li',\n                { key: result.landParcel + result.subaltern },\n                _react2.default.createElement(\n                    'h3',\n                    null,\n                    'Land info:'\n                ),\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    'District: ',\n                    result.district,\n                    _react2.default.createElement('br', null),\n                    'Document: ',\n                    result.document,\n                    _react2.default.createElement('br', null),\n                    'Parcel: ',\n                    result.landParcel,\n                    _react2.default.createElement('br', null),\n                    'Subaltern: ',\n                    result.subaltern\n                )\n            );\n        });\n    }\n\n    return _react2.default.createElement(\n        'ul',\n        null,\n        options\n    );\n};\n\nexports.default = LandEntry;\n\n//# sourceURL=webpack:///./app/src/components/LandEntry/LandEntry.js?");
+
+/***/ }),
+
 /***/ "./app/src/components/Modal/Modal.css":
 /*!********************************************!*\
   !*** ./app/src/components/Modal/Modal.css ***!
@@ -199,6 +222,29 @@ eval("\nvar content = __webpack_require__(/*! !../../../../node_modules/css-load
 
 "use strict";
 eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\n__webpack_require__(/*! ./Modal.css */ \"./app/src/components/Modal/Modal.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Modal = function Modal(_ref) {\n    var handleClose = _ref.handleClose,\n        show = _ref.show,\n        children = _ref.children;\n\n    var showHideClassName = show ? \"modal display-block\" : \"modal display-none\";\n\n    return _react2.default.createElement(\n        \"div\",\n        { className: showHideClassName },\n        _react2.default.createElement(\n            \"section\",\n            { className: \"modal-main\" },\n            children,\n            _react2.default.createElement(\n                \"button\",\n                { onClick: handleClose },\n                \"close\"\n            )\n        )\n    );\n};\nexports.default = Modal;\n\n//# sourceURL=webpack:///./app/src/components/Modal/Modal.js?");
+
+/***/ }),
+
+/***/ "./app/src/components/SearchLand/SearchLand.css":
+/*!******************************************************!*\
+  !*** ./app/src/components/SearchLand/SearchLand.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../../node_modules/css-loader!./SearchLand.css */ \"./node_modules/css-loader/index.js!./app/src/components/SearchLand/SearchLand.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./app/src/components/SearchLand/SearchLand.css?");
+
+/***/ }),
+
+/***/ "./app/src/components/SearchLand/SearchLand.js":
+/*!*****************************************************!*\
+  !*** ./app/src/components/SearchLand/SearchLand.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\n__webpack_require__(/*! ./SearchLand.css */ \"./app/src/components/SearchLand/SearchLand.css\");\n\nvar _LandEntry = __webpack_require__(/*! ../LandEntry/LandEntry */ \"./app/src/components/LandEntry/LandEntry.js\");\n\nvar _LandEntry2 = _interopRequireDefault(_LandEntry);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar SearchLand = function (_React$Component) {\n    _inherits(SearchLand, _React$Component);\n\n    function SearchLand(props) {\n        _classCallCheck(this, SearchLand);\n\n        // Init of state vars.\n        var _this = _possibleConstructorReturn(this, (SearchLand.__proto__ || Object.getPrototypeOf(SearchLand)).call(this, props));\n\n        _this.state = { address: '', landEntries: [] };\n\n        // Methods binding.\n        _this.onSearchChange = _this.onSearchChange.bind(_this);\n        _this.onSubmit = _this.onSubmit.bind(_this);\n        return _this;\n    }\n\n    _createClass(SearchLand, [{\n        key: \"onSearchChange\",\n        value: function onSearchChange(event) {\n            this.setState({ address: event.target.value });\n        }\n    }, {\n        key: \"onSubmit\",\n        value: function onSubmit(event) {\n            var _this2 = this;\n\n            event.preventDefault();\n            if (this.state.address && this.state.address > 1) {\n                this.getLandsForAccount(this.state.address).then(function (res) {\n                    if (res) _this2.setState({ landEntries: res, notFound: false });else _this2.setState({ landEntries: [], notFound: true });\n                }).catch(function (err) {\n                    return _this2.setState({ err: err });\n                });\n            }\n        }\n    }, {\n        key: \"getLandsForAccount\",\n        value: async function getLandsForAccount(addressToSearchFor) {\n\n            // We need to query the server in order to get the lands' list.\n            try {\n                var response = await fetch('/rest/v1/getLandsForAddress?addr=' + addressToSearchFor);\n                if (!response.ok) {\n                    return null;\n                } else return await response.json();\n            } catch (error) {\n                console.error(\"\" + error);\n            }\n        }\n    }, {\n        key: \"render\",\n        value: function render() {\n            return _react2.default.createElement(\n                \"form\",\n                { onSubmit: this.onSubmit },\n                _react2.default.createElement(\n                    \"h2\",\n                    null,\n                    \"Get land for address\"\n                ),\n                _react2.default.createElement(\"input\", { type: \"text\", value: this.state.address, placeholder: \"Address\", name: \"address\",\n                    onChange: this.onSearchChange, required: true }),\n                _react2.default.createElement(\"input\", { type: \"submit\", value: \"Get lands\" }),\n                _react2.default.createElement(_LandEntry2.default, { results: this.state.landEntries, notFound: this.state.notFound })\n            );\n        }\n    }]);\n\n    return SearchLand;\n}(_react2.default.Component);\n\nexports.default = SearchLand;\n\n//# sourceURL=webpack:///./app/src/components/SearchLand/SearchLand.js?");
 
 /***/ }),
 
@@ -904,6 +950,17 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../../node_module
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./app/src/components/LandEntry/LandEntry.css":
+/*!******************************************************************************!*\
+  !*** ./node_modules/css-loader!./app/src/components/LandEntry/LandEntry.css ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./app/src/components/LandEntry/LandEntry.css?./node_modules/css-loader");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./app/src/components/Modal/Modal.css":
 /*!**********************************************************************!*\
   !*** ./node_modules/css-loader!./app/src/components/Modal/Modal.css ***!
@@ -912,6 +969,17 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../../node_module
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".modal {\\n    position: fixed;\\n    top: 0;\\n    left: 0;\\n    width:100%;\\n    height: 100%;\\n    background: rgba(0, 0, 0, 0.6);\\n}\\n\\n.modal-main {\\n    position:fixed;\\n    background: white;\\n    width: 80%;\\n    height: auto;\\n    top:50%;\\n    left:50%;\\n    transform: translate(-50%,-50%);\\n}\\n\\n.display-block {\\n    display: block;\\n}\\n\\n.display-none {\\n    display: none;\\n}\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./app/src/components/Modal/Modal.css?./node_modules/css-loader");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./app/src/components/SearchLand/SearchLand.css":
+/*!********************************************************************************!*\
+  !*** ./node_modules/css-loader!./app/src/components/SearchLand/SearchLand.css ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./app/src/components/SearchLand/SearchLand.css?./node_modules/css-loader");
 
 /***/ }),
 

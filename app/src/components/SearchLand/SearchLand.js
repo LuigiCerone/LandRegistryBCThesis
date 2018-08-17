@@ -1,5 +1,5 @@
 import React from "react";
-import "SearchLand.css";
+import "./SearchLand.css";
 import LandEntry from "../LandEntry/LandEntry";
 
 
@@ -9,8 +9,7 @@ class SearchLand extends React.Component {
         super(props);
 
         // Init of state vars.
-        this.setState({address: '', landEntries: []});
-
+        this.state = {address: '', landEntries: []};
 
         // Methods binding.
         this.onSearchChange = this.onSearchChange.bind(this);
@@ -24,7 +23,7 @@ class SearchLand extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         if (this.state.address && this.state.address > 1) {
-            this.getLandsForAccount(this.state.landId)
+            this.getLandsForAccount(this.state.address)
                 .then((res) => {
                     if (res)
                         this.setState({landEntries: res, notFound: false});
@@ -54,10 +53,10 @@ class SearchLand extends React.Component {
         return (
             <form onSubmit={this.onSubmit}>
                 <h2>Get land for address</h2>
-                <input type="number" value={this.state.address} placeholder="Address" name="address"
+                <input type="text" value={this.state.address} placeholder="Address" name="address"
                        onChange={this.onSearchChange} required/>
                 <input type="submit" value="Get lands"/>
-                <LandEntry results={this.state.historyEntries} notFound={this.state.notFound}/>
+                <LandEntry results={this.state.landEntries} notFound={this.state.notFound}/>
             </form>
         );
     }
