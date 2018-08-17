@@ -98,6 +98,12 @@ module.exports = {
     getLandsForAddress(req, res) {
         logger.info(`Just received a get lands by address request with address: ${req.query.addr}`);
 
-        res.json(unityDAO.getLandsForAddress(req.query.addr));
+        let result = unityDAO.getLandsForAddress(req.query.addr);
+
+        if (result && result.length !== 0) {
+            res.json(result);
+        } else {
+            res.status(404).send('Not found');
+        }
     }
 };

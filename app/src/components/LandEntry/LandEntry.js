@@ -2,7 +2,7 @@ import React from 'react';
 import './LandEntry.css';
 
 const LandEntry = props => {
-    // console.log("Invoked with props: " + JSON.stringify(props));
+    console.log("Invoked with props: " + JSON.stringify(props));
     let options;
     if (props.notFound === true) {
         options = <li>No lands associated to this account.</li>
