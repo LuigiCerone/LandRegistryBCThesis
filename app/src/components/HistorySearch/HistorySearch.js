@@ -29,7 +29,6 @@ class HistorySearch extends React.Component {
         if (this.state.landId && this.state.landId > 1) {
             this.getHistory(this.state.landId)
                 .then((res) => {
-                    console.log("Result:" + res);
                     if (res)
                         this.setState({historyEntries: res, notFound: false});
                     else
