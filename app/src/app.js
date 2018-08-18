@@ -23,8 +23,11 @@ web3.eth.getAccounts().then((accounts) => {
 ReactDOM.render(
     <div>
         <AddLand/>
+        <hr/>
         <HistorySearch/>
+        <hr/>
         <SearchLand/>
         <TransferLand/>
-    </div>,
+    </div>
+    ,
     document.getElementById("app"));

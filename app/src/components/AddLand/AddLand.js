@@ -96,24 +96,49 @@ class AddLand extends React.Component {
 
     render() {
         return (
-            <form onInput={this.resetDone} onSubmit={this.onFormSubmit}>
+            <form id="addLandSection" onInput={this.resetDone} onSubmit={this.onFormSubmit} autoComplete="new-password">
                 <h2>Insert new land</h2>
                 <Modal show={this.state.show} handleClose={this.hideModal}>
                     <p>New land has been correctly inserted into the blockchain!</p>
                 </Modal>
 
-                <div className="form-group">
-                    <label htmlFor="district">District</label>
-                    <input type="text" className="form-control" maxLength="2" placeholder="District" id="district"
-                           name="district" required/>
+                <div className="row">
+                    <div className="col-md-6 form-group">
+                        <label htmlFor="district">District: </label>
+                        <input type="text" className="form-control" maxLength="2" placeholder="District" id="district"
+                               name="district" required/>
+                    </div>
+
+                    <div className="col-md-6 form-group">
+                        <label htmlFor="document">Document: </label>
+                        <input type="number" className="form-control" placeholder="Document" id="document"
+                               name="document"
+                               required/>
+                    </div>
                 </div>
 
-                <input type="number" placeholder="Document" name="document" required/>
-                <input type="number" placeholder="Land parcel" name="landParcel" required/>
-                <input type="number" placeholder="Subaltern" name="subaltern" required/>
-                <input type="text" placeholder="Owner address" name="ownerAddress" required/>
+                <div className="row">
+                    <div className="col-md-6 form-group">
+                        <label htmlFor="landParcel">Land Parcel: </label>
+                        <input type="number" className="form-control" placeholder="Land parcel" id="landParcel"
+                               name="landParcel" required/>
+                    </div>
 
-                <input className="btn" type="submit" value="Add land"/>
+                    <div className="col-md-6 form-group">
+                        <label htmlFor="subaltern">Subaltern: </label>
+                        <input type="number" className="form-control" placeholder="Subaltern" id="subaltern"
+                               name="subaltern" required/>
+                    </div>
+                </div>
+
+
+                <div className="form-group">
+                    <label htmlFor="ownerAddress">Owner Address: </label>
+                    <input type="text" className="form-control" placeholder="Owner address" id="ownerAddress"
+                           name="ownerAddress" required/>
+                </div>
+
+                <input className="btn btn-primary" type="submit" value="Add land"/>
             </form>
         );
     }
