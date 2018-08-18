@@ -3,9 +3,15 @@ import ReactDOM from "react-dom";
 import AddLand from './components/AddLand/AddLand';
 import HistorySearch from './components/HistorySearch/HistorySearch';
 
-import web3 from './web3.wrapper';
+import web3 from './utils/web3.wrapper';
 import SearchLand from "./components/SearchLand/SearchLand";
 import TransferLand from "./components/TransferLand/TransferLand";
+
+import "../dist/css/reset.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import "../dist/css/app.css";
+
 
 let addresses;
 web3.eth.getAccounts().then((accounts) => {

@@ -81,7 +81,7 @@ module.exports = {
         logger.info(`Just received a get history request with id: ${req.query.id}`);
         let result = unityDAO.getHistoryByLandId(req.query.id);
 
-        if (result) {
+        if (result && result.length !== 0) {
             res.json(result);
         } else {
             res.status(404).send('Not found');

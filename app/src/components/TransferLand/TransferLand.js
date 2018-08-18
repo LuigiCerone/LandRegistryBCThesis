@@ -1,9 +1,9 @@
 import React from "react";
 import "./TransferLand.css";
 
-import Unity from "../../Unity";
-import web3 from '../../web3.wrapper';
-import {loggerContractAddress, UnityContract, UnityContractByteCode} from '../../costant';
+import Unity from "../../model/Unity";
+import web3 from '../../utils/web3.wrapper';
+import {loggerContractAddress, UnityContract, UnityContractByteCode} from '../../utils/costant';
 import Modal from '../Modal/Modal';
 import UnityAbi from "BuildContracts/Unity";
 
@@ -36,8 +36,6 @@ class TransferLand extends React.Component {
         event.preventDefault();
 
         if (this.state.done) return;
-
-        console.log(event.target);
 
         this.transfer({
             landId: event.target.landId.value,

@@ -1,8 +1,8 @@
 import React from "react";
 import './AddLand.css';
-import Unity from "../../Unity";
-import web3 from '../../web3.wrapper';
-import {loggerContractAddress, UnityContract, UnityContractByteCode} from '../../costant';
+import Unity from "../../model/Unity";
+import web3 from '../../utils/web3.wrapper';
+import {loggerContractAddress, UnityContract, UnityContractByteCode} from '../../utils/costant';
 import Modal from '../Modal/Modal';
 
 class AddLand extends React.Component {
@@ -102,13 +102,18 @@ class AddLand extends React.Component {
                     <p>New land has been correctly inserted into the blockchain!</p>
                 </Modal>
 
-                <input type="text" maxLength="2" placeholder="District" name="district" required/>
+                <div className="form-group">
+                    <label htmlFor="district">District</label>
+                    <input type="text" className="form-control" maxLength="2" placeholder="District" id="district"
+                           name="district" required/>
+                </div>
+
                 <input type="number" placeholder="Document" name="document" required/>
                 <input type="number" placeholder="Land parcel" name="landParcel" required/>
                 <input type="number" placeholder="Subaltern" name="subaltern" required/>
                 <input type="text" placeholder="Owner address" name="ownerAddress" required/>
 
-                <input type="submit" value="Add land"/>
+                <input className="btn" type="submit" value="Add land"/>
             </form>
         );
     }
