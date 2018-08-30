@@ -55,13 +55,23 @@ class HistorySearch extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <div id="getHistorySection">
                 <h2>Get history</h2>
-                <input type="number" value={this.state.landId} placeholder="landId" name="landId"
-                       onChange={this.onSearchChange} required/>
-                <input type="submit" value="Get history"/>
+                <p>Search land by using its land id.</p>
+                <form onSubmit={this.onSubmit} className="form">
+                    <div className="row">
+                        <div className="col-md-6 form-group">
+                            <input type="number" value={this.state.landId} placeholder="landId"
+                                   name="landId" className="form-control"
+                                   onChange={this.onSearchChange} required/>
+                        </div>
+                        <div className="col-md-3 form-group">
+                            <input type="submit" className="btn btn-primary" value="Get history"/>
+                        </div>
+                    </div>
+                </form>
                 <HistoryEntry results={this.state.historyEntries} notFound={this.state.notFound}/>
-            </form>
+            </div>
         );
     }
 }

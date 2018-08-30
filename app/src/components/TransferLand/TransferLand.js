@@ -78,18 +78,36 @@ class TransferLand extends React.Component {
 
     render() {
         return (
-            <form onInput={this.resetDone} onSubmit={this.onFormSubmit}>
-                <h2>Transfer land</h2>
+            <div id="transferLandSection">
                 <Modal show={this.state.show} handleClose={this.hideModal}>
                     <p>Land's ownership has been successfully transferred!</p>
                 </Modal>
-
-                <input type="number" placeholder="Land ID" name="landId" required/>
-                <input type="text" placeholder="Owner address" name="ownerAddress" required/>
-                <input type="text" placeholder="Buyer address" name="buyerAddress" required/>
-
-                <input type="submit" value="Transfer"/>
-            </form>
+                <h2>Transfer land</h2>
+                <form onInput={this.resetDone} onSubmit={this.onFormSubmit} className="form">
+                    <div className="row">
+                        <div className="col-md-6 form-group">
+                            <label htmlFor="landId">Land id: </label>
+                            <input type="number" className="form-control" placeholder="Land id" id="landId"
+                                   name="landId" required/>
+                        </div>
+                        <div className="col-md-6 form-group">
+                            <label htmlFor="ownerAddress">Owner Address: </label>
+                            <input type="text" className="form-control" placeholder="Owner address" id="ownerAddress"
+                                   name="ownerAddress" required/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-6 form-group">
+                            <label htmlFor="buyerAddress">Buyer Address: </label>
+                            <input type="text" className="form-control" placeholder="Buyer address" id="buyerAddress"
+                                   name="buyerAddress" required/>
+                        </div>
+                        <div className="col-md-3 offset-md-3 form-group input">
+                            <input className="btn btn-primary" type="submit" value="Transfer"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
         );
     }
 }

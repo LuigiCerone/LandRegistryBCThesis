@@ -27,6 +27,7 @@ ReactDOM.render(
         <HistorySearch/>
         <hr/>
         <SearchLand/>
+        <hr/>
         <TransferLand/>
     </div>
     ,

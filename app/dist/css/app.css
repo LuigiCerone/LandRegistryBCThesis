@@ -162,25 +162,6 @@ Nav
     color: white;
 }
 
-.nav a:visited {
-    color: white;
-}
-
-.nav a:focus {
-    color: black;
-    background-color: white;
-}
-
-.nav a:hover {
-    color: white;
-    background-color: green;
-}
-
-.nav a:active {
-    color: white;
-    background-color: red;
-}
-
 /* -----------------------
 Wide styles
 ------------------------*/

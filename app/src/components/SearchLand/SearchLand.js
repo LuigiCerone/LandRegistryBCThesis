@@ -1,6 +1,7 @@
 import React from "react";
 import "./SearchLand.css";
 import LandEntry from "../LandEntry/LandEntry";
+import HistoryEntry from "../HistoryEntry/HistoryEntry";
 
 
 class SearchLand extends React.Component {
@@ -51,13 +52,23 @@ class SearchLand extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <div id="getLandsSection">
                 <h2>Get land for address</h2>
-                <input type="text" value={this.state.address} placeholder="Address" name="address"
-                       onChange={this.onSearchChange} required/>
-                <input type="submit" value="Get lands"/>
+                <p>Return all the lands associated with a given address.</p>
+                <form onSubmit={this.onSubmit} className="form">
+                    <div className="row">
+                        <div className="col-md-9 form-group">
+                            <input type="text" className="form-control" value={this.state.address} placeholder="Address"
+                                   name="address"
+                                   onChange={this.onSearchChange} required/>
+                        </div>
+                        <div className="col-md-3 form-group">
+                            <input type="submit" className="btn btn-primary" value="Get lands"/>
+                        </div>
+                    </div>
+                </form>
                 <LandEntry results={this.state.landEntries} notFound={this.state.notFound}/>
-            </form>
+            </div>
         );
     }
 }
