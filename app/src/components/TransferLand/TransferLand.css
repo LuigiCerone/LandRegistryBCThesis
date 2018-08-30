@@ -2,3 +2,9 @@
     position: relative;
     top: 27px;
 }
+
+@media (max-width: 767px) {
+    .input input[type=submit] {
+        top: 0px;
+    }
+}

@@ -2,19 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/dao/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/database.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/HistorySearch/HistorySearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/HistorySearch/HistorySearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmRPD8k2urc67JkPjH7mYemW2HaEo3LKZuRTA5q5yveKY9/keystore/QmRPD8k2urc67JkPjH7mYemW2HaEo3LKZuRTA5q5yveKY9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmSn6gz6j2NjwtazzoSBj6Vbu1xRuuySu1SNBc4M4uPjkm/test.test/000057.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmSn6gz6j2NjwtazzoSBj6Vbu1xRuuySu1SNBc4M4uPjkm/test.test/000059.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmSn6gz6j2NjwtazzoSBj6Vbu1xRuuySu1SNBc4M4uPjkm/test.test/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmSn6gz6j2NjwtazzoSBj6Vbu1xRuuySu1SNBc4M4uPjkm/test.test/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmSn6gz6j2NjwtazzoSBj6Vbu1xRuuySu1SNBc4M4uPjkm/test.test/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmSn6gz6j2NjwtazzoSBj6Vbu1xRuuySu1SNBc4M4uPjkm/test.test/LOG.old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmSn6gz6j2NjwtazzoSBj6Vbu1xRuuySu1SNBc4M4uPjkm/test.test/MANIFEST-000058" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000172.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000174.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000177.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/MANIFEST-000176" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWf2eaUfMe6ijHtYoh4ybW9rXzRZaTH6RTFLGB2pjvnBW/first-db/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWf2eaUfMe6ijHtYoh4ybW9rXzRZaTH6RTFLGB2pjvnBW/first-db/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWf2eaUfMe6ijHtYoh4ybW9rXzRZaTH6RTFLGB2pjvnBW/first-db/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWf2eaUfMe6ijHtYoh4ybW9rXzRZaTH6RTFLGB2pjvnBW/first-db/MANIFEST-000002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmXty3eLYoKF3N8kHDS5eXmkmfruZfWTRdqMyjFYTbrqKE/database name/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmXty3eLYoKF3N8kHDS5eXmkmfruZfWTRdqMyjFYTbrqKE/database name/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmXty3eLYoKF3N8kHDS5eXmkmfruZfWTRdqMyjFYTbrqKE/database name/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmXty3eLYoKF3N8kHDS5eXmkmfruZfWTRdqMyjFYTbrqKE/database name/MANIFEST-000002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmYPwBsKmomp8TDoKQUeUUwapkzbHDWwQ1uKnESwf39ihw/keystore/QmYPwBsKmomp8TDoKQUeUUwapkzbHDWwQ1uKnESwf39ihw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000603.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000605.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000608.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/000611.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/LOG.old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/Qmd4rsDNVdqcXjYgfNnX5WPtkbbCiw9ftyNncMnDfWZHZK/test/MANIFEST-000610" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/001199.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG.old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/MANIFEST-001196" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmekaumXKQFtYXuUadzKHA9PQ1WagNjajdYUcisXniVdhs/test/000005.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmekaumXKQFtYXuUadzKHA9PQ1WagNjajdYUcisXniVdhs/test/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmekaumXKQFtYXuUadzKHA9PQ1WagNjajdYUcisXniVdhs/test/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmekaumXKQFtYXuUadzKHA9PQ1WagNjajdYUcisXniVdhs/test/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmekaumXKQFtYXuUadzKHA9PQ1WagNjajdYUcisXniVdhs/test/LOG.old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmekaumXKQFtYXuUadzKHA9PQ1WagNjajdYUcisXniVdhs/test/MANIFEST-000019" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,6 +80,7 @@
         <counts>
           <entry key="96c2d279-9978-40d6-b737-a27bbcb20a76" value="2" />
           <entry key="css" value="11" />
+          <entry key="default" value="1" />
           <entry key="html" value="2" />
           <entry key="js" value="34" />
           <entry key="json" value="2" />
@@ -58,13 +95,13 @@
           <entry key="HTML" value="2" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="34" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="151" />
-          <entry key="html" value="236" />
+          <entry key="css" value="176" />
+          <entry key="html" value="237" />
           <entry key="js" value="2492" />
           <entry key="json" value="8" />
           <entry key="sol" value="14" />
@@ -72,8 +109,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="151" />
-          <entry key="HTML" value="236" />
+          <entry key="CSS" value="176" />
+          <entry key="HTML" value="237" />
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="2492" />
           <entry key="PLAIN_TEXT" value="14" />
@@ -133,15 +170,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/dist/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="162" column="1" selection-start-line="162" selection-start-column="1" selection-end-line="162" selection-end-column="1" />
+            <state relative-caret-position="-550">
+              <caret line="106" column="10" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -149,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="120">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -176,11 +208,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            <state relative-caret-position="75">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -194,6 +226,7 @@
       <find>app.js</find>
       <find>app/js/app</find>
       <find>input</find>
+      <find>container</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -258,12 +291,12 @@
         <option value="$PROJECT_DIR$/api/dao/database.js" />
         <option value="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.css" />
         <option value="$PROJECT_DIR$/app/src/app.js" />
-        <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css" />
-        <option value="$PROJECT_DIR$/app/dist/index.html" />
         <option value="$PROJECT_DIR$/app/src/components/HistorySearch/HistorySearch.js" />
         <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" />
         <option value="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" />
         <option value="$PROJECT_DIR$/app/dist/css/app.css" />
+        <option value="$PROJECT_DIR$/app/dist/index.html" />
+        <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css" />
       </list>
     </option>
   </component>
@@ -376,6 +409,30 @@
             <path>
               <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="orbitdb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="orbitdb" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="orbitdb" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="keystore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="orbitdb" type="462c0819:PsiDirectoryNode" />
+              <item name="QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -480,12 +537,12 @@
       <workItem from="1534582198187" duration="5885000" />
       <workItem from="1535614960213" duration="291000" />
       <workItem from="1535615273445" duration="2029000" />
-      <workItem from="1535619830903" duration="2637000" />
+      <workItem from="1535619830903" duration="3234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169610000" />
+    <option name="totallyTimeSpent" value="170207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -500,7 +557,7 @@
     <frame x="35" y="-7" width="1331" height="775" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49667773" weight="0.17987806" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.17987806" />
       <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.16741072" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -650,7 +707,6 @@ var result = b
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/js/unityDAO.js" />
     <entry file="file://$PROJECT_DIR$/ethereum/truffle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -916,13 +972,6 @@ var result = b
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -940,13 +989,6 @@ var result = b
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -957,10 +999,27 @@ var result = b
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/orbitdb/default/keystore/default">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/dist/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="162" column="1" selection-start-line="162" selection-start-column="1" selection-end-line="162" selection-end-column="1" />
+        <state relative-caret-position="-550">
+          <caret line="106" column="10" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
