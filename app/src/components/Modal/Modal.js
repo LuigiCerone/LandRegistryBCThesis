@@ -1,14 +1,15 @@
 import React from "react";
 import './Modal.css';
 
-const Modal = ({handleClose, show, children}) => {
+const Modal = ({error, handleClose, show, children}) => {
     const showHide = show ? {display: 'block'} : {display: 'none'};
+    const title = error === 'true' ? "Error" : "Confirmation";
     return (
         <div className="modal" style={showHide} tabIndex="-1" role="dialog">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Confirmation</h5>
+                        <h5 className="modal-title">{title}</h5>
                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

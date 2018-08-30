@@ -110,6 +110,9 @@ module.exports = {
 
 
     getLandById(id) {
+        if (db == null) {
+            this.getDatabase();
+        }
         return db.query((doc) => doc._id === id);
     },
 

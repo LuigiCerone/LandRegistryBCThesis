@@ -90,8 +90,13 @@ module.exports = {
 
     getLandById(req, res) {
         logger.info(`Just received a get land by id request with id: ${req.query.id}`);
+        let result = unityDAO.getLandById(req.query.id);
 
-        res.json(unityDAO.getLandById(req.query.id));
+        if (result && result.length !== 0) {
+            res.json(result);
+        } else {
+            res.status(404).send('Not found');
+        }
     },
 
 

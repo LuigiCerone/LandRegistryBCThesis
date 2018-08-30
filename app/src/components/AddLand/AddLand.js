@@ -11,22 +11,39 @@ class AddLand extends React.Component {
 
         this.state = {
             show: false,
-            done: false
+            done: false,
+            error: false,
+            error_message: ''
         };
 
         // Bind methods.
         this.onFormSubmit = this.onFormSubmit.bind(this);
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
+        // For completed modal.
+        this.showCompletedModal = this.showCompletedModal.bind(this);
+        this.hideCompletedModal = this.hideCompletedModal.bind(this);
+
+        // For error modal.
+        this.showErrorModal = this.showErrorModal.bind(this);
+        this.hideErrorModal = this.hideErrorModal.bind(this);
+
         this.resetDone = this.resetDone.bind(this);
     }
 
-    showModal() {
+    showCompletedModal() {
         this.setState({show: true});
     };
 
-    hideModal() {
+    hideCompletedModal() {
         this.setState({show: false});
+    };
+
+
+    showErrorModal() {
+        this.setState({error: true});
+    };
+
+    hideErrorModal() {
+        this.setState({error: false});
     };
 
     resetDone() {
@@ -48,51 +65,90 @@ class AddLand extends React.Component {
             subaltern: event.target.subaltern.value,
             ownerAddress: event.target.ownerAddress.value,
         }).then(() => {
-                console.log("Show modal");
+                // console.log("Show modal");
                 this.setState({
                     done: true
                 });
-                return this.showModal();
+                return this.showCompletedModal();
             }
-        ).catch((err) => console.error(err));
+        ).catch((err) => {
+            console.error(err);
+            if (err.name !== null && err.name === 'DuplicateException') {
+                // console.log("Show error modal");
+                this.setState({
+                    error: true,
+                    error_message: err.message[0].contract.land.ownerAddress
+                });
+                return this.showErrorModal();
+            }
+        });
     };
 
     // district, document, landParcel, subaltern, ownerAddress.
     async insertUnity({district, document, landParcel, subaltern, ownerAddress}) {
 
-        // First we need to create a new unity.
-        let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
+        // First we need to check if the unity is already stored.
+        // We search by using id made of landParcel + subaltern.
+        let landId = landParcel + subaltern;
+        let landInfo = await this.isDuplicate(landId);
+        if (landInfo != null) {
+            console.log(landInfo);
+            throw new this.DuplicateException(landInfo);
+        } else {
 
-        // Now I need to insert newUnity into the contract.
+            // We need to create a new unity.
+            let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
+
+            // Now I need to insert newUnity into the contract.
+            try {
+                let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
+                console.log("Nonce value is: " + nonce);
+                let newContractInstance = await UnityContract.deploy({
+                    data: UnityContractByteCode,
+                    // (district, document, landParcel, subaltern, ownerAddress)
+                    arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                        newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
+                })
+                    .send({
+                        from: web3.eth.defaultAccount,
+                        nonce: web3.utils.toHex(nonce),
+                        // estimated gas 804653
+                        gas: web3.utils.toHex(1200000)
+                    });
+                console.log("New contract address is: " + newContractInstance.options.address);
+
+
+                // let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
+                //     from: web3.eth.defaultAccount,
+                //     nonce: web3.utils.toHex(++nonce),
+                //     gas: web3.utils.toHex(300000)
+                // });
+                // console.log(result);
+
+            } catch (error) {
+                console.error("" + error);
+            }
+        }
+    }
+
+    async isDuplicate(landId) {
+        // We need to query the server in order to check if this unity is already stored.
         try {
-            let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
-            console.log("Nonce value is: " + nonce);
-            let newContractInstance = await UnityContract.deploy({
-                data: UnityContractByteCode,
-                // (district, document, landParcel, subaltern, ownerAddress)
-                arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                    newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
-            })
-                .send({
-                    from: web3.eth.defaultAccount,
-                    nonce: web3.utils.toHex(nonce),
-                    // estimated gas 804653
-                    gas: web3.utils.toHex(1200000)
-                });
-            console.log("New contract address is: " + newContractInstance.options.address);
-
-
-            // let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
-            //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
-            //     from: web3.eth.defaultAccount,
-            //     nonce: web3.utils.toHex(++nonce),
-            //     gas: web3.utils.toHex(300000)
-            // });
-            // console.log(result);
-
+            let response = await
+                fetch('/rest/v1/getLandById?id=' + landId);
+            if (!response.ok) {
+                return null;
+            } else
+                return await response.json();
         } catch (error) {
             console.error("" + error);
         }
+    }
+
+    DuplicateException(message) {
+        this.message = message;
+        this.name = 'DuplicateException';
     }
 
     render() {
@@ -141,8 +197,12 @@ class AddLand extends React.Component {
 
                     <input className="btn btn-primary" type="submit" value="Add land"/>
                 </form>
-                <Modal show={this.state.show} handleClose={this.hideModal}>
+                <Modal error='false' show={this.state.show} handleClose={this.hideCompletedModal}>
                     <p>New land has been correctly inserted into the blockchain!</p>
+                </Modal>
+
+                <Modal error='true' show={this.state.error} handleClose={this.hideErrorModal}>
+                    <p>This land id is already assigned to account: {this.state.error_message}</p>
                 </Modal>
             </div>
         );
