@@ -1,7 +1,9 @@
 import React from "react";
 import "./SearchLand.css";
 import LandEntry from "../LandEntry/LandEntry";
-import HistoryEntry from "../HistoryEntry/HistoryEntry";
+
+import ReactTable from "react-table";
+import 'react-table/react-table.css'
 
 
 class SearchLand extends React.Component {
@@ -16,6 +18,7 @@ class SearchLand extends React.Component {
         this.onSearchChange = this.onSearchChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
+
 
     onSearchChange(event) {
         this.setState({address: event.target.value});
@@ -67,7 +70,29 @@ class SearchLand extends React.Component {
                         </div>
                     </div>
                 </form>
-                <LandEntry results={this.state.landEntries} notFound={this.state.notFound}/>
+                <div>
+                    <ReactTable data={this.state.landEntries} columns={[
+                        {
+                            Header: 'Land Parcel',
+                            accessor: 'landParcel'
+                        },
+                        {
+                            Header: 'Subaltern',
+                            accessor: 'subaltern'
+                        },
+                        {
+                            Header: 'District',
+                            accessor: 'district'
+                        },
+                        {
+                            Header: 'Document',
+                            accessor: 'document'
+                        }
+                    ]}
+                                defaultPageSize={5}
+                                className="-striped -highlight"/>
+                    {/*<LandEntry results={this.state.landEntries} notFound={this.state.notFound}/>*/}
+                </div>
             </div>
         );
     }

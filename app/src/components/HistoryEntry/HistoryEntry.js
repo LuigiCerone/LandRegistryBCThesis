@@ -4,6 +4,7 @@ import './HistoryEntry.css';
 const HistoryEntry = props => {
     // console.log("Invoked with props: " + JSON.stringify(props));
     let options;
+    // TODO Mettere intervallo di date sul possesso.
     if (props.notFound === true) {
         options =
             <div className="card">

@@ -117,6 +117,9 @@ module.exports = {
     },
 
     getLandsForAddress(searchAddress) {
+        if (db == null) {
+            this.getDatabase();
+        }
         return db.query((doc) => doc.contract.land.ownerAddress === searchAddress).map((item) => item.contract.land);
     },
 
