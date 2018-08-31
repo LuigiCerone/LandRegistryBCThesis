@@ -95,8 +95,9 @@ class AddLand extends React.Component {
             console.log(landInfo);
             throw new this.DuplicateException(landInfo);
         } else {
-
+            ownerAddress = ownerAddress.toString().toLowerCase();
             // We need to create a new unity.
+
             let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
 
             // Now I need to insert newUnity into the contract.

@@ -40,7 +40,7 @@ class TransferLand extends React.Component {
         this.transfer({
             landId: event.target.landId.value,
             ownerAddress: event.target.ownerAddress.value,
-            buyerAddress: event.target.buyerAddress.value,
+            buyerAddress: event.target.buyerAddress.value.toLowerCase(),
         }).then(() => {
                 this.setState({
                     done: true
@@ -67,7 +67,7 @@ class TransferLand extends React.Component {
 
             let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
 
-            await UnityContract.methods.transferLand(buyerAddress, contractStored[0].contract.land.landParcel).send({
+            await UnityContract.methods.transferLand(buyerAddress.toLowerCase(), contractStored[0].contract.land.landParcel).send({
                 from: ownerAddress,
                 gas: 300000
             });
@@ -85,24 +85,24 @@ class TransferLand extends React.Component {
                 <h2>Transfer land</h2>
                 <form onInput={this.resetDone} onSubmit={this.onFormSubmit} className="form">
                     <div className="row">
-                        <div className="col-md-6 form-group">
+                        <div className="col-md-4 form-group">
                             <label htmlFor="landId">Land id: </label>
                             <input type="number" className="form-control" placeholder="Land id" id="landId"
                                    name="landId" required/>
                         </div>
-                        <div className="col-md-6 form-group">
+                        <div className="col-md-8 form-group">
                             <label htmlFor="ownerAddress">Owner Address: </label>
                             <input type="text" className="form-control" placeholder="Owner address" id="ownerAddress"
                                    name="ownerAddress" required/>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-6 form-group">
+                        <div className="col-md-8 form-group">
                             <label htmlFor="buyerAddress">Buyer Address: </label>
                             <input type="text" className="form-control" placeholder="Buyer address" id="buyerAddress"
                                    name="buyerAddress" required/>
                         </div>
-                        <div className="col-md-3 offset-md-3 form-group input">
+                        <div className="col-md-4  form-group input">
                             <input className="btn btn-primary" type="submit" value="Transfer"/>
                         </div>
                     </div>

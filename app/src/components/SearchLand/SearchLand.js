@@ -1,6 +1,5 @@
 import React from "react";
 import "./SearchLand.css";
-import LandEntry from "../LandEntry/LandEntry";
 
 import ReactTable from "react-table";
 import 'react-table/react-table.css'

@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/dao/unityDAO.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/unityDAO.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/LandEntry/LandEntry.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/LandEntry/LandEntry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/AddLand/AddLand.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/AddLand/AddLand.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000406.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000458.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000460.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000463.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000466.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/MANIFEST-000403" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/MANIFEST-000465" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,10 +43,10 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="96c2d279-9978-40d6-b737-a27bbcb20a76" value="2" />
-          <entry key="css" value="12" />
+          <entry key="css" value="13" />
           <entry key="default" value="1" />
           <entry key="html" value="4" />
-          <entry key="js" value="49" />
+          <entry key="js" value="52" />
           <entry key="json" value="2" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
@@ -56,10 +55,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="12" />
+          <entry key="CSS" value="13" />
           <entry key="HTML" value="4" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="49" />
+          <entry key="JavaScript" value="52" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -67,7 +66,7 @@
         <counts>
           <entry key="css" value="179" />
           <entry key="html" value="268" />
-          <entry key="js" value="4497" />
+          <entry key="js" value="4742" />
           <entry key="json" value="8" />
           <entry key="sol" value="14" />
         </counts>
@@ -77,7 +76,7 @@
           <entry key="CSS" value="179" />
           <entry key="HTML" value="268" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="4497" />
+          <entry key="JavaScript" value="4742" />
           <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
@@ -93,10 +92,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js">
+        <entry file="file://$PROJECT_DIR$/app/src/components/AddLand/AddLand.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
+            <state relative-caret-position="131">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -114,28 +113,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
+        <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="81" column="39" lean-forward="true" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+            <state relative-caret-position="540">
+              <caret line="69" column="79" selection-start-line="69" selection-start-column="79" selection-end-line="69" selection-end-column="79" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
+        <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+            <state relative-caret-position="1005">
+              <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/dist/index.html">
+        <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="363">
+              <caret line="122" column="109" selection-start-line="122" selection-start-column="109" selection-end-line="122" selection-end-column="109" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-375">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -208,18 +219,18 @@
         <option value="$PROJECT_DIR$/api/dao/database.js" />
         <option value="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.css" />
         <option value="$PROJECT_DIR$/app/src/app.js" />
-        <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" />
         <option value="$PROJECT_DIR$/app/dist/css/app.css" />
         <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css" />
         <option value="$PROJECT_DIR$/app/src/components/Modal/Modal.css" />
         <option value="$PROJECT_DIR$/api/controller/unityController.js" />
         <option value="$PROJECT_DIR$/app/src/components/Modal/Modal.js" />
-        <option value="$PROJECT_DIR$/app/src/components/AddLand/AddLand.js" />
         <option value="$PROJECT_DIR$/app/src/components/HistorySearch/HistorySearch.js" />
         <option value="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" />
-        <option value="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" />
-        <option value="$PROJECT_DIR$/api/dao/unityDAO.js" />
         <option value="$PROJECT_DIR$/app/dist/index.html" />
+        <option value="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" />
+        <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" />
+        <option value="$PROJECT_DIR$/app/src/components/AddLand/AddLand.js" />
+        <option value="$PROJECT_DIR$/api/dao/unityDAO.js" />
       </list>
     </option>
   </component>
@@ -485,12 +496,12 @@
       <workItem from="1535615273445" duration="2029000" />
       <workItem from="1535619830903" duration="3300000" />
       <workItem from="1535637248061" duration="5784000" />
-      <workItem from="1535722406512" duration="4779000" />
+      <workItem from="1535722406512" duration="7627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180836000" />
+    <option name="totallyTimeSpent" value="183684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -505,19 +516,19 @@
     <frame x="35" y="-7" width="1331" height="775" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.12195122" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.12195122" />
       <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.16741072" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2901716" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28861153" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.43681747" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32917318" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4992378" visible="true" weight="0.17784712" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4992378" weight="0.17784712" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007622" side_tool="true" weight="0.5885023" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32917318" />
       <window_info anchor="bottom" id="Quokka" order="11" sideWeight="0.4985119" weight="0.32605305" />
@@ -554,27 +565,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/unityController.js</url>
-          <line>81</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/unityController.js</url>
-          <line>103</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/dao/unityDAO.js</url>
-          <line>115</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -628,12 +618,42 @@ var result = b
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>result</expression-string>
+        <expression-string>db.query((doc) =&gt; doc)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>if(result)</expression-string>
+        <expression-string>db.query((doc) )</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db.query(doc)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db.query(doc =&gt; doc.contract.land.ownerAddress )</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db.query(doc =&gt; doc.contract.land.ownerAddress == &quot;0xe6e17a8f00a7c72686fa92efec474f197b9818c9&quot;)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db.query((doc) =&gt; doc.contract.land.ownerAddress == &quot;0xe6e17a8f00a7c72686fa92efec474f197b9818c9&quot;)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db.query((doc) =&gt; doc.contract.land.ownerAddress === &quot;0xe6e17a8f00a7c72686fa92efec474f197b9818c9&quot;)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>db.query((doc) =&gt; doc.contract.land.ownerAddress === 0xe6e17a8f00a7c72686fa92efec474f197b9818c9)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -642,31 +662,9 @@ var result = b
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>req.query</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>await unityDAO.getAccounts();</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>req.body</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ethereum/truffle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/test/unityTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -869,16 +867,6 @@ var result = b
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -890,16 +878,6 @@ var result = b
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="72" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/AddLand/AddLand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,13 +919,17 @@ var result = b
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js">
+    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-table/react-table.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="347" selection-start-column="347" selection-end-column="347" />
         </state>
       </provider>
     </entry>
@@ -958,24 +940,44 @@ var result = b
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-375">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="81" column="39" lean-forward="true" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+        <state relative-caret-position="1005">
+          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="69" column="79" selection-start-line="69" selection-start-column="79" selection-end-line="69" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/AddLand/AddLand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        <state relative-caret-position="363">
+          <caret line="122" column="109" selection-start-line="122" selection-start-column="109" selection-end-line="122" selection-end-column="109" />
         </state>
       </provider>
     </entry>

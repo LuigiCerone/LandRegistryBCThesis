@@ -26,7 +26,7 @@ module.exports = {
                 transactionHash: event.transactionHash,
                 contractAddress: event.returnValues.contractAddress,
                 land: {
-                    district: event.returnValues._district,
+                    district: web3.utils.hexToAscii(event.returnValues._district),
                     document: event.returnValues._document,
                     landParcel: event.returnValues._landParcel,
                     subaltern: event.returnValues._subaltern,
@@ -120,7 +120,7 @@ module.exports = {
         if (db == null) {
             this.getDatabase();
         }
-        return db.query((doc) => doc.contract.land.ownerAddress === searchAddress).map((item) => item.contract.land);
+        return db.query((doc) => doc.contract.land.ownerAddress.toLowerCase() === searchAddress.toLowerCase()).map((item) => item.contract.land);
     },
 
     getContractInfo() {
