@@ -5,18 +5,34 @@ const HistoryEntry = props => {
     // console.log("Invoked with props: " + JSON.stringify(props));
     let options;
     if (props.notFound === true) {
-        options = <li>Not found</li>
+        options =
+            <div className="card">
+                <div className="card-header">
+                    Not found
+                </div>
+                <div className="card-body">
+                    <p className="card-text"> The land you are searching for is not in the system.</p>
+                </div>
+            </div>
     }
     else {
-        options = props.results.map(result => (
-                <li key={result.owner}>
-                    {result.owner} owned this land till {new Date(result.timestamp).toString()}
-                </li>
+        options = props.results.map(item => (
+                <div className="card" key={item.timestamp}>
+                    <div className="card-header">
+                        Owner's address is: {item.owner}
+                    </div>
+                    <div className="card-body">
+                        <p className="card-text">  {item.owner} owned this land
+                            till {new Date(item.timestamp).toLocaleDateString()}</p>
+                    </div>
+                </div>
             )
         );
     }
 
-    return <ul>{options}</ul>
+
+    return options;
 };
 
 export default HistoryEntry;
+

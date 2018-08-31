@@ -70,7 +70,9 @@ class HistorySearch extends React.Component {
                         </div>
                     </div>
                 </form>
-                <HistoryEntry results={this.state.historyEntries} notFound={this.state.notFound}/>
+                <div>
+                    <HistoryEntry results={this.state.historyEntries} notFound={this.state.notFound}/>
+                </div>
             </div>
         );
     }
