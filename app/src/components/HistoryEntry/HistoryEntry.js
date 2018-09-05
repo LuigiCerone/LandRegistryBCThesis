@@ -17,17 +17,32 @@ const HistoryEntry = props => {
             </div>
     }
     else {
-        options = props.results.map(item => (
-                <div className="card" key={item.timestamp}>
-                    <div className="card-header">
-                        Owner's address is: {item.owner}
-                    </div>
-                    <div className="card-body">
-                        <p className="card-text">  {item.owner} owned this land
-                            till {new Date(item.timestamp).toLocaleDateString()}</p>
-                    </div>
-                </div>
-            )
+        options = props.results.map((item, index) => {
+                // console.log(index);
+                if (index === props.results.length - 1) {
+                    return (
+                        <div className="card" key={item.timestamp}>
+                            <div className="card-header">
+                                Owner's address is: {item.owner}
+                            </div>
+                            <div className="card-body">
+                                <p className="card-text">  {item.owner} owns this land.</p>
+                            </div>
+                        </div>
+                    )
+                } else
+                    return (
+                        <div className="card" key={item.timestamp}>
+                            <div className="card-header">
+                                Owner's address is: {item.owner}
+                            </div>
+                            <div className="card-body">
+                                <p className="card-text">  {item.owner} owned this land
+                                    till {new Date(item.timestamp).toLocaleDateString()}</p>
+                            </div>
+                        </div>
+                    )
+            }
         );
     }
 

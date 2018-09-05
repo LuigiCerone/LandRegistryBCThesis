@@ -4,21 +4,20 @@ const logger = require('../../server/logger');
 const unityDAO = require('../dao/unityDAO');
 const loggerDAO = require('../dao/loggerDAO');
 
-
-unityDAO.getDatabase();
+let db = unityDAO.getDatabase();
 
 async function handleNewDeployEvent(error, event) {
     if (error) {
         logger.error("Error " + error);
         return;
     }
-    unityDAO.getDatabase();
+    if (db == null) db = unityDAO.getDatabase();
 
     logger.info(`Received the event: %j`, event);
     // console.log("Event:" + event);
     let hash = await unityDAO.insertNewDeployEvent(event);
 
-    // logger.info("Val: " + y);
+    logger.info("hash: " + hash);
 }
 
 async function handleTransferEvent(error, event) {
@@ -26,13 +25,12 @@ async function handleTransferEvent(error, event) {
         logger.error("Error " + error);
         return;
     }
-    unityDAO.getDatabase();
+    if (db == null) db = unityDAO.getDatabase();
 
     logger.info(`Received the event: %j`, event);
-
     let hash = await unityDAO.insertTransferEvent(event);
 
-    // logger.info("Val: " + y);
+    logger.info("hash: " + hash);
 }
 
 module.exports = {

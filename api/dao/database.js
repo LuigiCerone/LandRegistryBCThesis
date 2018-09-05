@@ -13,7 +13,14 @@ module.exports = {
         // Deve tornare una promise.
         try {
             const orbitdb = new OrbitDB(ipfs);
-            db = await orbitdb.docstore('land_registry');
+
+            const access = {
+                // Give write access to ourselves
+                write: [orbitdb.key.getPublic('hex')],
+            };
+
+
+            db = await orbitdb.docstore('land_registry', access);
         }
         catch (error) {
             logger.error("" + error);
