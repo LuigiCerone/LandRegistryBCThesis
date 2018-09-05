@@ -60,12 +60,13 @@ class SearchLand extends React.Component {
                 <form onSubmit={this.onSubmit} className="form">
                     <div className="row">
                         <div className="col-md-9 form-group">
-                            <input type="text" className="form-control" value={this.state.address} placeholder="Address"
+                            <input type="text" className="form-control text-lowercase" value={this.state.address}
+                                   placeholder="Address"
                                    name="address"
                                    onChange={this.onSearchChange} required/>
                         </div>
                         <div className="col-md-3 form-group">
-                            <input type="submit" className="btn btn-primary" value="Get lands"/>
+                            <input type="submit" className="btn btn-secondary" value="Get lands"/>
                         </div>
                     </div>
                 </form>

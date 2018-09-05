@@ -1,6 +1,7 @@
 import React from "react";
 import './AddLand.css';
 import Unity from "../../model/Unity";
+import DuplicateException from "../../model/DuplicateException";
 import web3 from '../../utils/web3.wrapper';
 import {loggerContractAddress, UnityContract, UnityContractByteCode} from '../../utils/costant';
 import Modal from '../Modal/Modal';
@@ -36,7 +37,6 @@ class AddLand extends React.Component {
     hideCompletedModal() {
         this.setState({show: false});
     };
-
 
     showErrorModal() {
         this.setState({error: true});
@@ -93,7 +93,7 @@ class AddLand extends React.Component {
         let landInfo = await this.isDuplicate(landId);
         if (landInfo != null) {
             console.log(landInfo);
-            throw new this.DuplicateException(landInfo);
+            throw new DuplicateException(landInfo);
         } else {
             ownerAddress = ownerAddress.toString().toLowerCase();
             // We need to create a new unity.
@@ -101,35 +101,30 @@ class AddLand extends React.Component {
             let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
 
             // Now I need to insert newUnity into the contract.
-            try {
-                let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
-                console.log("Nonce value is: " + nonce);
-                let newContractInstance = await UnityContract.deploy({
-                    data: UnityContractByteCode,
-                    // (district, document, landParcel, subaltern, ownerAddress)
-                    arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                        newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
-                })
-                    .send({
-                        from: web3.eth.defaultAccount,
-                        nonce: web3.utils.toHex(nonce),
-                        // estimated gas 804653
-                        gas: web3.utils.toHex(1200000)
-                    });
-                console.log("New contract address is: " + newContractInstance.options.address);
+            let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
+            console.log("Nonce value is: " + nonce);
+            let newContractInstance = await UnityContract.deploy({
+                data: UnityContractByteCode,
+                // (district, document, landParcel, subaltern, ownerAddress)
+                arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
+                    newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
+            })
+                .send({
+                    from: web3.eth.defaultAccount,
+                    nonce: web3.utils.toHex(nonce),
+                    // estimated gas 804653
+                    gas: web3.utils.toHex(1200000)
+                });
+            console.log("New contract address is: " + newContractInstance.options.address);
 
 
-                // let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
-                //     from: web3.eth.defaultAccount,
-                //     nonce: web3.utils.toHex(++nonce),
-                //     gas: web3.utils.toHex(300000)
-                // });
-                // console.log(result);
-
-            } catch (error) {
-                console.error("" + error);
-            }
+            // let result = await newContractInstance.methods.insertLand(web3.utils.asciiToHex(newUnity._district), newUnity._document,
+            //     newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress).send({
+            //     from: web3.eth.defaultAccount,
+            //     nonce: web3.utils.toHex(++nonce),
+            //     gas: web3.utils.toHex(300000)
+            // });
+            // console.log(result);
         }
     }
 
@@ -147,10 +142,6 @@ class AddLand extends React.Component {
         }
     }
 
-    DuplicateException(message) {
-        this.message = message;
-        this.name = 'DuplicateException';
-    }
 
     render() {
         return (
@@ -192,11 +183,12 @@ class AddLand extends React.Component {
 
                     <div className="form-group">
                         <label htmlFor="ownerAddress">Owner Address: </label>
-                        <input type="text" className="form-control" placeholder="Owner address" id="ownerAddress"
+                        <input type="text" className="form-control text-lowercase" placeholder="Owner address"
+                               id="ownerAddress"
                                name="ownerAddress" required/>
                     </div>
 
-                    <input className="btn btn-primary" type="submit" value="Add land"/>
+                    <input className="btn btn-secondary" type="submit" value="Add land"/>
                 </form>
                 <Modal error='false' show={this.state.show} handleClose={this.hideCompletedModal}>
                     <p>New land has been correctly inserted into the blockchain!</p>

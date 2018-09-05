@@ -61,12 +61,12 @@ class HistorySearch extends React.Component {
                 <form onSubmit={this.onSubmit} className="form">
                     <div className="row">
                         <div className="col-md-6 form-group">
-                            <input type="number" value={this.state.landId} placeholder="landId"
+                            <input type="number" value={this.state.landId} placeholder="Land id"
                                    name="landId" className="form-control"
                                    onChange={this.onSearchChange} required/>
                         </div>
                         <div className="col-md-3 form-group">
-                            <input type="submit" className="btn btn-primary" value="Get history"/>
+                            <input type="submit" className="btn btn-secondary" value="Get history"/>
                         </div>
                     </div>
                 </form>

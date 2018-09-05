@@ -19,13 +19,10 @@ module.exports = {
         logger.info(`Running mode ${env}`);
 
         // Setup database.
-        let x = await unityController.setupDatabase();
+        await unityController.setupDatabase();
 
         //Serve static assets (js, css, ...)
         app.use(express.static('app/dist'));
-
-        //Serve contract artifact files (ex: ToDo.json)
-        // app.use(express.static('build/contracts'));
 
         // Setup body parser.
         app.use(bodyParser.json());
@@ -57,7 +54,6 @@ module.exports = {
             res.status(404);
             res.send('Oops... this URL does not exist');
         });
-
 
         //Start the server
         app.listen(app.get('port'), () => {

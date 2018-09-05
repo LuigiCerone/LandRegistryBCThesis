@@ -12,25 +12,43 @@ class TransferLand extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            error: false,
+            done: false,
+            show: false
+        };
+        // For completed modal.
+        this.showCompletedModal = this.showCompletedModal.bind(this);
+        this.hideCompletedModal = this.hideCompletedModal.bind(this);
 
-        this.onFormSubmit = this.onFormSubmit.bind(this);
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
+        // For error modal.
+        this.showErrorModal = this.showErrorModal.bind(this);
+        this.hideErrorModal = this.hideErrorModal.bind(this);
+
         this.resetDone = this.resetDone.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    showModal() {
+    showCompletedModal() {
         this.setState({show: true});
     };
 
-    hideModal() {
+    hideCompletedModal() {
         this.setState({show: false});
+    };
+
+    showErrorModal() {
+        this.setState({error: true});
+    };
+
+    hideErrorModal() {
+        this.setState({error: false});
     };
 
     resetDone() {
         this.setState({done: false});
     }
+
 
     onFormSubmit(event) {
         event.preventDefault();
@@ -45,43 +63,47 @@ class TransferLand extends React.Component {
                 this.setState({
                     done: true
                 });
-                return this.showModal();
+                return this.showCompletedModal();
             }
-        ).catch((err) => console.error(err));
+        ).catch((err) => {
+            this.showErrorModal();
+            console.error(err);
+        });
 
     }
 
     async transfer({landId, ownerAddress, buyerAddress}) {
-        try {
-            // (1) get contract address by searching with landId.
-            // (2) check owner address.
-            // (3) load smart contract somehow.
-            // (4) change owner address in smart contract.
-            // (5) store the history in the db.
+        // (1) get contract address by searching with landId.
+        // (2) check owner address.
+        // (3) load smart contract somehow.
+        // (4) change owner address in smart contract.
+        // (5) store the history in the db.
 
-            let response = await fetch('/rest/v1/getLandById?id=' + landId + "&addr=" + ownerAddress);
-            let contractStored = await response.json();
+        let response = await fetch('/rest/v1/getLandById?id=' + landId + "&addr=" + ownerAddress);
+        let contractStored = await response.json();
 
-            console.log(contractStored);
-            let contractAddress = contractStored[0].contract.contractAddress;
+        console.log(contractStored);
+        let contractAddress = contractStored[0].contract.contractAddress;
 
-            let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
+        let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
 
-            await UnityContract.methods.transferLand(buyerAddress.toLowerCase(), contractStored[0].contract.land.landParcel).send({
-                from: ownerAddress,
-                gas: 300000
-            });
-        } catch (error) {
-            console.log("" + error);
-        }
+        await UnityContract.methods.transferLand(buyerAddress.toLowerCase(), contractStored[0].contract.land.landParcel).send({
+            from: ownerAddress,
+            gas: 300000
+        });
+
     }
 
     render() {
         return (
             <div id="transferLandSection">
-                <Modal show={this.state.show} handleClose={this.hideModal}>
+                <Modal error='false' show={this.state.show} handleClose={this.hideModal}>
                     <p>Land's ownership has been successfully transferred!</p>
                 </Modal>
+                <Modal error='true' show={this.state.error} handleClose={this.hideErrorModal}>
+                    <p>Error</p>
+                </Modal>
+
                 <h2>Transfer land</h2>
                 <form onInput={this.resetDone} onSubmit={this.onFormSubmit} className="form">
                     <div className="row">
@@ -92,18 +114,20 @@ class TransferLand extends React.Component {
                         </div>
                         <div className="col-md-8 form-group">
                             <label htmlFor="ownerAddress">Owner Address: </label>
-                            <input type="text" className="form-control" placeholder="Owner address" id="ownerAddress"
+                            <input type="text" className="form-control text-lowercase" placeholder="Owner address"
+                                   id="ownerAddress"
                                    name="ownerAddress" required/>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-8 form-group">
                             <label htmlFor="buyerAddress">Buyer Address: </label>
-                            <input type="text" className="form-control" placeholder="Buyer address" id="buyerAddress"
+                            <input type="text" className="form-control text-lowercase" placeholder="Buyer address"
+                                   id="buyerAddress"
                                    name="buyerAddress" required/>
                         </div>
                         <div className="col-md-4  form-group input">
-                            <input className="btn btn-primary" type="submit" value="Transfer"/>
+                            <input className="btn btn-secondary" type="submit" value="Transfer"/>
                         </div>
                     </div>
                 </form>

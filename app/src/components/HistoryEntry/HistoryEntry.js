@@ -19,6 +19,7 @@ const HistoryEntry = props => {
     else {
         options = props.results.map((item, index) => {
                 // console.log(index);
+                // If this is the last item then it is the current owner.
                 if (index === props.results.length - 1) {
                     return (
                         <div className="card" key={item.timestamp}>
