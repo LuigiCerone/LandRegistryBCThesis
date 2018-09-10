@@ -42,7 +42,7 @@ contract('Unity contract test', async (accounts) => {
             let transferGas = await instance.transferLand(accounts[1], landParcelRandom);
 
             // console.log("Insertion gas cost: " + JSON.stringify(insertionGas), ", transfer gas cost: " + JSON.stringify(transferGas));
-            console.log("Insertion gas cost: " + insertionGas.receipt.gasUsed, ", transfer gas cost: " + transferGas.receipt.gasUsed);
+            console.log("Insertion gas cost: " + insertionGas.receipt.gasUsed, ",transfer gas cost: " + transferGas.receipt.gasUsed);
         }
     });
 });
