@@ -4,7 +4,6 @@ pragma solidity ^0.4.23;
 contract Unity {
 
     // Define the structure of a land.
-    // TODO Add all relevant data.
     struct Land {
         bytes2 district;
         uint document;

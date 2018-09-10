@@ -21,10 +21,10 @@ const unityController = {
 
         // First we need to create a new unity by using the data stored in req.body.
         let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
-        // debugger;
+
         // Now I need to insert newUnity into the contract.
         try {
-            // let [insert, event] = await unityDAO.insertUnity(newUnity);
+
             let nonce = await web3.eth.getTransactionCount(web3.eth.defaultAccount);
             console.log("Nonce value is: " + nonce);
 
@@ -60,7 +60,7 @@ const unityController = {
 
             // If here then correctly inserted into the contract.
             // console.log(insert);
-            // TODO Update UI.
+
         } catch (error) {
             console.log("" + error);
         }
@@ -104,10 +104,11 @@ const unityController = {
 
     async transfer(landParcel, ownerAddress, buyerAddress) {
         try {
-            await UnityContract.methods.transferLand(buyerAddress, landParcel).send({
+            let result = await UnityContract.methods.transferLand(buyerAddress, landParcel).send({
                 from: ownerAddress,
                 gas: 300000
             });
+            console.log(result);
         } catch (error) {
             console.log("" + error);
         }
