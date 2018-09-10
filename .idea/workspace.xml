@@ -36,7 +36,7 @@
     <session id="-50838742">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="4" />
@@ -560,12 +560,12 @@
       <workItem from="1536135077326" duration="22000" />
       <workItem from="1536137374592" duration="292000" />
       <workItem from="1536138177139" duration="3901000" />
-      <workItem from="1536155994053" duration="4056000" />
+      <workItem from="1536155994053" duration="4079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197774000" />
+    <option name="totallyTimeSpent" value="197797000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -578,9 +578,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="-7" width="1331" height="775" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.14939025" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.14939025" />
       <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.16741072" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -592,7 +591,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32917318" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4992378" weight="0.17784712" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4992378" visible="true" weight="0.17784712" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007622" side_tool="true" weight="0.5885023" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32917318" />
       <window_info anchor="bottom" id="Quokka" order="11" sideWeight="0.4985119" weight="0.32605305" />
