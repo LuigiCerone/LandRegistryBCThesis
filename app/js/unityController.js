@@ -20,6 +20,10 @@ const unityController = {
     // district, document, landParcel, subaltern, ownerAddress.
     async insertUnity(district, document, landParcel, subaltern, ownerAddress) {
 
+        if (!web3.utils.isAddress(ownerAddress)) {
+            console.log("Wrong address/checksum");
+            return;
+        }
         // First we need to create a new unity by using the data stored in req.body.
         let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
         // debugger;
