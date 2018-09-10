@@ -99,10 +99,11 @@ const unityController = {
 
             let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
 
-            await UnityContract.methods.transferLand(buyerAddress, contractStored[0].contract.land.landParcel).send({
+            let result = await UnityContract.methods.transferLand(buyerAddress, contractStored[0].contract.land.landParcel).send({
                 from: ownerAddress,
                 gas: 300000
             });
+            console.log(result);
         } catch (error) {
             console.log("" + error);
         }

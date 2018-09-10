@@ -1,20 +1,28 @@
 const Unity = artifacts.require("Unity");
+const Logger = artifacts.require("Logger");
+
+const fetch = require('node-fetch');
 
 // SINTASSI truffle-contract!!
 
 contract('Unity contract test', async (accounts) => {
     it("Should insert a land in the first account", async () => {
-        let instance = await Unity.deployed();
-        console.log("Contract address is: " + instance.address);
         console.log("First account address is: " + accounts[0]);
 
-        // let nonce = await web3.eth.getTransactionCount(accounts[0]);
+        let logger = await Logger.deployed();
+        console.log(`Logger address is ${logger.address}`);
 
-        // Insert a fake land for accounts[0].
-        let tx = await instance.addLand("0x4151", 12, 123456789, 32, accounts[0]);
+        let instance = await Unity.new(logger.address, "0x4151", 12, 123456789, 32, accounts[0]);
+
+        let receipt = await web3.eth.getTransactionReceipt(instance.transactionHash);
+
+        console.log(`Gas used to deploy is: ${receipt.gasUsed}`);
 
         // Check if account[0] has only 1 land related.
-        let numberOfLands = await instance.getNoOfLands(accounts[0]);
+        let response = await fetch('http://localhost:3000/rest/v1/getLandsForAddress?addr=' + accounts[0]);
+        let result = await response.json();
+
+        let numberOfLands = result.length;
         assert.equal(1, numberOfLands);
     });
 
@@ -31,18 +39,17 @@ contract('Unity contract test', async (accounts) => {
     // });
 
     it("Should estimate gas usage for fake transfers", async () => {
-        let instance = await Unity.deployed();
-
         const NUM_TRANSFERS = 100;
+
+        let logger = await Logger.deployed();
+        console.log(`Logger address is ${logger.address}`);
 
         for (let i = 0; i < NUM_TRANSFERS; i++) {
             let landParcelRandom = Math.floor(Math.random() * 10000000) + 1;
-            let insertionGas = await instance.addLand("0x4151", 12, landParcelRandom, 32, accounts[0]);
+            let instance = await Unity.new(logger.address, "0x4151", 12, landParcelRandom, 32, accounts[0]);
 
-            let transferGas = await instance.transferLand(accounts[1], landParcelRandom);
-
-            // console.log("Insertion gas cost: " + JSON.stringify(insertionGas), ", transfer gas cost: " + JSON.stringify(transferGas));
-            console.log("Insertion gas cost: " + insertionGas.receipt.gasUsed, ", transfer gas cost: " + transferGas.receipt.gasUsed);
+            let receipt = await web3.eth.getTransactionReceipt(instance.transactionHash);
+            console.log(`Gas used to deploy is: ${receipt.gasUsed}`);
         }
     });
 });
