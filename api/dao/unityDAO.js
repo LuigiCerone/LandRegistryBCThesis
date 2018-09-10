@@ -120,7 +120,7 @@ module.exports = {
         if (db == null) {
             this.getDatabase();
         }
-        return db.query((doc) => doc.contract.land.ownerAddress.toLowerCase() === searchAddress.toLowerCase()).map((item) => item.contract.land);
+        return db.query((doc) => doc.contract.land.ownerAddress === web3.utils.toChecksumAddress(searchAddress)).map((item) => item.contract.land);
     },
 
     getContractInfo() {

@@ -56,7 +56,6 @@ class AddLand extends React.Component {
 
         if (this.state.done) return;
 
-        // TODO Add validation.
 
         this.insertUnity({
             district: event.target.district.value,
@@ -95,9 +94,7 @@ class AddLand extends React.Component {
             console.log(landInfo);
             throw new DuplicateException(landInfo);
         } else {
-            ownerAddress = ownerAddress.toString().toLowerCase();
             // We need to create a new unity.
-
             let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
 
             // Now I need to insert newUnity into the contract.
@@ -107,7 +104,7 @@ class AddLand extends React.Component {
                 data: UnityContractByteCode,
                 // (district, document, landParcel, subaltern, ownerAddress)
                 arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                    newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
+                    newUnity._landParcel, newUnity._subaltern, web3.utils.toChecksumAddress(newUnity._ownerAddress)]
             })
                 .send({
                     from: web3.eth.defaultAccount,
@@ -183,7 +180,7 @@ class AddLand extends React.Component {
 
                     <div className="form-group">
                         <label htmlFor="ownerAddress">Owner Address: </label>
-                        <input type="text" className="form-control text-lowercase" placeholder="Owner address"
+                        <input type="text" className="form-control" placeholder="Owner address"
                                id="ownerAddress"
                                name="ownerAddress" required/>
                     </div>

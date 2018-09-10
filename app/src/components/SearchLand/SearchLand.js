@@ -3,6 +3,7 @@ import "./SearchLand.css";
 
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
+import web3 from "../../utils/web3.wrapper";
 
 
 class SearchLand extends React.Component {
@@ -42,7 +43,7 @@ class SearchLand extends React.Component {
         // We need to query the server in order to get the lands' list.
         try {
             let response = await
-                fetch('/rest/v1/getLandsForAddress?addr=' + addressToSearchFor);
+                fetch('/rest/v1/getLandsForAddress?addr=' + web3.utils.toChecksumAddress(addressToSearchFor));
             if (!response.ok) {
                 return null;
             } else
@@ -60,7 +61,7 @@ class SearchLand extends React.Component {
                 <form onSubmit={this.onSubmit} className="form">
                     <div className="row">
                         <div className="col-md-9 form-group">
-                            <input type="text" className="form-control text-lowercase" value={this.state.address}
+                            <input type="text" className="form-control" value={this.state.address}
                                    placeholder="Address"
                                    name="address"
                                    onChange={this.onSearchChange} required/>

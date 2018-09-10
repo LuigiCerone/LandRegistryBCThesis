@@ -58,7 +58,7 @@ class TransferLand extends React.Component {
         this.transfer({
             landId: event.target.landId.value,
             ownerAddress: event.target.ownerAddress.value,
-            buyerAddress: event.target.buyerAddress.value.toLowerCase(),
+            buyerAddress: event.target.buyerAddress.value,
         }).then(() => {
                 this.setState({
                     done: true
@@ -79,7 +79,7 @@ class TransferLand extends React.Component {
         // (4) change owner address in smart contract.
         // (5) store the history in the db.
 
-        let response = await fetch('/rest/v1/getLandById?id=' + landId + "&addr=" + ownerAddress);
+        let response = await fetch('/rest/v1/getLandById?id=' + landId + "&addr=" + web3.utils.toChecksumAddress(ownerAddress));
         let contractStored = await response.json();
 
         console.log(contractStored);
@@ -87,8 +87,8 @@ class TransferLand extends React.Component {
 
         let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
 
-        await UnityContract.methods.transferLand(buyerAddress.toLowerCase(), contractStored[0].contract.land.landParcel).send({
-            from: ownerAddress,
+        await UnityContract.methods.transferLand(web3.utils.toChecksumAddress(buyerAddress), contractStored[0].contract.land.landParcel).send({
+            from: web3.utils.toChecksumAddress(ownerAddress),
             gas: 300000
         });
 
@@ -97,7 +97,7 @@ class TransferLand extends React.Component {
     render() {
         return (
             <div id="transferLandSection">
-                <Modal error='false' show={this.state.show} handleClose={this.hideModal}>
+                <Modal error='false' show={this.state.show} handleClose={this.hideCompletedModal}>
                     <p>Land's ownership has been successfully transferred!</p>
                 </Modal>
                 <Modal error='true' show={this.state.error} handleClose={this.hideErrorModal}>
@@ -114,7 +114,7 @@ class TransferLand extends React.Component {
                         </div>
                         <div className="col-md-8 form-group">
                             <label htmlFor="ownerAddress">Owner Address: </label>
-                            <input type="text" className="form-control text-lowercase" placeholder="Owner address"
+                            <input type="text" className="form-control" placeholder="Owner address"
                                    id="ownerAddress"
                                    name="ownerAddress" required/>
                         </div>
@@ -122,7 +122,7 @@ class TransferLand extends React.Component {
                     <div className="row">
                         <div className="col-md-8 form-group">
                             <label htmlFor="buyerAddress">Buyer Address: </label>
-                            <input type="text" className="form-control text-lowercase" placeholder="Buyer address"
+                            <input type="text" className="form-control" placeholder="Buyer address"
                                    id="buyerAddress"
                                    name="buyerAddress" required/>
                         </div>
