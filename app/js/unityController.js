@@ -25,7 +25,7 @@ const unityController = {
             return;
         }
         // First we need to create a new unity by using the data stored in req.body.
-        let newUnity = new Unity(district, document, landParcel, subaltern, ownerAddress);
+        let newUnity = new Unity(district, document, landParcel, subaltern, web3.utils.toChecksumAddress(ownerAddress));
         // debugger;
         // Now I need to insert newUnity into the contract.
         try {
@@ -36,10 +36,10 @@ const unityController = {
                 data: UnityAbi.bytecode,
                 // (district, document, landParcel, subaltern, ownerAddress)
                 arguments: [loggerContractAddress, web3.utils.asciiToHex(newUnity._district), newUnity._document,
-                    newUnity._landParcel, newUnity._subaltern, newUnity._ownerAddress]
+                    newUnity._landParcel, newUnity._subaltern, web3.utils.toChecksumAddress(newUnity._ownerAddress)]
             })
                 .send({
-                    from: web3.eth.defaultAccount,
+                    from: web3.utils.toChecksumAddress(web3.eth.defaultAccount),
                     nonce: web3.utils.toHex(nonce),
                     // estimated gas 804653
                     gas: web3.utils.toHex(1200000)
@@ -79,7 +79,7 @@ const unityController = {
 
     async getListOfLands(searchAddress) {
         try {
-            let response = await fetch('/rest/v1/getLandsForAddress?addr=' + searchAddress);
+            let response = await fetch('/rest/v1/getLandsForAddress?addr=' + web3.utils.toChecksumAddress(searchAddress));
             let result = await response.json();
             console.log(result);
         } catch (error) {
@@ -103,8 +103,8 @@ const unityController = {
 
             let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
 
-            let result = await UnityContract.methods.transferLand(buyerAddress, contractStored[0].contract.land.landParcel).send({
-                from: ownerAddress,
+            let result = await UnityContract.methods.transferLand(web3.utils.toChecksumAddress(buyerAddress), contractStored[0].contract.land.landParcel).send({
+                from: web3.utils.toChecksumAddress(ownerAddress),
                 gas: 300000
             });
             console.log(result);
