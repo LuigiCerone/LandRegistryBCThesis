@@ -2686,8 +2686,14 @@
       "links": {},
       "address": "0xee65c99799bf4136f04d900054a8e647d4230df1",
       "transactionHash": "0x3082e0b7068552646f5f767c0712516335632a8ed2defac617952c5dc8eb2f77"
+    },
+    "1536650780279": {
+      "events": {},
+      "links": {},
+      "address": "0xcb6c92cf0ebe3446ca5008340dca18f4fc7fcb91",
+      "transactionHash": "0xdbe67627ced7281a4284cefba634870d658101ec38e0fd7fd7e487287d3caeae"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-09-10T14:40:55.001Z"
+  "updatedAt": "2018-09-11T07:26:53.935Z"
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/debian-luigi/Documenti/ThesisTest/firstTest
+cd /home/luigi-cer1/Documenti/ThesisCode/
 echo $PWD " ..starting"
 
 # First we need to start ganache-cli to create a local blockchain.
@@ -9,7 +9,6 @@ gnome-terminal --window-with-profile=tesi -e "ganache-cli"
 sleep 10
 
 # Second we need to start ipfs daemon.
-
 gnome-terminal --window-with-profile=tesi -e "ipfs daemon --enable-pubsub-experiment"
 sleep 10
 

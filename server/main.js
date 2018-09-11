@@ -39,12 +39,6 @@ module.exports = {
         // Setup logger for express HTTP requests.
         app.use(morgan('dev'));
 
-        // //Serve index.html
-        // app.get('/', (req, res) => {
-        //     res.sendFile(__dirname + '/app/index.html');
-        // });
-
-
         // Subscribe to event.
         unityController.subscribeToEvents();
 
