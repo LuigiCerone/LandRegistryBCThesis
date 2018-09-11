@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/unityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/unityController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000330.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000332.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000335.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/000338.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/web3.wrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/web3.wrapper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/MANIFEST-000337" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/LOG.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmddLECTJVqU8bUkFRsLBTQjAr8NfYKUu28JP1YEuXM8eS/test/MANIFEST-000340" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,7 +23,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="96c2d279-9978-40d6-b737-a27bbcb20a76" value="1" />
-          <entry key="js" value="4" />
+          <entry key="js" value="5" />
           <entry key="json" value="1" />
           <entry key="sol" value="1" />
         </counts>
@@ -38,14 +31,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="4" />
+          <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Solidity file" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="495" />
+          <entry key="js" value="521" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -58,7 +51,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="495" />
+          <entry key="JavaScript" value="521" />
         </counts>
       </usages-collector>
     </session>
@@ -72,49 +65,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ethereum/contracts/Unity.sol">
+        <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+            <state relative-caret-position="228">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="313">
+              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/dao/database.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/start.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/js/unityController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="27" column="118" selection-start-line="27" selection-start-column="118" selection-end-line="27" selection-end-column="118" />
-              <folding>
-                <element signature="e#14#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ethereum/test/unityTest.js">
+        <entry file="file://$PROJECT_DIR$/app/js/web3.wrapper.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/dist/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -165,7 +182,6 @@
         <option value="$PROJECT_DIR$/ethereum/migrations/2_deploy_unit.js" />
         <option value="$PROJECT_DIR$/ethereum/migrations/2_deploy_logger.js" />
         <option value="$PROJECT_DIR$/server/web3.js" />
-        <option value="$PROJECT_DIR$/app/js/web3.wrapper.js" />
         <option value="$PROJECT_DIR$/api/dao/loggerDAO.js" />
         <option value="$PROJECT_DIR$/ethereum/migrations/1_initial_migration.js" />
         <option value="$PROJECT_DIR$/api/dao/database.js" />
@@ -180,6 +196,7 @@
         <option value="$PROJECT_DIR$/nodemon.json" />
         <option value="$PROJECT_DIR$/ethereum/test/unityTest.js" />
         <option value="$PROJECT_DIR$/app/js/unityController.js" />
+        <option value="$PROJECT_DIR$/app/js/web3.wrapper.js" />
       </list>
     </option>
   </component>
@@ -213,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,7 +240,24 @@
             <path>
               <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
@@ -264,6 +297,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,7 +388,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135962000" />
+    <option name="totallyTimeSpent" value="136016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,7 +401,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="-7" width="1331" height="775" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.14939025" />
       <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.16741072" />
@@ -383,7 +416,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32917318" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5014881" side_tool="true" weight="0.32724252" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.5014881" side_tool="true" visible="true" weight="0.32724252" />
       <window_info anchor="bottom" id="Quokka" order="11" sideWeight="0.4985119" weight="0.32724252" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -573,8 +606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="60">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -587,13 +620,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/migrations/2_deploy_unit.js" />
     <entry file="file://$PROJECT_DIR$/ethereum/migrations/2_deploy_logger.js" />
-    <entry file="file://$PROJECT_DIR$/app/js/web3.wrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -666,24 +692,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/dao/database.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="195">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/96c2d279-9978-40d6-b737-a27bbcb20a76">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/start.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="390">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
@@ -705,7 +724,7 @@
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -725,15 +744,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+        <state relative-caret-position="228">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+        <state relative-caret-position="313">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -758,6 +777,20 @@
           <folding>
             <element signature="e#14#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/web3.wrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
