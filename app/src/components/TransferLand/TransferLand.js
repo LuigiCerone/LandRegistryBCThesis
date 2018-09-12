@@ -80,18 +80,23 @@ class TransferLand extends React.Component {
         // (5) store the history in the db.
 
         let response = await fetch('/rest/v1/getLandById?id=' + landId + "&addr=" + web3.utils.toChecksumAddress(ownerAddress));
-        let contractStored = await response.json();
+        if (!response.ok) {
+            return Promise.reject("Land not found");
+        }
+        else {
+            let contractStored = await response.json();
 
-        console.log(contractStored);
-        let contractAddress = contractStored[0].contract.contractAddress;
+            console.log(contractStored);
+            let contractAddress = contractStored[0].contract.contractAddress;
 
-        let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
+            let UnityContract = new web3.eth.Contract(UnityAbi.abi, contractAddress);
 
-        await UnityContract.methods.transferLand(web3.utils.toChecksumAddress(buyerAddress), contractStored[0].contract.land.landParcel).send({
-            from: web3.utils.toChecksumAddress(ownerAddress),
-            gas: 300000
-        });
-
+            let result = await UnityContract.methods.transferLand(web3.utils.toChecksumAddress(buyerAddress), contractStored[0].contract.land.landParcel, contractStored[0].contract.land.subaltern).send({
+                from: web3.utils.toChecksumAddress(ownerAddress),
+                gas: 300000
+            });
+            console.log(result);
+        }
     }
 
     render() {

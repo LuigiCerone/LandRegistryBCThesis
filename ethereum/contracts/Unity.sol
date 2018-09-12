@@ -62,15 +62,15 @@ contract Unity {
     event Transfer(address indexed _from, address indexed _to, uint _landParcel);
 
     // Modifier to check if the address of the calling (from field in the transaction obj) is the owner.
-    modifier isOwner{
-        require(msg.sender == owner, "Not authorized");
+    modifier isOwner(){
+        require(msg.sender == _land.ownerAddress, "This land is not of the caller");
         _;
     }
 
     // Caller (owner/anyone) can transfer a land to the provided buyer if the caller is the owner of the requested land.
-    function transferLand(address _landBuyer, uint _landParcel) public returns (bool) {
+    function transferLand(address _landBuyer, uint _landParcel, uint _subaltern) isOwner public returns (bool) {
         // If so, then the land ID is in owner's collection.
-        if (_land.landParcel == _landParcel) {
+        if (_land.landParcel == _landParcel && _land.subaltern == _subaltern) {
             _land.ownerAddress = _landBuyer;
 
             // Insert movement in the history mapping.
@@ -81,7 +81,7 @@ contract Unity {
             __history.push(myEntry);
 
             // Inform the backend or who is subscribed to the event.
-//            emit Transfer(msg.sender, _landBuyer, _landParcel);
+            //            emit Transfer(msg.sender, _landBuyer, _landParcel);
             logger.emitTransfer(address(this), _land.landParcel, _land.subaltern, _landBuyer);
             return true;
         }

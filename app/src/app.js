@@ -26,9 +26,9 @@ ReactDOM.render(
         <hr/>
         <HistorySearch/>
         <hr/>
-        <SearchLand/>
-        <hr/>
         <TransferLand/>
+        <hr/>
+        <SearchLand/>
     </div>
     ,
     document.getElementById("app"));
