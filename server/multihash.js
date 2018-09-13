@@ -52,15 +52,15 @@ module.exports = {
   /**
    * Parse Solidity response in array to a Multihash object
    *
-   * @param {array} response Response array from Solidity
+   * @param {object} response Response object from Solidity
    * @returns {Multihash} multihash object
    */
   parseContractResponse(response) {
-    const [digest, hashFunction, size] = response;
+    const [digest, hashFunction, size] = Object.values(response);
     return {
       digest,
-      hashFunction: hashFunction.toNumber(),
-      size: size.toNumber(),
+      hashFunction: parseInt(hashFunction),
+      size: parseInt(size),
     };
   },
 
@@ -71,6 +71,6 @@ module.exports = {
    * @returns {string} base58 encoded multihash string
    */
   getMultihashFromContractResponse(response) {
-    return getMultihashFromBytes32(parseContractResponse(response));
+    return this.getMultihashFromBytes32(this.parseContractResponse(response));
   },
 };

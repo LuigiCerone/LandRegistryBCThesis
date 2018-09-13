@@ -4,6 +4,8 @@ const logger = require('../../server/logger');
 const unityDAO = require('../dao/unityDAO');
 const loggerDAO = require('../dao/loggerDAO');
 const multihash = require('../../server/multihash');
+const web3 = require('../../server/web3');
+const unity_abi = require('../../ethereum/build/contracts/Unity');
 
 let db = unityDAO.getDatabase();
 

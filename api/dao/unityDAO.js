@@ -1,9 +1,8 @@
-const Unity = require('../../ethereum/build/contracts/Unity');
-
 const web3 = require('../../server/web3');
 const unity_abi = require('../../ethereum/build/contracts/Unity');
 const logger = require('../../server/logger');
 const database = require('./database');
+const multihash = require('../../server/multihash');
 
 var UnityContract = new web3.eth.Contract(unity_abi.abi);
 
@@ -76,7 +75,7 @@ module.exports = {
   },
 
   async insertIFPSHash(multihash, contractAddress) {
-    let UnityContract = new web3.eth.Contract(Unity.abi, contractAddress);
+    let UnityContract = new web3.eth.Contract(unity_abi.abi, contractAddress);
 
     return await UnityContract.methods.setIPFS(multihash.digest,
         multihash.hashFunction, multihash.size).send({
@@ -111,13 +110,50 @@ module.exports = {
         this.getDatabase();
       }
       let result = db.query((doc) => doc._id === id, {fullOp: true});
-      console.log(result);
-      if (result.length !== 0)
-        return result[0].payload.value.contract.land.history;
-      else return null;
+      // console.log(result);
+      if (result.length !== 0) {
+        // Now we need to check if the hash stored in the smart contract is the
+        // same as the one stored in the DB.
+
+        // In order to get the hash stored in the blockchain we need to
+        // instantiate the smart contract.
+        this.checkIPFSHash(result[0].hash,
+            result[0].payload.value.contract.contractAddress).then((data) => {
+          console.log(data);
+          if (data)
+            return result[0].payload.value.contract.land.history;
+          else return null;
+        });
+      }
+      else
+        return null;
     } catch (error) {
       logger.error('' + error);
     }
+  },
+
+  // Get the contract by using the contractAddress, get the multihash, parse it
+  // and check it with the given hash.
+  async checkIPFSHash(givenHash, contractAddress) {
+    logger.info(`Fetching the IPFS hash for smart contract ${contractAddress}`);
+
+    let UnityContract = new web3.eth.Contract(unity_abi.abi, contractAddress);
+
+    let result = await UnityContract.methods.getIPFS().call();
+    // console.log(result);
+    let ipfsHash = multihash.getMultihashFromContractResponse(result);
+    console.log(ipfsHash);
+
+    return ipfsHash === givenHash;
+  },
+
+  async getIPFSHash(contractAddress) {
+    logger.info(`Fetching the IPFS hash for smart contract ${contractAddress}`);
+
+    let UnityContract = new web3.eth.Contract(unity_abi.abi, contractAddress);
+
+    let result = await UnityContract.methods.getIPFS().call();
+
   },
 
   getLandById(id) {
@@ -138,15 +174,5 @@ module.exports = {
 
   getContractInfo() {
     return UnityContract;
-  },
-
-  async getList(address) {
-    let n = await
-        UnityContract.methods.getNoOfLands(address).call();
-    let promises = [];
-    for (let i = 0; i < n; i++) {
-      promises.push(UnityContract.methods.getLand(address, i).call());
-    }
-    return Promise.all(promises);
   },
 };
