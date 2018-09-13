@@ -3,21 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/unityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/unityController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dao/unityDAO.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/dao/unityDAO.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/contracts/Unity.sol" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/contracts/Unity.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000744.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000746.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000749.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000752.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000783.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/MANIFEST-000751" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/MANIFEST-000780" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,17 +30,20 @@
     <session id="-50838742">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="28" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="4" />
-          <entry key="project.open.time.13" value="6" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="5" />
+          <entry key="project.open.time.13" value="7" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,12 +52,12 @@
           <entry key="css" value="16" />
           <entry key="default" value="1" />
           <entry key="html" value="6" />
-          <entry key="js" value="84" />
+          <entry key="js" value="95" />
           <entry key="json" value="3" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
           <entry key="sh" value="2" />
-          <entry key="sol" value="4" />
+          <entry key="sol" value="5" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
@@ -66,9 +67,9 @@
           <entry key="CSS" value="16" />
           <entry key="HTML" value="6" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="84" />
+          <entry key="JavaScript" value="95" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Solidity file" value="3" />
+          <entry key="Solidity file" value="4" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
@@ -76,9 +77,9 @@
         <counts>
           <entry key="css" value="284" />
           <entry key="html" value="347" />
-          <entry key="js" value="5741" />
+          <entry key="js" value="6701" />
           <entry key="json" value="8" />
-          <entry key="sol" value="156" />
+          <entry key="sol" value="608" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -86,9 +87,9 @@
           <entry key="CSS" value="284" />
           <entry key="HTML" value="347" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="5741" />
+          <entry key="JavaScript" value="6701" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Solidity file" value="142" />
+          <entry key="Solidity file" value="594" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -102,11 +103,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="91" column="11" lean-forward="true" selection-start-line="91" selection-start-column="11" selection-end-line="97" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-645">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <state relative-caret-position="134">
+              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/multihash.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="24" column="18" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -114,44 +142,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ethereum/contracts/Unity.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="750">
+              <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/dist/index.html">
+        <entry file="file://$PROJECT_DIR$/node_modules/orbit-db-docstore/src/DocumentStore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/AddLand/AddLand.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="135" column="45" lean-forward="true" selection-start-line="132" selection-start-column="12" selection-end-line="135" selection-end-column="45" />
+            <state relative-caret-position="282">
+              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -160,7 +161,7 @@
         <entry file="file://$PROJECT_DIR$/start.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -187,7 +188,7 @@
         <entry file="file://$PROJECT_DIR$/server/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
-              <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -221,7 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/js/unityDAO.js" />
         <option value="$PROJECT_DIR$/ethereum/tests/unityTest.js" />
         <option value="$PROJECT_DIR$/app/js/Unity.js" />
         <option value="$PROJECT_DIR$/ethereum/test/unityTest.js" />
@@ -255,7 +255,6 @@
         <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.css" />
         <option value="$PROJECT_DIR$/app/src/components/Modal/Modal.css" />
         <option value="$PROJECT_DIR$/app/src/components/Modal/Modal.js" />
-        <option value="$PROJECT_DIR$/api/controller/unityController.js" />
         <option value="$PROJECT_DIR$/api/dao/database.js" />
         <option value="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" />
         <option value="$PROJECT_DIR$/app/src/model/DuplicateException.js" />
@@ -263,15 +262,17 @@
         <option value="$PROJECT_DIR$/app/src/components/HistorySearch/HistorySearch.js" />
         <option value="$PROJECT_DIR$/app/src/components/AddLand/AddLand.js" />
         <option value="$PROJECT_DIR$/app/src/components/SearchLand/SearchLand.js" />
-        <option value="$PROJECT_DIR$/api/dao/unityDAO.js" />
         <option value="$PROJECT_DIR$/app/dist/index.html" />
         <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/app/src/utils/web3.wrapper.js" />
         <option value="$PROJECT_DIR$/app/src/utils/costant.js" />
         <option value="$PROJECT_DIR$/app/src/app.js" />
-        <option value="$PROJECT_DIR$/ethereum/contracts/Unity.sol" />
         <option value="$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js" />
+        <option value="$PROJECT_DIR$/server/multihash.js" />
+        <option value="$PROJECT_DIR$/ethereum/contracts/Unity.sol" />
+        <option value="$PROJECT_DIR$/api/controller/unityController.js" />
+        <option value="$PROJECT_DIR$/api/dao/unityDAO.js" />
       </list>
     </option>
   </component>
@@ -305,6 +306,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -384,6 +386,12 @@
               <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
               <item name="ethereum" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
+              <item name="ethereum" type="462c0819:PsiDirectoryNode" />
               <item name="contracts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -412,7 +420,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,7 +430,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Solidity" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -523,12 +530,19 @@
       <workItem from="1536650213984" duration="937000" />
       <workItem from="1536659368002" duration="650000" />
       <workItem from="1536661708356" duration="3384000" />
-      <workItem from="1536744594977" duration="1268000" />
+      <workItem from="1536744594977" duration="1389000" />
+      <workItem from="1536760694777" duration="578000" />
+      <workItem from="1536761659240" duration="4484000" />
+      <workItem from="1536767145954" duration="48000" />
+      <workItem from="1536767216163" duration="7000" />
+      <workItem from="1536848851820" duration="1772000" />
+      <workItem from="1536850650845" duration="129000" />
+      <workItem from="1536850805337" duration="2127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205440000" />
+    <option name="totallyTimeSpent" value="214706000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -541,16 +555,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="-7" width="1331" height="775" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.15091464" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.15091464" />
       <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.16741072" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28861153" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43681747" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21840873" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44149765" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32917318" />
@@ -593,126 +606,131 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/dao/unityDAO.js</url>
+          <line>112</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/dao/unityDAO.js</url>
+          <line>115</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
-      <expression>
-        <expression-string>result.length === 0</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result.length</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>typeof result</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result ==</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result === [[]]</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result === []</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
       <expression>
         <expression-string>result</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>result !== []</expression-string>
+        <expression-string>multihash.getMultihashFromBytes32(result)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>let b = db.query((doc) =&gt; doc._id === id);
-var result = b
-    .map((item) =&gt; item.contract.land.history);</expression-string>
+        <expression-string>result[0].payload.value.contract.land.history</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Object.keys(this._index._index)
+      .map((e) =&gt; this._index.get(e, fullOp))
+      .filter(e =&gt; fullOp ? mapper(e.payload.value) : mapper(e))</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>fullOp</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Object.keys(this._index._index).map((e) =&gt; this._index.get(e, true))
+    .filter(doc =&gt; true ? mapper(doc.payload.value) : mapper(doc))</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Object.keys(this._index._index).map((e) =&gt; this._index.get(e, true))
+    .filter(item =&gt; true ? mapper(doc.payload.value) : mapper(doc
+    ))</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Object.keys(this._index._index).map((e) =&gt; this._index.get(e, true))
+    .filter(item =&gt; true ? mapper(item.payload.value) : mapper(item))</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Object.keys(this._index._index).map((e) =&gt; this._index.get(e, true))
+    .filter(item =&gt; false ? mapper(item.payload.value) : mapper(item))</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>db.query((doc) =&gt; doc)</expression-string>
+        <expression-string>Object.keys(this._index._index)       .map((e) =&gt; this._index.get(e, true)).filter((doc) =&gt; doc.payload.value.id == id)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query((doc) )</expression-string>
+        <expression-string>Object.keys(this._index._index)       .map((e) =&gt; this._index.get(e, true))</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query(doc)</expression-string>
+        <expression-string>Object.keys(this._index._index)       .map((e) =&gt; this._index.get(e, true)).filter((doc) =&gt; doc.value.id == id)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query(doc =&gt; doc.contract.land.ownerAddress )</expression-string>
+        <expression-string>Object.keys(this._index._index)       .map((e) =&gt; this._index.get(e, true)).filter(mapper)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query(doc =&gt; doc.contract.land.ownerAddress == &quot;0xe6e17a8f00a7c72686fa92efec474f197b9818c9&quot;)</expression-string>
+        <expression-string>mapper</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query((doc) =&gt; doc.contract.land.ownerAddress == &quot;0xe6e17a8f00a7c72686fa92efec474f197b9818c9&quot;)</expression-string>
+        <expression-string>Object.keys(this._index._index)       .map((e) =&gt; this._index.get(e, false))</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query((doc) =&gt; doc.contract.land.ownerAddress === &quot;0xe6e17a8f00a7c72686fa92efec474f197b9818c9&quot;)</expression-string>
+        <expression-string>Object.keys(this._index._index)       .map((e) =&gt; this._index.get(e, fullOp))</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query((doc) =&gt; doc.contract.land.ownerAddress === 0xe6e17a8f00a7c72686fa92efec474f197b9818c9)</expression-string>
+        <expression-string>(this._index._index)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>db.query((doc) =&gt; doc.contract.land.ownerAddress === searchAddress)</expression-string>
+        <expression-string>Object.keys(this._index._index)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/dao/loggerDAO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" selection-start-line="8" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/build/contracts/Unity.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="232" column="11" selection-start-line="232" selection-start-column="3" selection-end-line="232" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/web3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/logger.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -904,20 +922,6 @@ var result = b
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/dao/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/test/unityTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -925,10 +929,45 @@ var result = b
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/dao/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/orbit-db/src/OrbitDB.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/AddLand/AddLand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="135" column="45" selection-start-line="132" selection-start-column="12" selection-end-line="135" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/start.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -949,49 +988,49 @@ var result = b
     <entry file="file://$PROJECT_DIR$/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
-          <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ethereum/contracts/Unity.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-645">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/AddLand/AddLand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="135" column="45" lean-forward="true" selection-start-line="132" selection-start-column="12" selection-end-line="135" selection-end-column="45" />
+          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/TransferLand/TransferLand.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
+        <state relative-caret-position="272">
+          <caret line="91" column="11" lean-forward="true" selection-start-line="91" selection-start-column="11" selection-end-line="97" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ethereum/contracts/Unity.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/multihash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/orbit-db-docstore/src/DocumentStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/dao/unityDAO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
         </state>
       </provider>
     </entry>

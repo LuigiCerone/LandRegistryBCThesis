@@ -15,12 +15,24 @@ contract Unity {
         address ownerAddress;
     }
 
+    // Define the strcuture of an history entry.
     struct EntryHistory {
         address ownerAddress;
         uint timestamp;
     }
 
-    address public owner;   // address of who creates the contract
+    // Define the structure of the IPFS hash.
+    struct Multihash {
+        bytes32 hash;
+        uint8 hash_function;
+        uint8 size;
+    }
+
+    // address of who creates the contract
+    address public owner;
+
+    // IPFS hash field.
+    Multihash public _ipfs;
 
     // One landId can have multiple passed owners.
     EntryHistory[] public __history;
@@ -65,6 +77,19 @@ contract Unity {
     modifier isOwner(){
         require(msg.sender == _land.ownerAddress, "This land is not of the caller");
         _;
+    }
+
+
+    function setIPFS(bytes32 _hash, uint8 _hash_function, uint8 _size) public isOwner {
+        _ipfs = Multihash({
+            hash : _hash,
+            hash_function : _hash_function,
+            size : _size
+            });
+    }
+
+    function getIPFS() public view returns (bytes32, uint8, uint8){
+        return (_ipfs.hash, _ipfs.hash_function, _ipfs.size);
     }
 
     // Caller (owner/anyone) can transfer a land to the provided buyer if the caller is the owner of the requested land.
