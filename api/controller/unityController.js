@@ -89,13 +89,16 @@ module.exports = {
 
   getHistoryByLandId(req, res) {
     logger.info(`Just received a get history request with id: ${req.query.id}`);
-    let result = unityDAO.getHistoryByLandId(req.query.id);
-
-    if (result && result.length !== 0) {
-      res.json(result);
-    } else {
-      res.status(404).send('Not found');
-    }
+    unityDAO.getHistoryByLandId(req.query.id).then((result) => {
+      if (result && result.length !== 0) {
+        res.json(result);
+      } else {
+        res.status(404).send('Not found');
+      }
+    }).catch((err) => {
+      logger.error("" + err);
+      res.status(500).send();
+    });
   },
 
   getLandById(req, res) {

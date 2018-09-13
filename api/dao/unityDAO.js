@@ -105,12 +105,13 @@ module.exports = {
   },
 
   getHistoryByLandId(id) {
-    try {
-      if (db == null) {
-        this.getDatabase();
-      }
-      let result = db.query((doc) => doc._id === id, {fullOp: true});
-      // console.log(result);
+    if (db == null) {
+      this.getDatabase();
+    }
+    let result = db.query((doc) => doc._id === id, {fullOp: true});
+    // console.log(result);
+
+    return new Promise((resolve, reject) => {
       if (result.length !== 0) {
         // Now we need to check if the hash stored in the smart contract is the
         // same as the one stored in the DB.
@@ -121,15 +122,12 @@ module.exports = {
             result[0].payload.value.contract.contractAddress).then((data) => {
           console.log(data);
           if (data)
-            return result[0].payload.value.contract.land.history;
-          else return null;
+            resolve(result[0].payload.value.contract.land.history);
+          else resolve(null);
         });
-      }
-      else
-        return null;
-    } catch (error) {
-      logger.error('' + error);
-    }
+      } else
+        resolve(null);
+    });
   },
 
   // Get the contract by using the contractAddress, get the multihash, parse it
