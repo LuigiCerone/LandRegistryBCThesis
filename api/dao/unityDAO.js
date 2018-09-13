@@ -104,34 +104,48 @@ module.exports = {
     // Deve tornare una promise.
   },
 
-  getHistoryByLandId(id) {
+  async getHistoryByLandId(id) {
     if (db == null) {
       this.getDatabase();
     }
     let result = db.query((doc) => doc._id === id, {fullOp: true});
     // console.log(result);
 
-    return new Promise((resolve, reject) => {
-      if (result.length !== 0) {
-        // Now we need to check if the hash stored in the smart contract is the
-        // same as the one stored in the DB.
+    if (result.length !== 0) {
+      // Now we need to check if the hash stored in the smart contract is the
+      // same as the one stored in the DB.
 
-        // In order to get the hash stored in the blockchain we need to
-        // instantiate the smart contract.
-        this.checkIPFSHash(result[0].hash,
-            result[0].payload.value.contract.contractAddress).then((data) => {
-          console.log(data);
-          if (data)
-            resolve(result[0].payload.value.contract.land.history);
-          else resolve(null);
-        });
-      } else
-        resolve(null);
-    });
+      // In order to get the hash stored in the blockchain we need to
+      // instantiate the smart contract.
+      let data = await this.checkIPFSHash(result[0].hash,
+          result[0].payload.value.contract.contractAddress);
+      if (data)
+        return result[0].payload.value.contract.land.history;
+      else return null;
+    }
+    else
+      return null;
   },
+// return new Promise((resolve, reject) => {
+//   if (result.length !== 0) {
+//     // Now we need to check if the hash stored in the smart contract is the
+//     // same as the one stored in the DB.
+//
+//     // In order to get the hash stored in the blockchain we need to
+//     // instantiate the smart contract.
+//     this.checkIPFSHash(result[0].hash,
+//         result[0].payload.value.contract.contractAddress).then((data) => {
+//       console.log(data);
+//       if (data)
+//         resolve(result[0].payload.value.contract.land.history);
+//       else resolve(null);
+//     });
+//   } else
+//     resolve(null);
+// });
 
-  // Get the contract by using the contractAddress, get the multihash, parse it
-  // and check it with the given hash.
+// Get the contract by using the contractAddress, get the multihash, parse it
+// and check it with the given hash.
   async checkIPFSHash(givenHash, contractAddress) {
     logger.info(`Fetching the IPFS hash for smart contract ${contractAddress}`);
 
@@ -152,8 +166,8 @@ module.exports = {
 
     let result = await UnityContract.methods.getIPFS().call();
 
-  },
-
+  }
+  ,
   getLandById(id) {
     if (db == null) {
       this.getDatabase();
@@ -172,5 +186,7 @@ module.exports = {
 
   getContractInfo() {
     return UnityContract;
-  },
-};
+  }
+  ,
+}
+;
