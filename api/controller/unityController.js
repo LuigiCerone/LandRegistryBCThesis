@@ -96,7 +96,7 @@ module.exports = {
         res.status(404).send('Not found');
       }
     }).catch((err) => {
-      logger.error("" + err);
+      logger.error('' + err);
       res.status(500).send();
     });
   },
@@ -117,12 +117,16 @@ module.exports = {
     logger.info(
         `Just received a get lands by address request with address: ${req.query.addr}`);
 
-    let result = unityDAO.getLandsForAddress(req.query.addr);
+    unityDAO.getLandsForAddress(req.query.addr).then((result) => {
+      if (result && result.length !== 0) {
+        res.json(result);
+      } else {
+        res.status(404).send('Not found');
+      }
+    }).catch((err) => {
+      logger.error('' + err);
+      res.status(500).send();
+    });
 
-    if (result && result.length !== 0) {
-      res.json(result);
-    } else {
-      res.status(404).send('Not found');
-    }
   },
 };

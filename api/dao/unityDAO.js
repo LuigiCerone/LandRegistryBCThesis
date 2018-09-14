@@ -159,15 +159,6 @@ module.exports = {
     return ipfsHash === givenHash;
   },
 
-  async getIPFSHash(contractAddress) {
-    logger.info(`Fetching the IPFS hash for smart contract ${contractAddress}`);
-
-    let UnityContract = new web3.eth.Contract(unity_abi.abi, contractAddress);
-
-    let result = await UnityContract.methods.getIPFS().call();
-
-  }
-  ,
   getLandById(id) {
     if (db == null) {
       this.getDatabase();
@@ -175,13 +166,19 @@ module.exports = {
     return db.query((doc) => doc._id === id);
   },
 
-  getLandsForAddress(searchAddress) {
+  async getLandsForAddress(searchAddress) {
     if (db == null) {
       this.getDatabase();
     }
-    return db.query((doc) => doc.contract.land.ownerAddress ===
-        web3.utils.toChecksumAddress(searchAddress)).
-        map((item) => item.contract.land);
+    let result = db.query((doc) => doc.contract.land.ownerAddress ===
+        web3.utils.toChecksumAddress(searchAddress), {fullOp: true});
+
+    if (result.length !== 0) {
+      return await result.filter(async (item) => {
+        return await this.checkIPFSHash(item.hash,
+            item.payload.value.contract.contractAddress);
+      }).map((item) => item.payload.value.contract.land);
+    } else return null;
   },
 
   getContractInfo() {
