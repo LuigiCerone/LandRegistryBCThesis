@@ -36,9 +36,29 @@ async function handleTransferEvent(error, event) {
   if (db == null) db = unityDAO.getDatabase();
 
   logger.info(`Received the event: %j`, event);
-  let hash = await unityDAO.insertTransferEvent(event);
 
-  logger.info('hash: ' + hash);
+  // First we need to check that the stored IPFS in the blockchain
+  // matches with the one in the DB;
+  let id = event.returnValues._landParcel + event.returnValues._subaltern;
+  let storedContract = unityDAO.getLandById(id, true);
+
+  let match = await unityDAO.checkIPFSHash(storedContract[0].hash,
+      event.returnValues.contractAddress);
+
+  if (match) {
+    // Then we need to insert the transfer event and update the blockchain with
+    // the new IPFS hash.
+    let hash = await unityDAO.insertTransferEvent(event);
+    logger.info('hash: ' + hash);
+
+    let ipfs = multihash.getBytes32FromMultiash(hash);
+
+    let result = await unityDAO.insertIFPSHash(ipfs,
+        event.returnValues.contractAddress, event.returnValues.exOwner);
+    logger.info(result);
+  } else {
+    throw Error('Corrupted data.');
+  }
 }
 
 module.exports = {

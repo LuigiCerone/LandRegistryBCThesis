@@ -110,7 +110,7 @@ class AddLand extends React.Component {
                     from: web3.eth.defaultAccount,
                     nonce: web3.utils.toHex(nonce),
                     // estimated gas 804653
-                    gas: web3.utils.toHex(1200000)
+                    gas: web3.utils.toHex(1400000)
                 });
             console.log("New contract address is: " + newContractInstance.options.address);
 

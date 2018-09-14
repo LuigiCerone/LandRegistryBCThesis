@@ -66,7 +66,7 @@ module.exports = {
         storedContract.contract.land.ownerAddress = event.returnValues._landBuyer;
 
         // Update in DB.
-        db.put({_id: id, contract: storedContract.contract});
+        return db.put({_id: id, contract: storedContract.contract});
 
       } else {
         logger.info(`Cannot find the contract with id: ${id}.`);
@@ -74,12 +74,13 @@ module.exports = {
     }
   },
 
-  async insertIFPSHash(multihash, contractAddress) {
+  async insertIFPSHash(
+      multihash, contractAddress, sender = web3.eth.defaultAccount) {
     let UnityContract = new web3.eth.Contract(unity_abi.abi, contractAddress);
 
     return await UnityContract.methods.setIPFS(multihash.digest,
         multihash.hashFunction, multihash.size).send({
-      from: web3.eth.defaultAccount,
+      from: web3.utils.toChecksumAddress(sender),
       gas: 300000,
     });
   },
@@ -159,11 +160,11 @@ module.exports = {
     return ipfsHash === givenHash;
   },
 
-  getLandById(id) {
+  getLandById(id, fullOp = false) {
     if (db == null) {
       this.getDatabase();
     }
-    return db.query((doc) => doc._id === id);
+    return db.query((doc) => doc._id === id, {fullOp: fullOp});
   },
 
   async getLandsForAddress(searchAddress) {
