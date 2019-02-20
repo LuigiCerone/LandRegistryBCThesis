@@ -4,25 +4,14 @@
     <list default="true" id="3c17c09b-8a07-45aa-87e5-76290181d7c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Logger.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Migrations.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum/build/contracts/Unity.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000952.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000954.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/000957.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/MANIFEST-000956" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/blocks/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/blocks/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/blocks/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/blocks/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/blocks/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/blocks/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/blocks/MANIFEST-000004" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/datastore/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/datastore/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/datastore/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/datastore/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/datastore/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/orbitdb/ipfs/datastore/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orbitdb/ipfs/datastore/MANIFEST-000004" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbitdb/QmWNMxcMNHY8YdJjtoQXH5C6jfe8bqgng2DfNhHqf1s5TJ/land_registry/MANIFEST-001001" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,12 +26,12 @@
     <session id="-50838742">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="32" />
+          <entry key="project.closed" value="34" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="5" />
-          <entry key="project.open.time.13" value="9" />
+          <entry key="project.open.time.13" value="10" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.2" value="2" />
@@ -51,7 +40,7 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,7 +49,7 @@
           <entry key="css" value="16" />
           <entry key="default" value="1" />
           <entry key="html" value="7" />
-          <entry key="js" value="97" />
+          <entry key="js" value="99" />
           <entry key="json" value="4" />
           <entry key="log" value="2" />
           <entry key="md" value="1" />
@@ -75,7 +64,7 @@
           <entry key="CSS" value="16" />
           <entry key="HTML" value="7" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="97" />
+          <entry key="JavaScript" value="99" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="Solidity file" value="5" />
           <entry key="TypeScript" value="1" />
@@ -85,7 +74,7 @@
         <counts>
           <entry key="css" value="284" />
           <entry key="html" value="347" />
-          <entry key="js" value="9300" />
+          <entry key="js" value="9311" />
           <entry key="json" value="8" />
           <entry key="sol" value="996" />
         </counts>
@@ -95,7 +84,7 @@
           <entry key="CSS" value="284" />
           <entry key="HTML" value="347" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="9300" />
+          <entry key="JavaScript" value="9311" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Solidity file" value="982" />
         </counts>
@@ -121,29 +110,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="480">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/AddLand/AddLand.js">
+        <entry file="file://$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
-              <caret line="112" column="44" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="44" />
+            <state relative-caret-position="600">
+              <caret line="41" column="82" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ethereum/contracts/Unity.sol">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="88" column="81" selection-start-line="88" selection-start-column="81" selection-end-line="88" selection-end-column="81" />
+            <state relative-caret-position="136">
+              <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -264,7 +253,6 @@
         <option value="$PROJECT_DIR$/app/src/components/Modal/Modal.css" />
         <option value="$PROJECT_DIR$/app/src/components/Modal/Modal.js" />
         <option value="$PROJECT_DIR$/api/dao/database.js" />
-        <option value="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" />
         <option value="$PROJECT_DIR$/app/src/model/DuplicateException.js" />
         <option value="$PROJECT_DIR$/app/dist/css/app.css" />
         <option value="$PROJECT_DIR$/app/src/components/HistorySearch/HistorySearch.js" />
@@ -282,6 +270,7 @@
         <option value="$PROJECT_DIR$/app/src/components/AddLand/AddLand.js" />
         <option value="$PROJECT_DIR$/app/src/utils/web3.wrapper.js" />
         <option value="$PROJECT_DIR$/app/dist/index.html" />
+        <option value="$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js" />
       </list>
     </option>
   </component>
@@ -302,10 +291,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="198" />
-    <option name="y" value="180" />
-    <option name="width" value="974" />
-    <option name="height" value="588" />
+    <option name="x" value="35" />
+    <option name="y" value="23" />
+    <option name="width" value="1190" />
+    <option name="height" value="681" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -315,6 +304,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -348,96 +338,12 @@
             <path>
               <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="AddLand" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TransferLand" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="ethereum" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="ethereum" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="ethereum" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="ethereum" type="462c0819:PsiDirectoryNode" />
-              <item name="contracts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="ethereum" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
-              <item name="ethereum" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThesisCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThesisCode" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,7 +383,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="node.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/bin/node" node-parameters="/usr/local/bin/nodemon" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
+    <configuration name="node.js" type="NodeJSConfigurationType" path-to-node="/usr/bin/node" node-parameters="/usr/local/bin/nodemon" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
   </component>
@@ -559,12 +465,13 @@
       <workItem from="1536911605043" duration="5036000" />
       <workItem from="1537804679417" duration="2010000" />
       <workItem from="1539448241979" duration="404000" />
-      <workItem from="1539957724619" duration="25000" />
+      <workItem from="1539957724619" duration="1479000" />
+      <workItem from="1540017693355" duration="638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227919000" />
+    <option name="totallyTimeSpent" value="230011000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -576,10 +483,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="-7" width="1331" height="775" extended-state="6" />
+    <frame x="198" y="180" width="964" height="588" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.15091464" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49667773" visible="true" weight="0.20952381" />
       <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.16741072" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -836,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/model/Unity.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -961,13 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ethereum/build/contracts/Unity.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3765">
@@ -986,6 +879,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="88" column="81" selection-start-line="88" selection-start-column="81" selection-end-line="88" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/utils/web3.wrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/HistoryEntry/HistoryEntry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="41" column="82" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
         </state>
       </provider>
     </entry>
@@ -1031,17 +945,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/utils/web3.wrapper.js">
+    <entry file="file://$PROJECT_DIR$/api/controller/unityController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="136">
+          <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
         </state>
       </provider>
     </entry>

@@ -39,7 +39,7 @@ const HistoryEntry = props => {
                             </div>
                             <div className="card-body">
                                 <p className="card-text">  {item.owner} owned this land
-                                    till {new Date(item.timestamp).toLocaleDateString()}</p>
+                                    till {new Date(item.timestamp).toLocaleString()}</p>
                             </div>
                         </div>
                     )
